@@ -10,7 +10,7 @@ In Activity 1, we learned how to retrieve homologous sequences – the prerequis
 ## Table of contents
 
 * [Align the 12s sequences using MAFFT](#mafft)
-* [Edit the alignment in an alignment viewer] (#aliview)
+* [Edit the alignment in an alignment viewer](#aliview)
 
 
 <a name="mafft"></a>
@@ -26,4 +26,4 @@ In case the web server is busy you may also download and install the MAFFT softw
 <a name="aliview"></a>
 ## Edit the alignment in an alignment viewer
 
-Download the AliView alignment viewer program (Larsson 2014 Bioinf) from “http://ormbunkar.se/aliview/”, and install the program (Mac, Linux, and Windows versions available).
+Download the AliView alignment viewer program (Larsson 2014 Bioinf) from “http://ormbunkar.se/aliview”, and install the program (Mac, Linux, and Windows versions available).
