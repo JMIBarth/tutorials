@@ -9,10 +9,10 @@ Our ultimate goal after this and the following five Activities will be to infer 
 
 * [1.1 The dataset](#dataset)
 * [1.2 Use BLAST to find missing sequences](#blast)
-* [1.3 Batch-download remaining sequences] (#batch)
-* [1.4 Rename sequences] (#rename)
-* [1.5 Download and rename the CO1 sequences] (#rename_co1)
-* [(Optional) Download and rename the RAG1 sequences] (#rag1)
+* [1.3 Batch-download remaining sequences](#batch)
+* [1.4 Rename sequences](#rename)
+* [1.5 Download and rename the CO1 sequences](#rename_co1)
+* [(Optional) Download and rename the RAG1 sequences](#rag1)
 
 
 <a name="dataset"></a>
@@ -23,12 +23,16 @@ We are going to compile sequence information of up to three genes (12s, CO1, and
 
 <details>
   <summary>Background: What are these genes? (click here)</summary> 
-  
+
+--------
+
 **12s** corresponds to the mitochondrial 12s ribosomal (r)RNA gene, translating messenger RNAs into mitochondrial proteins.  
 **CO1** is a protein-subunit of the cytochrome c oxidase complex and also encoded in the mitochondrial DNA.  
 **RAG1** (Recombination activating gene 1) is a protein of a complex involved in antibody receptor recombination and encoded in the nuclear genome.  
   
 The three sequences have unique properties that make them suitable for different phylogenetic analyses: They are encoded by different genomes – the mitochondrial genes are maternally inherited, non-recombining, and have a higher mutation rate than the nuclear genome. Nuclear genes on the other hand also have paternal inheritance. Of the three, the most variable is 12s (in humans, 30% of the nucleotides are variable), followed by CO1 where about 2% sequence divergence is typically detected between closely related species, and RAG1, which is highly conserved even among distantly related species.
+
+--------
 </details>
 
 The table below lists the accession numbers for the sequences that are available on the NCBI or BOLD databases:
@@ -76,19 +80,27 @@ Go to the “**Taxonomy**” tab.
 
 <details>
   <summary>Answer (click here)</summary> 
-  
+
+--------
+
 In November 2022, there was only one species with additional 12s sequence data: *Charadrius vociferus* (Killdeer), for which four hits were found.
+
+--------
 </details>
 
 ![](../img/discussion_icon.png)If there are multiple hits, which criteria do you use to select the one sequence to include in your dataset? Where do you find  information about these criteria? Click on the different links within the NCBI page to explore which information you can find and discuss possible criteria with your neighbors.
 
 <details>
   <summary>Discussion points (click here)</summary> 
-  
+
+--------
+
 * Total sequence length
 * Voucher specimen
 * Information on sampling location 
 * Available meta data (e.g., measurements, used already in other studies)
+
+--------
 </details>
 
 Download the selected 12s sequence(s) for the species you found: In the “**Descriptions**” tab, click on the accession number for the available sequence(s), click on “**Send to**” in the upper right corner, select “**File**”, for “Format" choose “**FASTA**”, click “**Create file**”. 
@@ -119,35 +131,50 @@ We will refresh your bioinformatics knowledge and do this on the command line us
 
 <details>
   <summary>Help! How? (click here)</summary> 
+
+--------
   
 `cd path/to/your/file` (change directory)
+
+--------
 </details>
 
 **2\.**  Display the content of the file to check that you navigated to and downloaded the correct file.
 
 <details>
   <summary>Help! How? (click here)</summary> 
-  
+
+--------
+
 There are many options, e.g., `less`, `more`, `head`, `tail`, `nano`, `emacs`, etc... followed by the filename
+
+--------
 </details>
 
 **3\.**  Only display the sequence header lines (following the greater-than sign) and count how many header lines there are.  
 
 <details>
   <summary>Help! How? (click here)</summary> 
-  
+
+--------
+
 `cat 12s_ncbi.fasta | grep ">" | wc -l`
 
 Do you know the commands used above? If not, you may consult the manual (e.g., `man grep` (to exit the man pages, press `q`) or consult the help text (`grep -h`). Our file should have 17 header lines.
+
+--------
 </details>
 
 **4\.**  Print the first five header lines on screen. Are those the first five sequence names in our file? 
 
 <details>
   <summary>Help! How? (click here)</summary> 
-  
+
+--------
+
 `cat 12s_ncbi.fasta | grep ">" | head -n 5`
 
+--------
 </details>
 
 **5\.**  If these are the correct header lines, lets rename them and check the result: 
@@ -155,8 +182,12 @@ Do you know the commands used above? If not, you may consult the manual (e.g., `
 
 <details>
   <summary>Whats that code? (click here)</summary> 
-  
+
+--------
+
 With `cat` the file is read to standard out, with the pipe character `|` its content is forwarded to the program `cut`, where the `-d` flag specifies the field delimiter as being a `space` and the `-f` flag specifies the fields to be cut as the columns 1 to 3. With `tr` spaces are transformed to underscores, and with `sed` the period and any number thereafter is replaced with nothing. Finally, `grep` searches for the greater-than symbol and `head` prints the first 5 lines `-n 5`  on the screen.
+
+--------
 </details>
 
 Do the reformatted names look like we want them? If yes, replace the last two commands `| grep ">" | head -n 5` with `> 12s_ncbi_ed.fasta` to save the sequences and their new headers to a new edited (“_ed") file. Check the content again to see that the command worked.
@@ -169,8 +200,12 @@ There are more databases than NCBI or its European counterpart [ENA (European Nu
 
 <details>
   <summary>Background: What is barcoding? (click here)</summary> 
-  
+
+--------
+
 Barcoding is a technique uses one or more standardized short genetic markers to identify a specimen as belonging to a particular species. It is also used to depict cryptic species, to survey environmental samples, and for forensic applications.
+
+--------
 </details>
 
 Similarly to the NCBI “Batch Entrez” website, you can download multiple sequences at once. Go to the [BOLD website](https://www.boldsystems.org/) , click on “**Databases > Public Data Portal**”. 
@@ -186,16 +221,24 @@ The site should now display 22 records. Click on the blue “Sequences: FASTA”
 
 <details>
   <summary>Answer (click here)</summary> 
-  
+
+--------
+
 Yes, because the sequences have leading and trailing “gap” characters (here dashes) that adjust them to the same length. Indeed, the closer related species are already well aligned, but Haematopus ater is not.
+
+--------
 </details>
 
 The names in the sequence headers are again not very machine-readable. Adjust the code from section [1.4 Rename sequences] (#rename) to rename the headers. Note, there is no “version” number in the BOLD UIDs, instead the number after the dash corresponds to the year the sequence was added to the database. The year is part of the UID, so we need to keep it, but we could replace the dash with an underscore. For example, we could change: `>BON196-07|Charadrius morinellus|COI-5P|GU571332` to `>BON196_07_Charadrius_morinellus`.
 
 <details>
   <summary>Answer (click here)</summary> 
-  
+
+--------
+
 `cat co1_bold.fasta | cut -d '|' -f 1-2 | tr ' ' '_' | tr '|' '_' | tr '-' '_' > co1_bold_ed.fasta`
+
+--------
 </details>
 
 NOTE: Because *Thinornis rubricollis* is also know by the synonym *Thinornis cucullatus*, the CO1 sequence is labeled with *T. cucullatus*. This will be problematic if we compare the phylogenetic trees or concatenate the data, so rename this sequence (manually or with `sed`) to *Thinornis rubricollis*.

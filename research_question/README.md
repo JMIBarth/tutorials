@@ -8,8 +8,8 @@ When did the bird family of Charadriidae (including plovers, dotterels, and lapw
 
 * [Biogeographic history of New Zealand](#bio_hist)
 * [Origin of the New Zealand fauna](#origin_fauna)
-* [New Zealand endemic species of dotterels and plovers] (#charadriidae)
-* [The research question] (#research_question)
+* [New Zealand endemic species of dotterels and plovers](#charadriidae)
+* [The research question](#research_question)
 
 
 <a name="bio_hist"></a>
@@ -18,11 +18,16 @@ When did the bird family of Charadriidae (including plovers, dotterels, and lapw
 New Zealand, today consistent of two main islands, is part of the mostly submerged continent Zealandia that broke off Gondwana and Australia around 80 million years ago and drifted into the Pacific Ocean ([Video of continental breakup of Zealandia](https://www.sciencelearn.org.nz/videos/798-tectonic-plates)). It is this long geographical isolation that makes its flora and fauna so special: a very high rate of endemism, many flightless birds, and the absence of terrestrial mammals until human settlement in the 13th century. "New Zealand is as close as we will get to the opportunity to study life on another planet" (Jared Diamond 1990).
 
  <details>
-  <summary>Further background: Human settlement and impact (click here)</summary>  
+  <summary>Further background: Human settlement and impact (click here)</summary>
+
+--------
+
 Also New Zealand wasn't spared by human exploition. The first settlers intensively hunted the larger, slower-breeding animals like Moas, geese, penguins, sea lions, and seals, which became extinct within a few hundred years. Smaller animals, lizards, frogs, birds were prayed on by introduced Kiore, the Pacific rat. Forest was burned to make the land more habitable and so New Zealand lost half of its forested area withing a few hundred years after settlement.  
 The most devastating environmental impact however had the Europeans after their arrival only some 200 years ago. Endemic flora and fauna is threatened by further deforestation and introduced plant and mammal species. Especially ground breeding and flightless birds have hardly any defense against introduced predators such as ferrets, stoats and weasels, hedgehogs, possums, dogs and cats.  
 
 There is an excellent four parts 45-minutes each documentary series and a four parts 25-minutes each podcast series produced for Radio New Zealand (RNZ) highlighting New Zealands unique biodiversity and the desperate battle to protect it: [www.rnz.co.nz/wild](https://www.rnz.co.nz/programmes/fight-for-the-wild)
+
+--------
 </details>
 
 <a name="origin_fauna"></a>
@@ -31,8 +36,13 @@ There is an excellent four parts 45-minutes each documentary series and a four p
 The faunal biogeography of New Zealand is an actively reserached topic that still leaves many open questions. Main theories include vicariance – the split of species with the separation of the land masses, as well as overwater dispersal have been put forward for many of the endemic species. 
 
 <details>
-  <summary>Further background: The faunal biogeography of New Zealand (click here)</summary>  
+  <summary>Further background: The faunal biogeography of New Zealand (click here)</summary>
+
+--------
+
 A recent review article focusing on new insights from ancient DNA research nicely summarizes previous and recent theories: [https://doi.org/10.1080/03036758.2022.2093227](https://doi.org/10.1080/03036758.2022.2093227)
+
+--------
 </details>
 
 <a name="charadriidae"></a>
@@ -43,6 +53,9 @@ From previous studies we know that the whole order Charadriiformes is younger th
 
 <details>
   <summary>Further background: The order Charadriiformes (click here)</summary>  
+
+--------
+
 About 380 species belonging to several families can be found in the order Charadriiformes. To pick some examples:
 
 * The black-headed gull (*Chroicocephalus ridibundus*) that can also be observed along the Rhine in Basel and is especially abundand in the winter months 
@@ -79,6 +92,8 @@ Species | Common name | Breeding distribution
 *Haematopus ater* | Blackish oystercatcher | Outgroup (South Am.)
 
 For a recent phylogeny of Charadriiformes, refer to Černýa and Natale, 2022: [https://doi.org/10.1016/j.ympev.2022.107620](https://doi.org/10.1016/j.ympev.2022.107620)
+
+--------
 </details>
 
 <a name="research_question"></a>
@@ -86,11 +101,13 @@ For a recent phylogeny of Charadriiformes, refer to Černýa and Natale, 2022: [
 
 When did the endemic species of dotterels and plovers disperse to New Zealand? Did they disperse in one or several events?
 
-![](../icons/discussion_icon.png) Take a few minutes and discuss with you neighbours how we could investigate this question and what kind of data we would need to find an answer. 
+![](../img/discussion_icon.png) Take a few minutes and discuss with you neighbours how we could investigate this question and what kind of data we would need to find an answer. 
 
 <details>
   <summary>Possible discussion points (click here)</summary> 
-   
+
+--------
+
 * Fossils
 * Ancient DNA
 * Phylogenetic inference
@@ -98,12 +115,19 @@ When did the endemic species of dotterels and plovers disperse to New Zealand? D
 * Outgroup species and older sister taxa
 * Time calibration point(s)
 * Orthologs
+
+--------
 </details>
+
 
 <details>
   <summary>Our approach (click here)</summary> 
 
+--------
+
 We will infer a time-calibrated phylogeny based on molecular DNA sequences sampled from the endemic New Zealand Charadriidae species, from sister species outside of New Zealand, and an outgroup to root the tree. The DNA sequences must represent orthologous genomic regions that originated through speciation events. We align these sequences to infer substitutions amongst them. The substitution rates will determine the relative distances between species, but to know the absolute timeline in years, we also need a time-calibration point in terms of fossil data, geographic events or other constraints. Finally, we will apply Maxium likelihood and Bayesian inference methods to reconstruct the phylogenetic relationships amongst Charadriidae and identify split and possible dispersal events.
+
+--------
 </details>
 
 
