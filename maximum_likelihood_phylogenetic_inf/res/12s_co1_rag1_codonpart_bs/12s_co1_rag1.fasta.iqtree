@@ -1,0 +1,223 @@
+IQ-TREE 1.6.12 built Aug 15 2019
+
+Partition file name: 12s_co1_rag1_partitions.txt
+Input file name: 12s_co1_rag1.fasta
+Type of analysis: ModelFinder + tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 654207
+
+REFERENCES
+----------
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2017) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol Biol Evol, in press.
+https://doi.org/10.1093/molbev/msx281
+
+Since you used partition models please also cite:
+
+Olga Chernomor, Arndt von Haeseler, and Bui Quang Minh (2016)
+Terrace aware data structure for phylogenomic inference from
+supermatrices. Syst Biol, 65:997-1008.
+https://doi.org/10.1093/sysbio/syw037
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 22 taxa with 6 partitions and 4135 total sites (2.97351% missing data)
+
+  ID  Name           Type	Seq	Site	Unique	Infor	Invar	Const
+   1  12s            DNA	17	541	170	109	372	372
+   2  co1_1          DNA	22	284	63	17	256	256
+   3  co1_2          DNA	22	284	39	0	282	282
+   4  co1_3          DNA	22	284	259	203	33	33
+   5  rag1_1_rag1_2  DNA	22	1828	90	18	1756	1756
+   6  rag1_3         DNA	22	914	159	55	749	749
+
+Column meanings:
+  Unique: Number of unique site patterns
+  Infor:  Number of parsimony-informative sites
+  Invar:  Number of invariant sites
+  Const:  Number of constant sites (can be subset of invariant sites)
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: TIM2+F+G4:12s,TNe+I:co1_1,F81+F:co1_2,TIM3+F+G4:co1_3,HKY+F+I:rag1_1_rag1_2,K2P+I+G4:rag1_3
+
+List of best-fit models per partition:
+
+  ID  Model             LogL          AIC      w-AIC      AICc     w-AICc       BIC      w-BIC
+   1  TIM2+F+G4        -2421.6493   4859.2985 + 0.0000   4859.5692 + 0.0000   4893.6459 + 0.0000
+   2  TNe+I             -674.8099   1357.6197 + 0.0000   1357.7631 + 0.0000   1372.2156 + 0.0000
+   3  F81+F             -388.3104    784.6208 + 0.0000    784.7642 + 0.0000    799.2167 + 0.0000
+   4  TIM3+F+G4        -3453.5220   6923.0440 + 0.0000   6923.5676 + 0.0000   6952.2358 + 0.0000
+   5  HKY+F+I          -3124.2696   6260.5392 + 0.0000   6260.5853 + 0.0000   6293.6051 + 0.0000
+   6  K2P+I+G4         -2640.4931   5288.9861 + 0.0000   5289.0301 + 0.0000   5308.2574 + 0.0000
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Edge-linked-proportional partition model but separate models between partitions
+
+  ID  Model           Speed  Parameters
+   1  TIM2+F+G4      1.2533  TIM2{5.96484,50.0776,99.9952}+F{0.318864,0.293418,0.200882,0.186836}+G4{0.206712}
+   2  TNe+I          0.3590  TNe{5.07277,100}+FQ+I{0.799055}
+   3  F81+F          0.0089  F81
+   4  TIM3+F+G4      10.1928  TIM3{0.463126,37.7194,12.0637}+F{0.383748,0.401745,0.0356299,0.178877}+G4{2.3416}
+   5  HKY+F+I        0.0600  HKY{5.87822}+F{0.33369,0.19383,0.247197,0.225284}+I{0.812533}
+   6  K2P+I+G4       0.3809  K2P{8.86356}+FQ+I{0.480272}+G4{0.815543}
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -12656.7385 (s.e. 261.2167)
+Unconstrained log-likelihood (without tree): -12725.3203
+Number of free parameters (#branches + #model parameters): 74
+Akaike information criterion (AIC) score: 25461.4771
+Corrected Akaike information criterion (AICc) score: 25464.2111
+Bayesian information criterion (BIC) score: 25929.6931
+
+Total tree length (sum of branch lengths): 0.8772
+Sum of internal branch lengths: 0.1678 (19.1233% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Anarhynchus_frontalis' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++---Anarhynchus_frontalis
+|
+|        +--------Charadrius_alexandrinus
+|     +--| (59)
+|     |  |     +-----Charadrius_mongolus
+|     |  |  +--| (76)
+|     |  |  |  +--------Charadrius_veredus
+|     |  +--| (37)
+|     |     |  +-------Charadrius_collaris
+|     |     +--| (67)
+|     |        +-------Charadrius_falklandicus
+|  +--| (36)
+|  |  +------------------Peltohyas_australis
++--| (52)
+|  |                         +----------------------------Charadrius_morinellus
+|  |                      +--| (96)
+|  |                      |  |        +---------Charadrius_semipalmatus
+|  |                      |  |    +---| (94)
+|  |                      |  |    |   +----------Charadrius_vociferus
+|  |                      |  +----| (100)
+|  |                      |       |        +-----------------Elseyornis_melanops
+|  |                      |       |    +---| (90)
+|  |                      |       |    |   +-----Thinornis_novaeseelandiae
+|  |                      |       +----| (94)
+|  |                      |            +---------Thinornis_rubricollis
+|  |                   +--| (62)
+|  |                   |  +---------------------Phegornis_mitchellii
+|  |                +--| (72)
+|  |                |  +---------------------------Oreopholus_ruficollis
+|  |             +--| (98)
+|  |             |  |    +---------------------------Haematopus_ater
+|  |             |  +----| (92)
+|  |             |       +----------------------------Pluvialis_squatarola
+|  |         +---| (94)
+|  |         |   |                 +---------Vanellus_chilensis
+|  |         |   +-----------------| (100)
+|  |         |                     +---------Vanellus_vanellus
+|  |  +------| (99)
+|  |  |      +--------------------------------------Erythrogonys_cinctus
+|  +--| (56)
+|     +---Charadrius_bicinctus
+|
++--Charadrius_obscurus
+
+Tree in newick format:
+
+(Anarhynchus_frontalis:0.0098223439,(((Charadrius_alexandrinus:0.0208983927,((Charadrius_mongolus:0.0146752539,Charadrius_veredus:0.0212087569)76:0.0081360223,(Charadrius_collaris:0.0180278815,Charadrius_falklandicus:0.0179899859)67:0.0034346550)37:0.0023121817)59:0.0040042234,Peltohyas_australis:0.0417782872)36:0.0010073376,(((((((Charadrius_morinellus:0.0635925006,((Charadrius_semipalmatus:0.0220886115,Charadrius_vociferus:0.0244342448)94:0.0087034337,((Elseyornis_melanops:0.0386515154,Thinornis_novaeseelandiae:0.0138341458)90:0.0090258281,Thinornis_rubricollis:0.0233234757)94:0.0127307764)100:0.0125114845)96:0.0074364836,Phegornis_mitchellii:0.0480084360)62:0.0009665437,Oreopholus_ruficollis:0.0615263639)72:0.0020780586,(Haematopus_ater:0.0614918674,Pluvialis_squatarola:0.0639255355)92:0.0113804103)98:0.0083607310,(Vanellus_chilensis:0.0225430898,Vanellus_vanellus:0.0234797706)100:0.0392430249)94:0.0093035285,Erythrogonys_cinctus:0.0836967494)99:0.0166636801,Charadrius_bicinctus:0.0085629932)56:0.0067414902)52:0.0037182489,Charadrius_obscurus:0.0059246957);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000bootstrap trees
+Log-likelihood of consensus tree: -12656.738609
+Robinson-Foulds distance between ML tree and consensus tree: 0
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++---Anarhynchus_frontalis
+|
+|        +--------Charadrius_alexandrinus
+|     +--| (59)
+|     |  |     +-----Charadrius_mongolus
+|     |  |  +--| (76)
+|     |  |  |  +--------Charadrius_veredus
+|     |  +--| (37)
+|     |     |  +-------Charadrius_collaris
+|     |     +--| (67)
+|     |        +-------Charadrius_falklandicus
+|  +--| (36)
+|  |  +------------------Peltohyas_australis
++--| (52)
+|  |                         +----------------------------Charadrius_morinellus
+|  |                      +--| (96)
+|  |                      |  |        +---------Charadrius_semipalmatus
+|  |                      |  |    +---| (94)
+|  |                      |  |    |   +----------Charadrius_vociferus
+|  |                      |  +----| (100)
+|  |                      |       |        +-----------------Elseyornis_melanops
+|  |                      |       |    +---| (90)
+|  |                      |       |    |   +-----Thinornis_novaeseelandiae
+|  |                      |       +----| (94)
+|  |                      |            +---------Thinornis_rubricollis
+|  |                   +--| (62)
+|  |                   |  +---------------------Phegornis_mitchellii
+|  |                +--| (72)
+|  |                |  +---------------------------Oreopholus_ruficollis
+|  |             +--| (98)
+|  |             |  |    +---------------------------Haematopus_ater
+|  |             |  +----| (92)
+|  |             |       +----------------------------Pluvialis_squatarola
+|  |         +---| (94)
+|  |         |   |                 +---------Vanellus_chilensis
+|  |         |   +-----------------| (100)
+|  |         |                     +---------Vanellus_vanellus
+|  |  +------| (99)
+|  |  |      +--------------------------------------Erythrogonys_cinctus
+|  +--| (56)
+|     +---Charadrius_bicinctus
+|
++--Charadrius_obscurus
+
+
+Consensus tree in newick format: 
+
+(Anarhynchus_frontalis:0.0098268895,(((Charadrius_alexandrinus:0.0209022202,((Charadrius_mongolus:0.0146755709,Charadrius_veredus:0.0212064696)76:0.0081375778,(Charadrius_collaris:0.0180305723,Charadrius_falklandicus:0.0179900827)67:0.0034376560)37:0.0023080838)59:0.0040048193,Peltohyas_australis:0.0417737541)36:0.0010178123,(((((((Charadrius_morinellus:0.0635938270,((Charadrius_semipalmatus:0.0220861869,Charadrius_vociferus:0.0244378094)94:0.0087056615,((Elseyornis_melanops:0.0386508372,Thinornis_novaeseelandiae:0.0138218300)90:0.0090863463,Thinornis_rubricollis:0.0233200293)94:0.0126867310)100:0.0125134971)96:0.0074356901,Phegornis_mitchellii:0.0480074513)62:0.0009662461,Oreopholus_ruficollis:0.0615280737)72:0.0020784679,(Haematopus_ater:0.0614924945,Pluvialis_squatarola:0.0639280327)92:0.0113759169)98:0.0083615871,(Vanellus_chilensis:0.0225444116,Vanellus_vanellus:0.0234776648)100:0.0392425993)94:0.0092999736,Erythrogonys_cinctus:0.0836925685)99:0.0166743635,Charadrius_bicinctus:0.0085547887)56:0.0067411870)52:0.0037057534,Charadrius_obscurus:0.0059242057);
+
+TIME STAMP
+----------
+
+Date and time: Fri Nov 26 16:14:10 2021
+Total CPU time used: 25.396054 seconds (0h:0m:25s)
+Total wall-clock time used: 26.29731393 seconds (0h:0m:26s)
+

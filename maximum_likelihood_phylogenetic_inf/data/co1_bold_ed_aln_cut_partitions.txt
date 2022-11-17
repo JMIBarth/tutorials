@@ -1,0 +1,6 @@
+#NEXUS
+  BEGIN SETS;
+  	CHARSET codon1 = 1-850\3;
+  	CHARSET codon2 = 2-851\3;
+  	CHARSET codon3 = 3-852\3;
+  END; 

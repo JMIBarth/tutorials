@@ -1,0 +1,149 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    rabi (SSE4.2, 15 GB RAM)
+Command: ../../iqtree -s 12s_ncbi_ed_cut_realn_filtered.fasta -m TIM2+I+G4+F
+Seed:    319066 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Mon Nov 22 09:18:21 2021
+Kernel:  SSE2 - 1 threads (24 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 24 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file 12s_ncbi_ed_cut_realn_filtered.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 17 sequences with 541 columns, 170 distinct patterns
+109 parsimony-informative, 60 singleton sites, 372 constant sites
+                                    Gap/Ambiguity  Composition  p-value
+   1  NC_003713_Haematopus_ater             0.00%    passed     89.71%
+   2  DQ485792_Charadrius_vociferus         0.00%    passed     98.30%
+   3  EU167040_Charadrius_semipalmatus      0.00%    passed     96.94%
+   4  EF373078_Elseyornis_melanops          0.00%    passed     96.93%
+   5  EF373113_Thinornis_novaeseelandiae    0.00%    passed     91.72%
+   6  EF380263_Anarhynchus_frontalis        0.00%    passed     99.31%
+   7  EF373098_Peltohyas_australis          0.00%    passed     94.02%
+   8  NC_041118_Charadrius_alexandrinus     0.00%    passed     99.38%
+   9  MW298528_Charadrius_mongolus          0.00%    passed     99.92%
+  10  EF373096_Oreopholus_ruficollis        0.00%    passed     99.42%
+  11  EF373101_Pluvialis_squatarola         0.00%    passed     87.21%
+  12  EF373115_Vanellus_chilensis           0.18%    passed     98.97%
+  13  NC_025637_Vanellus_vanellus           0.18%    passed     98.65%
+  14  EF373099_Phegornis_mitchellii         1.11%    passed     70.28%
+  15  EF373080_Charadrius_morinellus        0.00%    passed     98.86%
+  16  EF373079_Erythrogonys_cinctus         0.00%    passed     74.44%
+  17  KF357995_Charadrius_obscurus         70.43%    passed     44.69%
+WARNING: 1 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                 4.23%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.001 seconds
+
+NOTE: 0 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Thoroughly optimizing +I+G parameters from 10 start values...
+Init pinv, alpha: 0.000, 1.000 / Estimate: 0.000, 0.205 / LogL: -2398.572
+Init pinv, alpha: 0.076, 1.000 / Estimate: 0.078, 0.235 / LogL: -2397.948
+Init pinv, alpha: 0.153, 1.000 / Estimate: 0.156, 0.273 / LogL: -2397.426
+Init pinv, alpha: 0.229, 1.000 / Estimate: 0.234, 0.324 / LogL: -2397.021
+Init pinv, alpha: 0.306, 1.000 / Estimate: 0.312, 0.397 / LogL: -2396.706
+Init pinv, alpha: 0.382, 1.000 / Estimate: 0.389, 0.508 / LogL: -2396.426
+Init pinv, alpha: 0.458, 1.000 / Estimate: 0.464, 0.690 / LogL: -2396.158
+Init pinv, alpha: 0.535, 1.000 / Estimate: 0.532, 1.012 / LogL: -2396.011
+Init pinv, alpha: 0.611, 1.000 / Estimate: 0.581, 1.473 / LogL: -2396.244
+Init pinv, alpha: 0.688, 1.000 / Estimate: 0.581, 1.482 / LogL: -2396.252
+Optimal pinv,alpha: 0.532, 1.012 / LogL: -2396.011
+
+Parameters optimization took 0.632 sec
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+Computing ML distances based on estimated model parameters... 0.003 sec
+Computing BIONJ tree...
+0.037 seconds
+Log-likelihood of BIONJ tree: -2393.532
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.087 second
+Computing log-likelihood of 98 initial trees ... 0.285 seconds
+Current best score: -2391.643
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 1: -2390.746
+Estimate model parameters (epsilon = 0.100)
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 3: -2388.079
+Estimate model parameters (epsilon = 0.100)
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 4: -2387.386
+Estimate model parameters (epsilon = 0.100)
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 7: -2386.599
+Iteration 10 / LogL: -2390.778 / Time: 0h:0m:1s
+Estimate model parameters (epsilon = 0.100)
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 18: -2386.089
+Iteration 20 / LogL: -2393.212 / Time: 0h:0m:1s
+Finish initializing candidate tree set (17)
+Current best tree score: -2386.089 / CPU time: 1.070
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -2387.065 / Time: 0h:0m:2s (0h:0m:6s left)
+UPDATE BEST LOG-LIKELIHOOD: -2386.089
+Iteration 40 / LogL: -2386.926 / Time: 0h:0m:2s (0h:0m:4s left)
+UPDATE BEST LOG-LIKELIHOOD: -2386.089
+Iteration 50 / LogL: -2389.709 / Time: 0h:0m:2s (0h:0m:3s left)
+Iteration 60 / LogL: -2389.602 / Time: 0h:0m:3s (0h:0m:3s left)
+Iteration 70 / LogL: -2386.927 / Time: 0h:0m:3s (0h:0m:2s left)
+Iteration 80 / LogL: -2386.928 / Time: 0h:0m:3s (0h:0m:1s left)
+Iteration 90 / LogL: -2386.666 / Time: 0h:0m:4s (0h:0m:1s left)
+Iteration 100 / LogL: -2386.626 / Time: 0h:0m:4s (0h:0m:0s left)
+Iteration 110 / LogL: -2386.631 / Time: 0h:0m:4s (0h:0m:0s left)
+UPDATE BEST LOG-LIKELIHOOD: -2386.089
+TREE SEARCH COMPLETED AFTER 119 ITERATIONS / Time: 0h:0m:4s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -2386.089
+Optimal log-likelihood: -2386.085
+Rate parameters:  A-C: 5.20799  A-G: 48.26405  A-T: 5.20799  C-G: 1.00000  C-T: 99.89532  G-T: 1.00000
+Base frequencies:  A: 0.319  C: 0.293  G: 0.201  T: 0.187
+Proportion of invariable sites: 0.534
+Gamma shape alpha: 1.038
+Parameters optimization took 1 rounds (0.014 sec)
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BEST SCORE FOUND : -2386.085
+Total tree length: 1.017
+
+Total number of iterations: 119
+CPU time used for tree search: 3.792 sec (0h:0m:3s)
+Wall-clock time used for tree search: 4.081 sec (0h:0m:4s)
+Total CPU time used: 4.458 sec (0h:0m:4s)
+Total wall-clock time used: 4.930 sec (0h:0m:4s)
+
+Analysis results written to: 
+  IQ-TREE report:                12s_ncbi_ed_cut_realn_filtered.fasta.iqtree
+  Maximum-likelihood tree:       12s_ncbi_ed_cut_realn_filtered.fasta.treefile
+  Likelihood distances:          12s_ncbi_ed_cut_realn_filtered.fasta.mldist
+  Screen log file:               12s_ncbi_ed_cut_realn_filtered.fasta.log
+
+Date and Time: Mon Nov 22 09:18:26 2021

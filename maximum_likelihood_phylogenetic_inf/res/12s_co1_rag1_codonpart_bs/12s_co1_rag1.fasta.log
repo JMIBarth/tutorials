@@ -1,0 +1,224 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    rabi (SSE4.2, 15 GB RAM)
+Command: ../../iqtree -s 12s_co1_rag1.fasta -spp 12s_co1_rag1_partitions.txt -pre 12s_co1_rag1.fasta -m TEST -bb 1000
+Seed:    654207 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Fri Nov 26 16:13:36 2021
+Kernel:  SSE2 - 1 threads (24 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 24 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file 12s_co1_rag1_partitions.txt ...
+Reading alignment file 12s_co1_rag1.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 22 sequences with 4135 columns, 690 distinct patterns
+402 parsimony-informative, 285 singleton sites, 3448 constant sites
+                           Gap/Ambiguity  Composition  p-value
+   1  Anarhynchus_frontalis        3.99%    passed     75.51%
+   2  Charadrius_alexandrinus     46.60%    passed     15.33%
+   3  Charadrius_bicinctus        62.18%    passed     24.53%
+   4  Charadrius_collaris         56.90%    passed     44.49%
+   5  Charadrius_falklandicus     59.69%    passed     44.20%
+   6  Charadrius_mongolus         48.42%    failed      4.49%
+   7  Charadrius_morinellus        3.12%    passed     89.67%
+   8  Charadrius_obscurus         75.60%    failed      0.00%
+   9  Charadrius_semipalmatus     45.25%    passed     11.83%
+  10  Charadrius_veredus          62.35%    passed     18.65%
+  11  Charadrius_vociferus         1.69%    passed     60.69%
+  12  Elseyornis_melanops          6.51%    passed     81.80%
+  13  Erythrogonys_cinctus         4.21%    passed     59.05%
+  14  Haematopus_ater              0.00%    passed     72.97%
+  15  Oreopholus_ruficollis        1.69%    passed     51.50%
+  16  Peltohyas_australis          0.02%    passed     45.45%
+  17  Phegornis_mitchellii         0.22%    passed     44.89%
+  18  Pluvialis_squatarola         1.67%    passed     70.72%
+  19  Thinornis_novaeseelandiae    6.02%    passed     60.30%
+  20  Thinornis_rubricollis       63.05%    passed     39.84%
+  21  Vanellus_chilensis           1.74%    passed     79.02%
+  22  Vanellus_vanellus           43.89%    passed     20.11%
+WARNING: 6 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                       27.04%  2 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 6 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1		17	541	109	372	TEST	12s
+2		22	284	17	256	TEST	co1_1
+3		22	284	0	282	TEST	co1_2
+WARNING: No parsimony-informative sites in partition co1_2
+4		22	284	203	33	TEST	co1_3
+5		22	1828	18	1756	TEST	rag1_1_rag1_2
+6		22	914	55	749	TEST	rag1_3
+Degree of missing data: 0.030
+Info: multi-threading strategy over partitions
+
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.003 seconds
+NOTE: ModelFinder requires 5 MB RAM!
+Testing GTR+F+G on supermatrix...
+GTR+F+G4 / LnL: -13756.666 / df: 50 / AIC: 27613.333 / AICc: 27614.581 / BIC: 27929.695
+Selecting individual models for 6 charsets using BIC...
+ No. Model        Score       Charset
+   1 TIM2+F+G4    4893.646    12s
+   2 TNe+I        1372.216    co1_1
+   3 F81+F        799.217     co1_2
+   4 TIM3+F+G4    6952.236    co1_3
+   5 HKY+F+I      6293.605    rag1_1_rag1_2
+   6 K2P+I+G4     5308.257    rag1_3
+Full partition model BIC score: 26022.324 (LnL: -12703.054  df:74)
+Partition information was printed to 12s_co1_rag1.fasta.best_scheme.nex
+Partition information in Raxml format was printed to 12s_co1_rag1.fasta.best_scheme
+
+All model information printed to 12s_co1_rag1.fasta.model.gz
+CPU time for ModelFinder: 7.429 seconds (0h:0m:7s)
+Wall-clock time for ModelFinder: 7.697 seconds (0h:0m:7s)
+Generating 1000 samples for ultrafast bootstrap (seed: 654207)...
+
+NOTE: 4 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -15315.050
+Current log-likelihood at step 1: -13044.703
+Current log-likelihood at step 2: -12836.759
+Current log-likelihood at step 3: -12687.560
+Current log-likelihood at step 4: -12686.011
+Current log-likelihood at step 5: -12685.551
+Current log-likelihood at step 6: -12685.158
+Current log-likelihood at step 7: -12684.784
+Current log-likelihood at step 8: -12684.419
+Current log-likelihood at step 9: -12684.060
+Current log-likelihood at step 10: -12683.701
+Current log-likelihood at step 11: -12683.341
+Current log-likelihood at step 12: -12682.978
+Current log-likelihood at step 13: -12682.612
+Current log-likelihood at step 14: -12682.239
+Current log-likelihood at step 15: -12681.860
+Current log-likelihood at step 16: -12681.471
+Current log-likelihood at step 17: -12681.072
+Current log-likelihood at step 18: -12680.664
+Current log-likelihood at step 19: -12680.245
+Current log-likelihood at step 20: -12679.813
+Current log-likelihood at step 21: -12679.368
+Current log-likelihood at step 22: -12678.909
+Current log-likelihood at step 23: -12678.434
+Current log-likelihood at step 24: -12677.944
+Current log-likelihood at step 25: -12677.438
+Current log-likelihood at step 26: -12676.915
+Current log-likelihood at step 27: -12676.375
+Current log-likelihood at step 28: -12675.818
+Current log-likelihood at step 29: -12675.245
+Current log-likelihood at step 30: -12674.658
+Current log-likelihood at step 31: -12674.058
+Current log-likelihood at step 32: -12673.450
+Current log-likelihood at step 33: -12669.413
+Current log-likelihood at step 34: -12669.409
+Partition-specific rates:  1.264 0.342 0.009 10.135 0.062 0.393
+Parameters optimization took 33 rounds (1.396 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+Computing ML distances based on estimated model parameters... 0.018 sec
+Computing BIONJ tree...
+0.055 seconds
+Log-likelihood of BIONJ tree: -12794.808
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.409 second
+Computing log-likelihood of 98 initial trees ... 1.606 seconds
+Current best score: -12662.482
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -12661.925
+Current log-likelihood at step 1: -12661.870
+Parameters optimization took 0 rounds (0.048 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 1: -12661.870
+UPDATE BEST LOG-LIKELIHOOD: -12661.869
+Iteration 10 / LogL: -12663.420 / Time: 0h:0m:4s
+Iteration 20 / LogL: -12661.918 / Time: 0h:0m:6s
+Finish initializing candidate tree set (3)
+Current best tree score: -12661.869 / CPU time: 4.722
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -12657.353
+Current log-likelihood at step 1: -12656.769
+Current log-likelihood at step 2: -12656.746
+Parameters optimization took 1 rounds (0.084 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 29: -12656.746
+Iteration 30 / LogL: -12663.997 / Time: 0h:0m:8s (0h:0m:29s left)
+Iteration 40 / LogL: -12656.956 / Time: 0h:0m:10s (0h:0m:23s left)
+UPDATE BEST LOG-LIKELIHOOD: -12656.744
+Iteration 50 / LogL: -12662.502 / Time: 0h:0m:12s (0h:0m:19s left)
+Log-likelihood cutoff on original alignment: -12685.483
+Iteration 60 / LogL: -12664.009 / Time: 0h:0m:13s (0h:0m:16s left)
+Iteration 70 / LogL: -12662.492 / Time: 0h:0m:15s (0h:0m:13s left)
+Iteration 80 / LogL: -12663.981 / Time: 0h:0m:17s (0h:0m:10s left)
+Iteration 90 / LogL: -12663.990 / Time: 0h:0m:19s (0h:0m:8s left)
+Iteration 100 / LogL: -12662.483 / Time: 0h:0m:20s (0h:0m:6s left)
+Log-likelihood cutoff on original alignment: -12685.146
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.997
+Iteration 110 / LogL: -12656.784 / Time: 0h:0m:22s (0h:0m:18s left)
+Iteration 120 / LogL: -12656.985 / Time: 0h:0m:24s (0h:0m:16s left)
+Iteration 130 / LogL: -12656.815 / Time: 0h:0m:25s (0h:0m:14s left)
+TREE SEARCH COMPLETED AFTER 130 ITERATIONS / Time: 0h:0m:25s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -12656.743
+Current log-likelihood at step 1: -12656.739
+Partition-specific rates:  1.253 0.359 0.009 10.193 0.060 0.381
+Parameters optimization took 0 rounds (0.029 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BEST SCORE FOUND : -12656.739
+Creating bootstrap support values...
+Split supports printed to NEXUS file 12s_co1_rag1.fasta.splits.nex
+Total tree length: 0.877
+
+Total number of iterations: 130
+CPU time used for tree search: 23.786 sec (0h:0m:23s)
+Wall-clock time used for tree search: 24.058 sec (0h:0m:24s)
+Total CPU time used: 25.396 sec (0h:0m:25s)
+Total wall-clock time used: 26.003 sec (0h:0m:26s)
+
+Computing bootstrap consensus tree...
+Reading input file 12s_co1_rag1.fasta.splits.nex...
+22 taxa and 158 splits.
+Consensus tree written to 12s_co1_rag1.fasta.contree
+Reading input trees file 12s_co1_rag1.fasta.contree
+Log-likelihood of consensus tree: -12656.739
+
+Analysis results written to: 
+  IQ-TREE report:                12s_co1_rag1.fasta.iqtree
+  Maximum-likelihood tree:       12s_co1_rag1.fasta.treefile
+  Likelihood distances:          12s_co1_rag1.fasta.mldist
+  Best partitioning scheme:      12s_co1_rag1.fasta.best_scheme.nex
+           in RAxML format:      12s_co1_rag1.fasta.best_scheme
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          12s_co1_rag1.fasta.splits.nex
+  Consensus tree:                12s_co1_rag1.fasta.contree
+  Screen log file:               12s_co1_rag1.fasta.log
+
+Date and Time: Fri Nov 26 16:14:10 2021

@@ -1,0 +1,9 @@
+#nexus
+begin sets;
+  charset 12s = 1-541;
+  charset co1_1 = 542-1393\3;
+  charset co1_2 = 543-1393\3;
+  charset co1_3 = 544-1393\3;
+  charset rag1_1_rag1_2 = 1394-4135\3  1395-4135\3;
+  charset rag1_3 = 1396-4135\3;
+end;

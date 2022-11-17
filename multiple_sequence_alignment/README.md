@@ -20,7 +20,7 @@ In [Activity 1](../dataset_compilation/README.md), we learned how to retrieve ho
 Go to the [MAFFT alignment server](https://mafft.cbrc.jp/alignment/server/). This site provides a web interface to the MAFFT alignment program ([Katoh et al. 2002 Nucleic Acids Res](https://doi.org/10.1093/nar/gkf436)), a popular multiple sequence aligner that implements progressive and iterative methods and both the Needleman-Wunsch and Smith-Waterman global and local alignment algorithms.
 
 <details>
-  <summary>Optional: download and locally install MAFFT (click here)</summary>
+  <summary>Optional: Download and locally install MAFFT (click here)</summary>
 
 --------
 

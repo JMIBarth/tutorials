@@ -1,0 +1,124 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=22;
+	taxlabels
+	Anarhynchus_frontalis
+	Charadrius_alexandrinus
+	Charadrius_bicinctus
+	Charadrius_collaris
+	Charadrius_falklandicus
+	Charadrius_mongolus
+	Charadrius_morinellus
+	Charadrius_obscurus
+	Charadrius_semipalmatus
+	Charadrius_veredus
+	Charadrius_vociferus
+	Elseyornis_melanops
+	Erythrogonys_cinctus
+	Haematopus_ater
+	Oreopholus_ruficollis
+	Peltohyas_australis
+	Phegornis_mitchellii
+	Pluvialis_squatarola
+	Thinornis_novaeseelandiae
+	Thinornis_rubricollis
+	Vanellus_chilensis
+	Vanellus_vanellus
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] (Anarhynchus_frontalis:0.009822,(((Charadrius_alexandrinus:0.020898,((Charadrius_mongolus:0.014675,Charadrius_veredus:0.021209)[&bs=76]:0.008136,(Charadrius_collaris:0.018028,Charadrius_falklandicus:0.01799)[&bs=67]:0.003435)[&bs=37]:0.002312)[&bs=59]:0.004004,Peltohyas_australis:0.041778)[&bs=36]:0.001007,(((((((Charadrius_morinellus:0.063593,((Charadrius_semipalmatus:0.022089,Charadrius_vociferus:0.024434)[&bs=94]:0.008703,((Elseyornis_melanops:0.038652,Thinornis_novaeseelandiae:0.013834)[&bs=90]:0.009026,Thinornis_rubricollis:0.023323)[&bs=94]:0.012731)[&bs=100]:0.012511)[&bs=96]:0.007436,Phegornis_mitchellii:0.048008)[&bs=62]:9.67E-4,Oreopholus_ruficollis:0.061526)[&bs=72]:0.002078,(Haematopus_ater:0.061492,Pluvialis_squatarola:0.063926)[&bs=92]:0.01138)[&bs=98]:0.008361,(Vanellus_chilensis:0.022543,Vanellus_vanellus:0.02348)[&bs=100]:0.039243)[&bs=94]:0.009304,Erythrogonys_cinctus:0.083697)[&bs=99]:0.016664,Charadrius_bicinctus:0.008563)[&bs=56]:0.006741)[&bs=52]:0.003718,Charadrius_obscurus:0.005925);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=0;
+	set legend.attribute=null;
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="bs";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=10;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute=null;
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute=null;
+	set nodeShapeInternal.colourAttribute=null;
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute=null;
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=true;
+	set trees.orderType="decreasing";
+	set trees.rooting=true;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+

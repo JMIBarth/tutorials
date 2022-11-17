@@ -1,0 +1,186 @@
+IQ-TREE 1.6.12 built Aug 15 2019
+
+Input file name: 12s_ncbi_ed_cut_realn_filtered.fasta
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 379650
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2017) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol Biol Evol, in press.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 17 sequences with 541 nucleotide sites
+Number of constant sites: 372 (= 68.7616% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 372 (= 68.7616% of all sites)
+Number of parsimony informative sites: 109
+Number of distinct site patterns: 170
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: TIM2+F+I+G4
+
+Rate parameter R:
+
+  A-C: 5.1944
+  A-G: 48.2292
+  A-T: 5.1944
+  C-G: 1.0000
+  C-T: 99.9448
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3189
+  pi(C) = 0.2934
+  pi(G) = 0.2009
+  pi(T) = 0.1868
+
+Rate matrix Q:
+
+  A   -0.6439   0.08055    0.5121   0.05129
+  C   0.08754    -1.085   0.01062    0.9869
+  G    0.8128   0.01551   -0.8382  0.009875
+  T   0.08754      1.55   0.01062    -1.648
+
+Model of rate heterogeneity: Invar+Gamma with 4 categories
+Proportion of invariable sites: 0.5349
+Gamma shape alpha: 1.041
+
+ Category  Relative_rate  Proportion
+  0         0              0.5349
+  1         0.312          0.1163
+  2         1.051          0.1163
+  3         2.164          0.1163
+  4         5.073          0.1163
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -2386.0849 (s.e. 104.4924)
+Unconstrained log-likelihood (without tree): -1917.5084
+Number of free parameters (#branches + #model parameters): 39
+Akaike information criterion (AIC) score: 4850.1699
+Corrected Akaike information criterion (AICc) score: 4856.3974
+Bayesian information criterion (BIC) score: 5017.6132
+
+Total tree length (sum of branch lengths): 1.0177
+Sum of internal branch lengths: 0.1843 (18.1127% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0018) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'NC_003713_Haematopus_ater' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++-----------------------NC_003713_Haematopus_ater
+|
+|            +------DQ485792_Charadrius_vociferus
+|         +--| (80)
+|         |  +-------EU167040_Charadrius_semipalmatus
+|     +---| (85)
+|     |   |       +-----------EF373078_Elseyornis_melanops
+|     |   +-------| (97)
+|     |           +--EF373113_Thinornis_novaeseelandiae
+|  +--| (22)
+|  |  +-------------------EF373099_Phegornis_mitchellii
++--| (65)
+|  |                      +--EF380263_Anarhynchus_frontalis
+|  |                   +--| (87)
+|  |                   |  +---KF357995_Charadrius_obscurus
+|  |                +--| (43)
+|  |                |  +------NC_041118_Charadrius_alexandrinus
+|  |             +--| (49)
+|  |             |  +----------EF373098_Peltohyas_australis
+|  |          +--| (80)
+|  |          |  +---MW298528_Charadrius_mongolus
+|  |     +----| (69)
+|  |     |    +-------------------------------------------------EF373079_Erythrogonys_cinctus
+|  |  +**| (16)
+|  |  |  +---------------------------EF373101_Pluvialis_squatarola
+|  +--| (23)
+|     |              +------EF373115_Vanellus_chilensis
+|     |  +-----------| (100)
+|     |  |           +----NC_025637_Vanellus_vanellus
+|     +--| (62)
+|        +-------------------EF373080_Charadrius_morinellus
+|
++-----------EF373096_Oreopholus_ruficollis
+
+Tree in newick format:
+
+(NC_003713_Haematopus_ater:0.0896783313,((((DQ485792_Charadrius_vociferus:0.0278169087,EU167040_Charadrius_semipalmatus:0.0314027299)80:0.0060988354,(EF373078_Elseyornis_melanops:0.0432505524,EF373113_Thinornis_novaeseelandiae:0.0095751142)97:0.0297191532)85:0.0153804674,EF373099_Phegornis_mitchellii:0.0748721769)22:0.0054364244,(((((((EF380263_Anarhynchus_frontalis:0.0078258868,KF357995_Charadrius_obscurus:0.0157922894)87:0.0054188420,NC_041118_Charadrius_alexandrinus:0.0260839499)43:0.0068033989,EF373098_Peltohyas_australis:0.0403607462)49:0.0113916047,MW298528_Charadrius_mongolus:0.0171473001)80:0.0118238403,EF373079_Erythrogonys_cinctus:0.1802081607)69:0.0187462898,EF373101_Pluvialis_squatarola:0.1044406834)16:0.0000022878,((EF373115_Vanellus_chilensis:0.0262681539,NC_025637_Vanellus_vanellus:0.0194980225)100:0.0447361054,EF373080_Charadrius_morinellus:0.0731476166)62:0.0114985231)23:0.0050352572)65:0.0122478450,EF373096_Oreopholus_ruficollis:0.0460250992);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000bootstrap trees
+Log-likelihood of consensus tree: -2386.627297
+Robinson-Foulds distance between ML tree and consensus tree: 6
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++-------------------------NC_003713_Haematopus_ater
+|
+|               +-------DQ485792_Charadrius_vociferus
+|            +--| (80)
+|            |  +--------EU167040_Charadrius_semipalmatus
+|        +---| (85)
+|        |   |       +-----------EF373078_Elseyornis_melanops
+|        |   +-------| (97)
+|        |           +--EF373113_Thinornis_novaeseelandiae
+|     +--| (31)
+|     |  +------------------------------EF373101_Pluvialis_squatarola
+|  +--| (14)
+|  |  |               +-----EF373115_Vanellus_chilensis
+|  |  |  +------------| (100)
+|  |  |  |            +-----NC_025637_Vanellus_vanellus
+|  |  +--| (62)
+|  |     +--------------------EF373080_Charadrius_morinellus
++--| (65)
+|  |                   +--EF380263_Anarhynchus_frontalis
+|  |                +--| (87)
+|  |                |  +---KF357995_Charadrius_obscurus
+|  |             +--| (43)
+|  |             |  +------NC_041118_Charadrius_alexandrinus
+|  |          +--| (49)
+|  |          |  +----------EF373098_Peltohyas_australis
+|  |     +----| (80)
+|  |     |    +----MW298528_Charadrius_mongolus
+|  |  +--| (69)
+|  |  |  +-------------------------------------------------EF373079_Erythrogonys_cinctus
+|  +--| (41)
+|     +--------------------EF373099_Phegornis_mitchellii
+|
++------------EF373096_Oreopholus_ruficollis
+
+
+Consensus tree in newick format: 
+
+(NC_003713_Haematopus_ater:0.0903453170,(((((DQ485792_Charadrius_vociferus:0.0280790008,EU167040_Charadrius_semipalmatus:0.0315952662)80:0.0063038796,(EF373078_Elseyornis_melanops:0.0437607905,EF373113_Thinornis_novaeseelandiae:0.0093252253)97:0.0298164641)85:0.0168934368,EF373101_Pluvialis_squatarola:0.1100941727)31:0.0037226598,((EF373115_Vanellus_chilensis:0.0224358212,NC_025637_Vanellus_vanellus:0.0235991363)100:0.0475855276,EF373080_Charadrius_morinellus:0.0746560078)62:0.0120856796)14:0.0000028230,((((((EF380263_Anarhynchus_frontalis:0.0076406286,KF357995_Charadrius_obscurus:0.0160773963)87:0.0059447674,NC_041118_Charadrius_alexandrinus:0.0260092523)43:0.0068996025,EF373098_Peltohyas_australis:0.0402404919)49:0.0106428924,MW298528_Charadrius_mongolus:0.0173773103)80:0.0185188504,EF373079_Erythrogonys_cinctus:0.1763986690)69:0.0133865896,EF373099_Phegornis_mitchellii:0.0757526586)41:0.0052442859)65:0.0126736760,EF373096_Oreopholus_ruficollis:0.0465080299);
+
+TIME STAMP
+----------
+
+Date and time: Tue Nov 30 18:13:23 2021
+Total CPU time used: 5.9157 seconds (0h:0m:5s)
+Total wall-clock time used: 6.765461922 seconds (0h:0m:6s)
+

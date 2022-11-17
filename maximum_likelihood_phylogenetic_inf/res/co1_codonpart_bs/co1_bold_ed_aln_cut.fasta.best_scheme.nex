@@ -1,0 +1,10 @@
+#nexus
+begin sets;
+  charset codon1 = 1-850\3;
+  charset codon2 = 2-851\3;
+  charset codon3 = 3-852\3;
+  charpartition mymodels =
+    TNe+I: codon1,
+    F81+F: codon2,
+    TIM3+F+G4: codon3;
+end;

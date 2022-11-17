@@ -1,0 +1,189 @@
+IQ-TREE multicore version 1.6.12 for Linux 64-bit built Aug 15 2019
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    rabi (SSE4.2, 15 GB RAM)
+Command: ../../iqtree -s co1_bold_ed_aln_cut.fasta -spp co1_bold_ed_aln_cut_partitions.txt -pre co1_bold_ed_aln_cut.fasta -m TEST -bb 1000
+Seed:    634073 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Nov 23 16:58:21 2021
+Kernel:  SSE2 - 1 threads (24 CPU cores detected)
+
+HINT: Use -nt option to specify number of threads because your CPU has 24 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading partition model file co1_bold_ed_aln_cut_partitions.txt ...
+Reading alignment file co1_bold_ed_aln_cut.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 22 sequences with 852 columns, 316 distinct patterns
+220 parsimony-informative, 61 singleton sites, 571 constant sites
+                                      Gap/Ambiguity  Composition  p-value
+   1  BON196_07_Charadrius_morinellus        15.14%    passed     86.77%
+   2  BROM261_06_Charadrius_collaris          0.00%    passed     95.09%
+   3  BROM726_07_Charadrius_bicinctus        20.19%    passed     92.07%
+   4  BROM747_07_Charadrius_obscurus         22.54%    passed     86.94%
+   5  BROM876_08_Anarhynchus_frontalis       19.37%    passed     76.05%
+   6  BROM752_07_Charadrius_veredus          21.01%    passed     58.40%
+   7  KFIP072_07_Charadrius_mongolus         16.90%    passed     84.12%
+   8  BROM542_07_Peltohyas_australis          0.12%    passed     65.01%
+   9  BROM439_06_Phegornis_mitchellii         0.12%    passed     74.42%
+  10  BROM264_06_Charadrius_semipalmatus      1.53%    passed     94.49%
+  11  BROM464_06_Thinornis_novaeseelandiae   27.58%    passed     66.77%
+  12  BROM687_07_Thinornis_cucullatus        24.41%    passed     98.38%
+  13  BROM405_06_Elseyornis_melanops         25.12%    passed     65.20%
+  14  GBIR3242_12_Vanellus_vanellus           0.00%    passed     82.64%
+  15  ROMC001_06_Haematopus_ater              0.00%    passed     86.91%
+  16  BROM727_07_Erythrogonys_cinctus        19.37%    passed     89.29%
+  17  BROM227_06_Oreopholus_ruficollis        8.10%    passed     32.97%
+  18  BROM395_06_Charadrius_vociferus         8.10%    passed     96.92%
+  19  BROM468_06_Vanellus_chilensis           8.10%    passed     89.19%
+  20  BROM673_07_Charadrius_alexandrinus      8.10%    passed     88.00%
+  21  BROM677_07_Charadrius_falklandicus      8.10%    passed     87.96%
+  22  BROM665_07_Pluvialis_squatarola         8.10%    passed     82.30%
+****  TOTAL                                  11.91%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+NOTE: No CharPartition defined, use all CharSets
+
+Loading 3 partitions...
+Subset	Type	Seqs	Sites	Infor	Invar	Model	Name
+1		22	284	17	256	TEST	codon1
+2		22	284	0	282	TEST	codon2
+WARNING: No parsimony-informative sites in partition codon2
+3		22	284	203	33	TEST	codon3
+Degree of missing data: 0.000
+Info: multi-threading strategy over partitions
+
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+NOTE: ModelFinder requires 2 MB RAM!
+Testing GTR+F+G on supermatrix...
+GTR+F+G4 / LnL: -5029.550 / df: 50 / AIC: 10159.100 / AICc: 10165.467 / BIC: 10396.480
+Selecting individual models for 3 charsets using BIC...
+ No. Model        Score       Charset
+   1 TNe+I        1363.613    codon1
+   2 F81+F        799.699     codon2
+   3 TIM3+F+G4    6899.322    codon3
+Full partition model BIC score: 9350.115 (LnL: -4486.125  df:56)
+Partition information was printed to co1_bold_ed_aln_cut.fasta.best_scheme.nex
+Partition information in Raxml format was printed to co1_bold_ed_aln_cut.fasta.best_scheme
+
+All model information printed to co1_bold_ed_aln_cut.fasta.model.gz
+CPU time for ModelFinder: 5.136 seconds (0h:0m:5s)
+Wall-clock time for ModelFinder: 5.438 seconds (0h:0m:5s)
+Generating 1000 samples for ultrafast bootstrap (seed: 634073)...
+
+NOTE: 2 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -5921.886
+Current log-likelihood at step 1: -4670.139
+Current log-likelihood at step 2: -4481.924
+Current log-likelihood at step 3: -4479.427
+Current log-likelihood at step 4: -4478.367
+Current log-likelihood at step 5: -4477.689
+Current log-likelihood at step 6: -4477.149
+Current log-likelihood at step 7: -4476.695
+Current log-likelihood at step 8: -4476.298
+Current log-likelihood at step 9: -4475.954
+Current log-likelihood at step 10: -4475.659
+Current log-likelihood at step 11: -4475.408
+Current log-likelihood at step 12: -4475.198
+Current log-likelihood at step 13: -4475.016
+Current log-likelihood at step 14: -4474.846
+Current log-likelihood at step 15: -4474.711
+Current log-likelihood at step 16: -4474.598
+Current log-likelihood at step 17: -4474.498
+Current log-likelihood at step 18: -4474.414
+Partition-specific rates:  0.118 0.003 2.879
+Parameters optimization took 17 rounds (0.512 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+Computing ML distances based on estimated model parameters... 0.010 sec
+Computing BIONJ tree...
+0.042 seconds
+Log-likelihood of BIONJ tree: -4468.109
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.276 second
+Computing log-likelihood of 98 initial trees ... 0.837 seconds
+Current best score: -4468.109
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+Initial log-likelihood: -4465.787
+Current log-likelihood at step 1: -4465.479
+Current log-likelihood at step 2: -4465.383
+Parameters optimization took 1 rounds (0.053 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BETTER TREE FOUND at iteration 1: -4465.383
+Iteration 10 / LogL: -4469.756 / Time: 0h:0m:2s
+Iteration 20 / LogL: -4465.396 / Time: 0h:0m:3s
+Finish initializing candidate tree set (5)
+Current best tree score: -4465.383 / CPU time: 2.807
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Iteration 30 / LogL: -4467.114 / Time: 0h:0m:4s (0h:0m:10s left)
+Iteration 40 / LogL: -4465.788 / Time: 0h:0m:5s (0h:0m:8s left)
+Iteration 50 / LogL: -4465.501 / Time: 0h:0m:6s (0h:0m:6s left)
+Log-likelihood cutoff on original alignment: -4488.327
+Iteration 60 / LogL: -4467.111 / Time: 0h:0m:7s (0h:0m:5s left)
+Iteration 70 / LogL: -4465.815 / Time: 0h:0m:8s (0h:0m:3s left)
+Iteration 80 / LogL: -4466.575 / Time: 0h:0m:9s (0h:0m:2s left)
+Iteration 90 / LogL: -4466.577 / Time: 0h:0m:10s (0h:0m:1s left)
+Iteration 100 / LogL: -4465.836 / Time: 0h:0m:11s (0h:0m:0s left)
+Log-likelihood cutoff on original alignment: -4488.327
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.998
+TREE SEARCH COMPLETED AFTER 102 ITERATIONS / Time: 0h:0m:11s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+Initial log-likelihood: -4465.383
+Current log-likelihood at step 1: -4465.359
+Current log-likelihood at step 2: -4465.347
+Current log-likelihood at step 3: -4465.344
+Partition-specific rates:  0.100 0.003 2.896
+Parameters optimization took 2 rounds (0.061 sec)
+
+
+WARNING: Estimated model parameters are at boundary that can cause numerical instability!
+
+BEST SCORE FOUND : -4465.344
+Creating bootstrap support values...
+Split supports printed to NEXUS file co1_bold_ed_aln_cut.fasta.splits.nex
+Total tree length: 2.939
+
+Total number of iterations: 102
+CPU time used for tree search: 10.820 sec (0h:0m:10s)
+Wall-clock time used for tree search: 11.009 sec (0h:0m:11s)
+Total CPU time used: 11.515 sec (0h:0m:11s)
+Total wall-clock time used: 11.949 sec (0h:0m:11s)
+
+Computing bootstrap consensus tree...
+Reading input file co1_bold_ed_aln_cut.fasta.splits.nex...
+22 taxa and 209 splits.
+Consensus tree written to co1_bold_ed_aln_cut.fasta.contree
+Reading input trees file co1_bold_ed_aln_cut.fasta.contree
+Log-likelihood of consensus tree: -4465.747
+
+Analysis results written to: 
+  IQ-TREE report:                co1_bold_ed_aln_cut.fasta.iqtree
+  Maximum-likelihood tree:       co1_bold_ed_aln_cut.fasta.treefile
+  Likelihood distances:          co1_bold_ed_aln_cut.fasta.mldist
+  Best partitioning scheme:      co1_bold_ed_aln_cut.fasta.best_scheme.nex
+           in RAxML format:      co1_bold_ed_aln_cut.fasta.best_scheme
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          co1_bold_ed_aln_cut.fasta.splits.nex
+  Consensus tree:                co1_bold_ed_aln_cut.fasta.contree
+  Screen log file:               co1_bold_ed_aln_cut.fasta.log
+
+Date and Time: Tue Nov 23 16:58:39 2021

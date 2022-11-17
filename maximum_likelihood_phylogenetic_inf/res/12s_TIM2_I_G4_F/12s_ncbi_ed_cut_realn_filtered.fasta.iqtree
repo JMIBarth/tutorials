@@ -1,0 +1,128 @@
+IQ-TREE 1.6.12 built Aug 15 2019
+
+Input file name: 12s_ncbi_ed_cut_realn_filtered.fasta
+Type of analysis: tree reconstruction
+Random seed number: 319066
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Lam-Tung Nguyen, Heiko A. Schmidt, Arndt von Haeseler, and Bui Quang Minh
+(2015) IQ-TREE: A fast and effective stochastic algorithm for estimating
+maximum likelihood phylogenies. Mol Biol Evol, 32:268-274.
+https://doi.org/10.1093/molbev/msu300
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 17 sequences with 541 nucleotide sites
+Number of constant sites: 372 (= 68.7616% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 372 (= 68.7616% of all sites)
+Number of parsimony informative sites: 109
+Number of distinct site patterns: 170
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: TIM2+F+I+G4
+
+Rate parameter R:
+
+  A-C: 5.2080
+  A-G: 48.2640
+  A-T: 5.2080
+  C-G: 1.0000
+  C-T: 99.8953
+  G-T: 1.0000
+
+State frequencies: (empirical counts from alignment)
+
+  pi(A) = 0.3189
+  pi(C) = 0.2934
+  pi(G) = 0.2009
+  pi(T) = 0.1868
+
+Rate matrix Q:
+
+  A   -0.6445   0.08075    0.5123   0.05142
+  C   0.08775    -1.085   0.01062    0.9863
+  G    0.8133   0.01551   -0.8386  0.009873
+  T   0.08775     1.549   0.01062    -1.647
+
+Model of rate heterogeneity: Invar+Gamma with 4 categories
+Proportion of invariable sites: 0.5344
+Gamma shape alpha: 1.038
+
+ Category  Relative_rate  Proportion
+  0         0              0.5344
+  1         0.3104         0.1164
+  2         1.048          0.1164
+  3         2.161          0.1164
+  4         5.072          0.1164
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -2386.0852 (s.e. 104.4903)
+Unconstrained log-likelihood (without tree): -1917.5084
+Number of free parameters (#branches + #model parameters): 39
+Akaike information criterion (AIC) score: 4850.1705
+Corrected Akaike information criterion (AICc) score: 4856.3980
+Bayesian information criterion (BIC) score: 5017.6138
+
+Total tree length (sum of branch lengths): 1.0172
+Sum of internal branch lengths: 0.1843 (18.1138% of tree length)
+
+WARNING: 1 near-zero internal branches (<0.0018) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'NC_003713_Haematopus_ater' is drawn at root
+
++-----------------------NC_003713_Haematopus_ater
+|
+|            +------DQ485792_Charadrius_vociferus
+|         +--|
+|         |  +-------EU167040_Charadrius_semipalmatus
+|     +---|
+|     |   |       +-----------EF373078_Elseyornis_melanops
+|     |   +-------|
+|     |           +--EF373113_Thinornis_novaeseelandiae
+|  +--|
+|  |  +-------------------EF373099_Phegornis_mitchellii
++--|
+|  |                      +--EF380263_Anarhynchus_frontalis
+|  |                   +--|
+|  |                   |  +---KF357995_Charadrius_obscurus
+|  |                +--|
+|  |                |  +------NC_041118_Charadrius_alexandrinus
+|  |             +--|
+|  |             |  +----------EF373098_Peltohyas_australis
+|  |          +--|
+|  |          |  +---MW298528_Charadrius_mongolus
+|  |     +----|
+|  |     |    +------------------------------------------------EF373079_Erythrogonys_cinctus
+|  |  +**|
+|  |  |  +---------------------------EF373101_Pluvialis_squatarola
+|  +--|
+|     |              +------EF373115_Vanellus_chilensis
+|     |  +-----------|
+|     |  |           +----NC_025637_Vanellus_vanellus
+|     +--|
+|        +-------------------EF373080_Charadrius_morinellus
+|
++-----------EF373096_Oreopholus_ruficollis
+
+Tree in newick format:
+
+(NC_003713_Haematopus_ater:0.0896317385,((((DQ485792_Charadrius_vociferus:0.0278105507,EU167040_Charadrius_semipalmatus:0.0313926319):0.0060978015,(EF373078_Elseyornis_melanops:0.0432331969,EF373113_Thinornis_novaeseelandiae:0.0095776355):0.0297056944):0.0153717795,EF373099_Phegornis_mitchellii:0.0748332336):0.0054417217,(((((((EF380263_Anarhynchus_frontalis:0.0078370056,KF357995_Charadrius_obscurus:0.0157851540):0.0054051817,NC_041118_Charadrius_alexandrinus:0.0260743677):0.0068054917,EF373098_Peltohyas_australis:0.0403427637):0.0113852744,MW298528_Charadrius_mongolus:0.0171459523):0.0118234968,EF373079_Erythrogonys_cinctus:0.1800568888):0.0187307654,EF373101_Pluvialis_squatarola:0.1043794126):0.0000023630,((EF373115_Vanellus_chilensis:0.0262628895,NC_025637_Vanellus_vanellus:0.0194912493):0.0447131847,EF373080_Charadrius_morinellus:0.0731097659):0.0114960140):0.0050332590):0.0122458800,EF373096_Oreopholus_ruficollis:0.0460037483);
+
+TIME STAMP
+----------
+
+Date and time: Mon Nov 22 09:18:26 2021
+Total CPU time used: 4.45821 seconds (0h:0m:4s)
+Total wall-clock time used: 5.009 seconds (0h:0m:5s)
+
