@@ -83,9 +83,9 @@ At the beginning of the tested-models list, the log output states: “Create ini
 * and the Bayesian Information Criterion (BIC)
 
 What ModelFinder does, is to compute the log-likelihoods for the 88 different models based on an initial parsimony tree and then apply each of these three criteria to obtain a score for each model. The AIC score of each model is calculated independently as:
-
-AIC = 2 $k$ -2 log($L$)
-
+```math
+\AIC = 2 k -2 log(L)
+```
 where $k$ is the number of free parameters in a model and $L$ is the likelihood after all free parameters have been optimized (*i.e.*, the maximum likelihood).
 These criteria are very similar to likelihood-ratio tests in that they assess the fit of each model, relative to the fit of the other models, but they have the advantage that they can also be used to compare models that are not “nested” (two models are nested if one of them has all the parameters of the other models plus additional parameters).
 
