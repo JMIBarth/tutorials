@@ -4,7 +4,7 @@ A collection of tutorials used for teaching at workshops and university courses
 
 ### How to follow the tutorials
 
-The main text includes all information needed to follow the exercises. Some additional information, discussion points or answers are hidded behind clickable sections (black triangles):
+The main text includes all information needed to follow the exercises. Some additional information, discussion points or answers are hidden behind clickable sections (black triangles):
 
  <details>
   <summary>What is the hidded content (click here)</summary>  
@@ -13,7 +13,7 @@ The main text includes all information needed to follow the exercises. Some addi
 
 * "**Further background**" contains additional information to deepen the understanding, including links to publications and videos
 * "**Optional**" are either further exercises that can be done for additional practice or alternative commands for locally installed software
-* "**Answer**" or "**Hint"/"Help**": include hints or answers to a question. Please <ins>only</ins> read if you really don't know what to do, if you can not find an answer, or after you have ansered the question.
+* "**Answer**" or "**Hint"/"Help**": include hints or answers to a question. Please <ins>only</ins> read if you really don't know what to do, if you can not find an answer, or after you have answered the question.
 * "**Discussion points**" can help to start a discussion
 
 --------
