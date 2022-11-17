@@ -17,7 +17,7 @@ Perform selection of the best-fit substitution model for phylogenetic inference.
 ## 3.1 Run model selection for the 12s alignment
 
  <details>
-  <summary>**Background**: Maximum likelihood inference software (click here)</summary>  
+  <summary>Background: Maximum likelihood inference software (click here)</summary>  
   
 --------
 
@@ -84,7 +84,7 @@ At the beginning of the tested-models list, the log output states: “Create ini
 
 What ModelFinder does, is to compute the log-likelihoods for the 88 different models based on an initial parsimony tree and then apply each of these three criteria to obtain a score for each model. The AIC score of each model is calculated independently as:  
 
- $$ AIC = 2 k -2 log(L) $$  
+ $ AIC = 2 k -2 log(L) $ 
 
  where $k$ is the number of free parameters in a model and $L$ is the likelihood after all free parameters have been optimized (*i.e.*, the maximum likelihood).
 These criteria are very similar to likelihood-ratio tests in that they assess the fit of each model, relative to the fit of the other models, but they have the advantage that they can also be used to compare models that are not “nested” (two models are nested if one of them has all the parameters of the other models plus additional parameters).
@@ -168,7 +168,7 @@ Download these results by clicking on the link “**Download selected jobs**”.
 
 
 <a name="model_co1_rag"></a>
-##(Optional) Run model selection for the CO1 and RAG1 alignments
+## (Optional) Run model selection for the CO1 and RAG1 alignments
 
 Repeat the model selection under the AIC criterion for the CO1 ([`co1_bold_ed_aln_cut.fasta`](../multiple_sequence_alignment/res/co1_bold_ed_aln_cut.fasta)) and rag1 alignments ([`rag1_ncbi_ed_aln_filtered.fasta`](../multiple_sequence_alignment/res/rag1_ncbi_ed_aln_filtered.fasta)).
 
