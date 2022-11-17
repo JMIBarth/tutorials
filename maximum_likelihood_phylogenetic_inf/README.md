@@ -2,8 +2,7 @@
 
 ## Objective
 
-Find the phylogenetic hypothesis that best explains the data.  
-So far, we have learned how to retrieve homologous sequences, how to align these sequences to match homologous sites, and how to find the best-fit substitution model for our data. In this tutorial, we will now perform maximum likelihood (ML) phylogenetic inference with the best-fit substitution model to find the best phylogenetic hypothesis for our data.
+Find the phylogenetic hypothesis that best explains the data. So far, we have learned how to retrieve homologous sequences, how to align these sequences to match homologous sites, and how to find the best-fit substitution model for our data. In this tutorial, we will now perform maximum likelihood (ML) phylogenetic inference with the best-fit substitution model to find the best phylogenetic hypothesis for our data.
 
 
 ## Table of contents
