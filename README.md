@@ -7,7 +7,7 @@ A collection of tutorials used for teaching at workshops and university courses
 The main text includes all information needed to follow the exercises. Some additional information, discussion points or answers are hidden behind clickable sections (black triangles):
 
  <details>
-  <summary>What is the hidded content (click here)</summary>  
+  <summary>What is the hidden content (click here)</summary>  
   
 --------
 

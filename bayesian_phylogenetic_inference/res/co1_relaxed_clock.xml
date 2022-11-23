@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.evolution.likelihoodbeast.base.evolution.alignment:beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood" required="" version="2.7">
+
+    <data
+id="co1"
+spec="beast.base.evolution.alignment.Alignment"
+name="alignment">
+        <sequence id="seq_Anarhynchus_frontalis" spec="beast.base.evolution.alignment.Sequence" taxon="Anarhynchus_frontalis" totalcount="4" value="accctatacttaatctttggcgcatgagccggtatagttggtaccgccctcagcttactcattcgtgcagaactaggccaaccaggaaccctcctaggtgatgaccaaatctacaatgtaattgtcaccgcccatgctttcgtaataatcttcttcatggtcatgccaatcataatcggcggcttcggaaactgactggtaccacttataatcggtgcaccagacatagcattcccacgcataaataacataagcttctgactactccccccatcattccttctcctccttgcatcatccacagtagaagccggagcaggtacaggatgaaccgtatacccacccctagccggtaatctagcccacgccggagcttcagtagacctagccatcttctctcttcacctagcaggtgtatcatccatcctaggtgcaatcaacttcatcacaacagccattaacataaaaccacccgccctttcacaataccaaactcccctcttcgtgtgatccgtacttattacagctgttctactactcctctcactcccagtccttgctgctggcattaccatactactaacagaccgaaacctaaacaccacattcttcgaccctgccggaggaggtgacccagtcctataccaacacctcttctgattcttcggccacccagaagtctatatc---------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Charadrius_alexandrinus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_alexandrinus" totalcount="4" value="---------------------------------------------------------------------gaactaggtcaaccaggaaccctcctaggtgacgaccaaatctacaatgtaattgtcaccgcccatgctttcgtgataatcttcttcatagtcatgccaatcatgatcggtggctttggaaactgactcgtacctctcataattggagcaccagacatagcattcccgcgcataaataacataagcttttgactactgcccccatcattccttctcctccttgcatcatccacagtagaagctggagcaggcacaggatgaaccgtgtacccgcccctggctggtaacttagcccacgccggagcttcagtagacctagccatcttctccctacacctagcaggtgtatcatccatcctaggtgccatcaacttcatcacaactgccattaacataaaaccgcccgccctttcacaataccaaactccactgtttgtatgatccgtactcattacagcagttctactgctcctctcactaccagtcctcgccgccggcatcaccatactactaacagatcgaaacctaaataccacattcttcgaccccgccggaggaggtgacccaatcttataccaacacctcttctgattcttcggccacccagaagtctacatcctaatcctaccaggctttggaattatctcacatgtagtaacatactacgccggcaaaaaagaaccattcggttacataggaatagtatgagccatattatccattggattcttgggtttcattgtatgagcccaccacatattcaccgtaggaatggacgtagac"/>
+        <sequence id="seq_Charadrius_bicinctus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_bicinctus" totalcount="4" value="accctatacttaatctttggcgcatgagccggtatagttggtaccgccctcagcttacttattcgtgcagaactaggccaaccaggaaccctcctaggcgacgaccaaatctacaatgtaattgtcaccgcccatgctttcgtaataatcttcttcatagttatgccaatcataatcggtggtttcggaaactgactagtaccacttataattggtgcaccagacatagcattcccacgcataaataacataagcttctgactactacccccatcattccttctcctccttgcatcatccacagtagaagccggagcaggtacaggatgaaccgtgtacccacccctggctggtaatttagcccacgccggagcttcagtagacctggccatcttctctcttcacctagcaggtgtgtcatccatcctaggtgcaatcaacttcatcacaacagccattaacataaaaccgcccgccctttcacaataccaaactcccctcttcgtatgatccgtacttattacagctgttctactcctcctctcactcccagtccttgctgctggcatcaccatgctactaacagatcgaaacctaaacaccacattcttcgaccccgccggaggaggtgacccagtcctataccaacacctcttctgattcttcggccacccagaagt----------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Charadrius_collaris" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_collaris" totalcount="4" value="accctatacttaatctttggcgcatgagccggtatagtcggtaccgccctcagcttacttattcgtgcagaactgggccaaccaggaaccctcctaggtgacgaccaaatctacaatgtaattgtcaccgcccatgctttcgtaataatctttttcatagttataccaatcataatcggcggttttggaaactgactggtgccacttataattggcgcaccagacatggcattcccccgcataaataacataagcttctgacttctacccccatccttccttcttctccttgcatcatccacagtagaggctggagcaggcacaggatgaaccgtgtacccacctttagctggcaacttagcccacgccggagcttcagtagacctagccatcttctctttacacctagcaggtgtatcatccatcctgggtgcaatcaacttcatcacaaccgccattaacatgaaaccacccgccctttcacaataccaaactcccctattcgtatgatccgtactcatcacagccgtcctattactcctctcactcccagtccttgctgccggcatcactatactactaacagaccgaaacctaaataccacattctttgaccccgccggaggaggtgacccagtcctataccagcacctcttctgattcttcggccacccagaagtctacatcttaatcctaccaggtttcggaatcatctcacacgtagtgacatactatgccggcaaaaaagagccattcggctacataggaatagtatgagctatactatccattggattcttaggtttcattgtatgagcccaccacatattcactgtgggaatggacgtagac"/>
+        <sequence id="seq_Charadrius_falklandicus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_falklandicus" totalcount="4" value="---------------------------------------------------------------------gaactaggccaaccaggaacactcctaggcgacgaccagatctacaatgtaattgtcaccgcccatgctttcgtaataatcttctttatagtcataccaattataatcggtggtttcggaaactgactggtaccccttataattggtgcgccagacatggcatttcctcgcataaacaacataagcttctgactactacccccatcatttcttctcctcctcgcatcatccacagtagaagctggagcaggcacaggatgaactgtatacccacccttagctggcaacttagctcacgccggagcttcagtggacctagccatcttctctctacacctagcaggtgtatcatccatcctaggtgcaatcaacttcatcacaaccgccattaacataaaaccacccgccctttcacaataccaaactcccctattcgtatggtccgtactcattacagctgttctattgctcctctcacttccagttctcgctgctggcatcaccatgctactaacagaccgaaacctaaacaccacattcttcgaccccgctgggggaggtgacccagtcctataccaacacctcttctgattcttcggccacccagaagtttacatcttaatcctgccaggttttgggatcatctctcatgtagtaacatactatgccggtaaaaaagaaccattcggttacataggaatagtatgagccatactatctatcggattcctaggcttcattgtatgagcccatcacatgtttaccgtaggaatggacgtagac"/>
+        <sequence id="seq_Charadrius_mongolus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_mongolus" totalcount="4" value="accctatacttaatctttggcgcatgagccggtatagttggtaccgccctcagcttactcattcgtgcagaactaggccaaccagggaccctcctaggcgacgaccaaatctacaacgtaatcgtcaccgcccatgctttcgtaataatctttttcatggtcatgccgattataatcggcggcttcggaaactgactggtgccactcataattggtgcaccagacatagcatttcctcgcataaacaacataagcttctgactactgcccccatcattcctcctcctcctcgcatcatccacagtagaagctggggcaggtacaggatgaaccgtatacccacccctagctggcaatctagcccatgccggagcttcagtagatctagccatcttctctctacacctagcaggtgtatcatccattctaggtgcaattaacttcatcacaactgccattaacataaaaccacccgccctttcacaataccaaacccccctattcgtatgatccgtacttatcacagccgtcctattgctcctctcacttccagtcctcgctgccggcattactatactactaacagaccgaaacctaaacaccacattctttgaccccgctggaggaggtgacccagtcctataccaacatctcttctgattcttcggccacccagaagtctacatcctaatcctcccaggatttgga------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Charadrius_morinellus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_morinellus" totalcount="4" value="accctatacctaatcttcggtgcatgagctggtatagttggtactgctctcagcctactcattcgcgcagaactaggacaaccgggaaccctactaggcgatgatcaaatctacaacgtaatcgtcaccgcccacgccttcgtaataatcttcttcatagtcatacctatcatgatcggcggatttggcaactgactagtcccacttataattggcgcaccagatatagcctttccccgcataaacaacataagcttctgactactacccccatcattcctcctcctccttgcctcctccacagtagaagccggagcaggcacaggatgaactgtttatcctcccctagccggcaatttagctcatgcaggagcgtcagtagacctagccatcttctcacttcacttagccggtgtctcttctatcctaggcgcaattaactttatcacaacagctattaatataaaaccacctgccctatcacaataccaaactcccctattcgtgtgatcagtgctcatcactgccgtcctactactcctatcactcccagtcctcgccgccggcattaccatactactaacagaccgtaacctgaacactacattcttcgaccccgctggaggaggtgacccagtactataccaacacctcttctgattctttggccacccagaagtctacatcctaatcctaccaggatttggaattatctcccacgta---------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Charadrius_obscurus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_obscurus" totalcount="4" value="-------------tctttggcgcatgagccggtatagttggtaccgccctcagcttacttattcgtgcagaactaggtcaaccaggaaccctcctaggcgacgaccaaatctacaatgtaattgtcaccgcccatgctttcgtaataatcttcttcatagtcatgccaatcataatcggcggtttcggaaactgactagtaccacttataattggcgcaccagacatagcattcccacgcataaataacataagcttctgactactacctccatcattccttctcctccttgcatcatccacagtagaagctggagcaggtacaggatgaaccgtgtacccacccctagccggtaatttagcccacgccggagcttcagtagacctggccatcttctctcttcacctagcaggggtatcatccatcctaggtgcaatcaacttcatcacaacagccattaacataaaaccacccgccctttcacaataccaaactcccctcttcgtatgatccgtacttattacagctgttctactactcctctcacttccagtcctcgccgctggcattaccatgctactaacagaccgaaacctaaacaccacattcttcgaccctgccggaggaggtgacccagtcctgtaccagcacctcttctgattcttcggccacc-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Charadrius_semipalmatus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_semipalmatus" totalcount="4" value="accctatacctgatctttggtgcatgagctggtatagttggtacagccctcagcttacttattcgcgcagaactaggccaaccagggaccctcctaggtgatgaccaaatttacaacgtaatcgtcactgcccatgctttcgtaataatcttcttcatagtcataccaatcataattggtggtttcggtaattgactagtcccactaataattggtgcaccagatatagcattcccccgcataaacaacataagcttctgactactacctccatcattcctacttcttctcgcctcctctacagtcgaagctggagcaggtacaggatgaaccgtctacccacccctagctggcaacctagcacacgccggggcatccgtagacctagccattttctcgcttcacctagcaggtgtctcctctatcctaggtgcaatcaacttcatcacaaccgctatcaacataaaacctcctgccctttcacaataccaaacacccctattcgtatgatccgtacttattaccgccgtcctattacttctctcactcccagttctcgccgcaggcatcaccatgctattaacagatcgaaacctgaacactacattcttcgaccctgctggaggaggtgaccccgtcctgtaccaacacctcttctgattctttggtcacccagaagtctacatcttaatcctaccaggatttggaatcatctcccacgtagtaacatactacgcaggcaaaaaagaaccattcggctatataggaatagtctgagctatgttatcaatcggattcctaggcttcattgtttgagcccaccacatattcaccgtagg-------------"/>
+        <sequence id="seq_Charadrius_veredus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_veredus" totalcount="4" value="accctatacttaatcttcggcgcatgagctggtatagttggtaccgccctcagcttacttatccgtgcagaactaggccaaccaggaacccttctaggcgacgaccaaatctacaatgtaatcgtcaccgcccatgctttcgtaataatcttcttcatagtcataccgattataatcggcggcttcggaaactgactggtaccgctcataattggcgcaccagacatagcattcccccgcataaataatataagcttctgactacttcccccatcattcctcctcctcctcgcatcgtccacagtagaagctggagcaggtacgggatgaaccgtatacccacccttagccggcaatctagcccacgctggagcctcagtagacctagccatcttctctctacatctagcaggtgtatcatccattctaggtgcaatcaacttcatcacaaccgccattaacataaaaccccccgccctctcacaataccaaacccccctattcgtatgatccgtacttattacagccgtcctactactcctctcacttccagtccttgctgccggcatcactatattactaacagaccgaaacctaaataccacattctttgaccccgccggagggggtgacccagtcctataccaacacctcttctgattcttcggccacc-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Charadrius_vociferus" spec="beast.base.evolution.alignment.Sequence" taxon="Charadrius_vociferus" totalcount="4" value="---------------------------------------------------------------------gaactaggccaaccaggaaccctcctaggagacgaccaaatctataacgtaattgtcaccgcccacgctttcgtaataatctttttcatagtcatgccaatcataatcggcggcttcggcaactgactagtcccactgataattggtgcaccggacatagcattcccccgcataaataacataagcttctgactacttcctccatcatttttacttcttctagcctcttctacagtcgaagcaggagcaggtaccggatgaaccgtttacccgcctctagctggcaacctagcacacgctggagcatcagtagacctagccatcttctcacttcacctagcaggtgtctcctctatcctaggcgcaatcaacttcatcacaaccgccatcaacataaaaccacctgccctctcacaataccaaactcccctattcgtctgatccgtacttatcaccgctgtcctattactcctctcacttccagtcctcgctgcaggcatcaccatgctactaacagaccgaaatctgaacactacattcttcgatcctgctggaggaggtgacccagtcctgtaccaacatctcttttgattcttcggccacccagaagtctacatcttaatcttaccaggatttggaatcatctcccacgtagtaacatactacgcaggtaaaaaagaaccattcggctatataggaatagtttgagccatactatcaatcggattcctaggcttcattgtttgagcccaccacatattcaccgtaggaatggacgtagac"/>
+        <sequence id="seq_Elseyornis_melanops" spec="beast.base.evolution.alignment.Sequence" taxon="Elseyornis_melanops" totalcount="4" value="-------------------------------------------ccgcccttagcttacttatccgtgcagaactgggccaaccaggaaccctgttaggtgacgaccaaatctataatgtaatcgtcactgctcacgcttttgtaataatctttttcatagtaataccaatcataatcggcggtttcggcaactggctggtcccactaataattggtgcaccagacatagcattcccccgcataaacaacatgagcttctgactactccccccatcatttctactcctactcgcctcttccacagtagaggccggagcaggcacgggatgaactgtatacccacccctagctggcaacctagcacatgctggagcatcagtggacttagccatcttctccctccacttggcaggtgtctcttccattctaggcgccatcaactttattaccactgctatcaatataaaacctcctgccctctcacagtaccaaacccctctattcgtatgatccgtacttatcaccgctgtcctgctacttctctccctcccagtcctcgccgcaggcatcactatactgttaacagaccgaaatctaaacaccacatttttcgaccctgccggaggaggtgaccccgttctgtaccaacaccttttctgattctttggtcacccagaagtt---------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Erythrogonys_cinctus" spec="beast.base.evolution.alignment.Sequence" taxon="Erythrogonys_cinctus" totalcount="4" value="accctatacctaatcttcggtgcatgagccggcatagctggcaccgccctcagcctactaatccgtgcagaactaggccaaccaggaacattactaggtgatgatcaaatttacaacgtgatcgttactgcccacgccttcgtgataattttctttatagtcataccaatcataattggcggtttcggaaactgactggtccccctcataattggtgcacctgacatagcattcccccgcataaataacataagcttttgattactgcccccatcattcctactccttcttgcctcatctacagtagaagctggagcaggcacaggatgaactgtatacccacccctagctggcaacttagcccacgccggagcctccgtagatttagccattttctccctccatctagcaggagtatcctctatcttaggtgcaatcaactttatcacgactgcaatcaacataaaaccccccgctctttcacaataccaaacccccttgttcgtatgatccgtactcattacagctgtcttactacttctctcactcccagtccttgctgccggtattaccatactgctaactgatcgaaacctaaacactacattcttcgaccctgcaggagggggtgacccagtcctataccagcatcttttctgattcttcggccaccctgaagtctacatc---------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Haematopus_ater" spec="beast.base.evolution.alignment.Sequence" taxon="Haematopus_ater" totalcount="4" value="accctatacctaatctttggtgcatgagccggtatagttggtaccgcccttagcttacttatccgagcagaactaggccaacctggaaccctactaggagacgatcaaatttacaatgtagtcgttacagcccatgcctttgtaataatcttcttcatagtcataccaattatgatcggcggattcggaaattgattagtcccgctcataattggtgctcctgacatagcatttcctcgcataaacaacataagcttttggctactacccccatcattcctactcctccttgcttcctctacagtagaagcaggagcaggcacaggatgaaccgtatatccccccctagctggcaaccttgcccacgctggggcttcagtagacctggcaatcttctccctccatctagcaggtgtatcctctatcttaggcgcaatcaattttatcacaaccgctatcaacataaaaccacctgccctctcacaataccaaactcccctatttgtatgatccgtactcatcaccgccgtcctactactcctatccctgccagttctcgctgccggcatcacaatactcctaacagatcgaaacctaaacactacattcttcgatcccgccggaggtggcgatccagtcctataccaacacctattctgattcttcggtcacccagaagtctatattttaatcctaccaggcttcggaatcatctcccacgtagtaacatattacgcaggtaaaaaagaaccattcggctacataggaatagtatgagccatactatcaatcggattcctaggctttatcgtctgagcccaccacatatttacagtaggaatagacgtagac"/>
+        <sequence id="seq_Oreopholus_ruficollis" spec="beast.base.evolution.alignment.Sequence" taxon="Oreopholus_ruficollis" totalcount="4" value="---------------------------------------------------------------------gaactaggccaaccagggaccctactaggtgatgaccaaatctacaatgtaatcgtcaccgcccatgctttcgtaataattttcttcatagttatgccaatcataattggtggctttggcaattgactagtcccactcataatcggcgcacccgacatagcattcccacgtataaacaacataagcttctgacttctacccccatcattccttcttcttcttgcttcttccacagtagaagctggagcaggtacaggatgaactgtatacccacccctagctggtaacctagcccatgctggagcttcagtagacctagctatcttctcccttcacttagcaggtgtatcctccatcttaggtgcaatcaactttatcacaactgccatcaatataaaaccacctgccctatcccaatatcaaaccccattattcgtatgatccgttcttatcaccgccgtcctactactcctttcactcccagtcctcgctgcaggcatcaccatactactaacagatcgaaacctaaacactacattctttgacccagctggaggaggtgacccagttctataccaacacctgttctgatttttcggccacccagaagtttacatcctgattctaccaggctttggaatcatctcacacgtagtaacatactacgcaggtaaaaaagaaccattcggctatataggtatagtatgagcaatactatcaattggattcttagggttcatcgtctgagcacaccatatatttactgttggaatagacgtagac"/>
+        <sequence id="seq_Peltohyas_australis" spec="beast.base.evolution.alignment.Sequence" taxon="Peltohyas_australis" totalcount="4" value="actctatacctaatctttggcgcatgagctggtatagtcggcacagcccttagcttacttatccgtgcagaactaggccaaccagggaccttactgggtgatgaccaaatctacaatgtaattgtcaccgcccatgctttcgtaatgatcttcttcatagttataccaattataatcggcggcttcggaaactgactagtaccgctcataattggcgccccagatatagcattcccccgcataaataacataagcttctgactactacccccatcattccttctccttcttgcctcatccacagtagaggctggagcgggtacaggatgaactgtatatcccccattagctggtaatctagcccacgctggagcttcagtagatctagccatcttctccctccacttagcaggtgtatcatccatcctaggggcaatcaacttcatcacaactgccatcaacataaaaccccctgccctttcacaataccaaactcccttattcgtatgatccgtacttattacagccgtcctgctacttctatccctcccagtccttgctgcaggcatcaccatgctacttacagatcgaaacctaaatactacattcttcgaccctgccggaggaggtgacccagtcctatatcagcatctcttctgattctttggccacccagaagtctatatcctaatcctaccaggctttggaatcatctcacacgtagtaacatattatgcaggcaaaaaagaaccatttggttacataggaatagtatgagctatactatccatcgggttcctaggcttcattgtatgagcccaccacatattcaccgtcggaatagacgtaga-"/>
+        <sequence id="seq_Phegornis_mitchellii" spec="beast.base.evolution.alignment.Sequence" taxon="Phegornis_mitchellii" totalcount="4" value="accctatacctaatctttggtacatgagctggtatagttggtaccgcccttagcttacttattcgcgcagaactaggccaaccaggaaccctactaggcgacgaccagatctacaatgtaatcgtcactgcccatgctttcgtaataattttcttcatagttataccaatcatgatcggtggctttggtaattgactagtcccgctcatgattggagcccctgacatagcatttccacgcataaacaacataagcttctgactactacccccctcgttccttctcctcctcgcctcctctacagtagaagctggagcaggtactggatggaccgtatatccacccctggccggcaacctagcccacgctggagcctcagtagacctagcaatcttctccctccacctagcaggtgtgtcctccatccttggtgcaatcaacttcatcacaactgccatcaacataaaaccacctacactctcacaataccagactcccttattcgtatgatcagtacttattaccgctgttctactactcctctcactccccgttctcgctgccggcattactatgctactaacagaccgaaacctaaacactacattcttcgaccctgccggaggaggtgacccagttttataccaacacctcttctgattctttggccacccagaagtttatattctaattctacccggttttggaatcatctcacacgtagtaacatactatgctggtaaaaaagaaccattcggctatatagggatagtatgagccatgctatcaatcggattcctaggctttattgtatgagcccatcacatattcaccgtgggaatagacgtaga-"/>
+        <sequence id="seq_Pluvialis_squatarola" spec="beast.base.evolution.alignment.Sequence" taxon="Pluvialis_squatarola" totalcount="4" value="---------------------------------------------------------------------gaactcggtcaaccaggtaccctactaggagacgaccaaatctacaatgtaattgttaccgcccatgccttcgtaataatcttcttcatagtcatgccaatcatgattggaggctttggaaactgactagtaccactcataattggtgcccccgacatagcatttccccgcataaacaacataagcttctggctacttcccccatcgttcctactcctccttgcctcctccacagtagaagccggagcaggtacaggatgaactgtataccctcccctagctggcaacctagctcacgccggagcctcagttgacctagctattttttccctccacctagcaggtgtatcatcaatcctaggtgcaatcaacttcatcacaaccgccatcaacataaaaccccctgccctatcacaataccaaactcccctatttgtatgatccgtcctcatcaccgccgtcctattactcctctcactcccagttctcgctgctggcatcacaatgctgctaacagaccgaaacctaaacaccacattcttcgaccccgccggaggaggagatccagtcctatatcaacacctcttctgattctttggccacccagaagtctacatcctaatccttccgggcttcggaatcatctcacacgtagtgacatactacgcaggcaaaaaagaaccattcggctacataggaatagtatgagccatactatcaattggattcctaggcttcattgtctgagcccaccacatattcaacgtgggaatagacgtagac"/>
+        <sequence id="seq_Thinornis_novaeseelandiae" spec="beast.base.evolution.alignment.Sequence" taxon="Thinornis_novaeseelandiae" totalcount="4" value="-----------------------------------------------cctcagcttacttatccgcgcagaactaggccaaccagggaccctactaggtgacgaccaaatctacaacgtaattgtcaccgctcacgcttttgtaataatcttcttcatagtaataccaatcatgatcggtggtttcggcaactgactagtcccactaataattggtgcaccagacatagcattcccccgcataaacaacataagcttctgattactccccccatcattcctcctcctcctcgcctcctccacagtagaagccggagcaggtacaggatgaaccgtatacccacccctagctggcaatctagcacatgctggagcatcagtagacctggccatcttctcacttcacctggcaggggtttcttccatcctaggcgcaatcaacttcattacaactgccatcaacataaaaccacctgccctctcacaataccaaacaccactatttgtatgatcagtacttatcactgccgtcctactactcctctcactcccagtcctcgccgcaggtatcactatgctgctaacagaccgaaatctaaacaccacattcttcgaccctgccggagggggcgacccagttctataccaacaccttttctgatttt--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Thinornis_rubricollis" spec="beast.base.evolution.alignment.Sequence" taxon="Thinornis_rubricollis" totalcount="4" value="------------------------tgagctggtatagttggtactgccctcagcttacttatccgtgcagaactcggccaaccagggaccctactaggcgacgaccaaatctacaatgtaatcgtcactgcccacgcttttgtaataattttcttcatagttataccaatcatgattggtggtttcggcaactgactagtcccactaataattggtgcaccagatatagcattcccacgcataaataacataagcttctgactactccctccatcattcctactcctcctcgcctcctccacagtagaagccggggcaggtacaggatgaaccgtatacccacccctagccggcaacctagcacatgctggagcatcagtagacctggccatcttctcactccacctagcaggtgtctcctccatcctaggtgcaatcaatttcatcacaactgctatcaacataaaaccccctgcactttcacaatatcaaacacccttattcgtgtgatcagtacttattaccgctgtcctactactcctctcacttccagttctcgccgcaggtatcactatactactaacagaccgaaacctaaacaccacattcttcgacccagccggagggggtgaccccgtcctataccaacaccttttctgattctttgg----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"/>
+        <sequence id="seq_Vanellus_chilensis" spec="beast.base.evolution.alignment.Sequence" taxon="Vanellus_chilensis" totalcount="4" value="---------------------------------------------------------------------gaactaggccaaccaggaactctactaggcgatgaccaaatctacaacgtaatcgtcaccgcccatgccttcgtaataatcttcttcatggtaatgccaattataatcggtggcttcggcaactgactagtcccactcataatcggcgcacctgacatagcatttccccgcataaacaatataagcttctgactactacccccctcgttcctactactacttgcctcctctacagtagaagcaggagcaggcacaggatgaactgtctacccacccctagctggtaacctggcccacgctggagcttcagtagacctagccatcttctcactccacttagcaggtgtatcctctatcctaggcgcaatcaacttcatcacaactgccatcaacataaaacctcccgccctctcacaataccaaacacccttatttgtgtgatccgtacttatcacggccgttctactactcctatcactcccagttctcgccgcgggcatcaccatgctgctaacagaccgaaatctaaataccacattcttcgaccctgctggaggaggtgacccagttttataccaacacctcttctgattcttcggccacccagaagtctacatcttaattttaccaggcttcggaatcatctcacatgtagtaacatactacgccggcaaaaaagaaccattcggttatataggaatagtatgagccatactatcaattggattcctaggttttatcgtctgagcccatcacatattcaccgtaggaatagacgtagac"/>
+        <sequence id="seq_Vanellus_vanellus" spec="beast.base.evolution.alignment.Sequence" taxon="Vanellus_vanellus" totalcount="4" value="accctatacctaatcttcggtgcatgagcaggtatagttggtaccgcactcagccttctcatccgtgcagaactaggccaaccaggaaccctactaggcgatgaccaaatctacaatgtaatcgtcactgcccatgcctttgtaataatctttttcatagtaatgccaatcataattggcggctttggcaactgactagtcccgctcataattggcgcacctgacatggcattcccacgcataaataatataagcttttgactactacccccctcattcctactccttctcgcatcctccacagtagaagcaggagcaggcacaggatgaactgtctacccccctctagccggcaacctagcccatgctggagcttcagtagacctggccatcttctctctccacctggcaggcgtatcctccatcctaggtgcaatcaacttcatcacaaccgccatcaacataaaaccccccgccctttcacaataccaaacacccttgttcgtatgatcagtacttattactgccgttctactgcttctatcacttccagttctcgctgctggcatcaccatactactaacagaccgaaatttaaatacaacattcttcgaccctgctggaggaggtgacccagtcctataccaacacctattctgatttttcggccacccagaagtttatatcttaattttaccaggcttcggaatcatctcacatgtagtaacgtactatgctggcaaaaaagagccattcggctatataggaatagtatgggccatactatcaattggattcctgggctttattgtctgagctcaccacatattcaccgtgggaatggacgtagac"/>
+    </data>
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    <run id="mcmc" spec="MCMC" chainLength="5000000">
+        <state id="state" spec="State" storeEvery="5000">
+            <tree id="Tree.t:co1" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.co1" spec="beast.base.evolution.alignment.TaxonSet">
+                    <alignment idref="co1"/>
+                </taxonset>
+            </tree>
+            <parameter id="BDBirthRate.t:co1" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">1.0</parameter>
+            <parameter id="BDDeathRate.t:co1" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
+            <parameter id="ORCucldMean.c:co1" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+            <parameter id="ORCsigma.c:co1" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.2</parameter>
+            <parameter id="ORCRates.c:co1" spec="parameter.RealParameter" dimension="42" lower="1.0E-100" name="stateNode">0.5</parameter>
+        </state>
+        <init id="RandomTree.t:co1" spec="RandomTree" estimate="false" initial="@Tree.t:co1" taxa="@co1">
+            <populationModel id="ConstantPopulation0.t:co1" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:co1" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+        <distribution id="posterior" spec="CompoundDistribution">
+            <distribution id="prior" spec="CompoundDistribution">
+                <distribution id="BirthDeath.t:co1" spec="beast.base.evolution.speciation.BirthDeathGernhard08Model" birthDiffRate="@BDBirthRate.t:co1" relativeDeathRate="@BDDeathRate.t:co1" tree="@Tree.t:co1"/>
+                <prior id="BirthRatePrior.t:co1" name="distribution" x="@BDBirthRate.t:co1">
+                    <Uniform id="Uniform.3" name="distr" upper="1000.0"/>
+                </prior>
+                <prior id="DeathRatePrior.t:co1" name="distribution" x="@BDDeathRate.t:co1">
+                    <Uniform id="Uniform.4" name="distr"/>
+                </prior>
+                <prior id="ORCRatePriorDistribution.c:co1" name="distribution" x="@ORCRates.c:co1">
+                    <LogNormal id="LogNormalDistributionModel.4" S="@ORCsigma.c:co1" meanInRealSpace="true" name="distr">
+                        <parameter id="RealParameter.24" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="ORCsigmaPrior.c:co1" name="distribution" x="@ORCsigma.c:co1">
+                    <Gamma id="Gamma.6" name="distr">
+                        <parameter id="RealParameter.25" spec="parameter.RealParameter" estimate="false" name="alpha">5.0</parameter>
+                        <parameter id="RealParameter.26" spec="parameter.RealParameter" estimate="false" name="beta">0.05</parameter>
+                    </Gamma>
+                </prior>
+                <prior id="ORCucldMeanPrior.c:co1" name="distribution" x="@ORCucldMean.c:co1">
+                    <Gamma id="Gamma.7" name="distr">
+                        <alpha id="Function$Constant.0" spec="Function$Constant" value="0.1"/>
+                        <beta id="Function$Constant.1" spec="Function$Constant" value="100.0"/>
+                    </Gamma>
+                </prior>
+                <distribution id="all.prior" spec="beast.base.evolution.tree.MRCAPrior" tree="@Tree.t:co1">
+                    <taxonset id="all" spec="beast.base.evolution.alignment.TaxonSet">
+                        <taxon id="Anarhynchus_frontalis" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_alexandrinus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_bicinctus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_collaris" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_falklandicus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_mongolus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_morinellus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_obscurus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_semipalmatus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_veredus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Charadrius_vociferus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Elseyornis_melanops" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Erythrogonys_cinctus" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Haematopus_ater" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Oreopholus_ruficollis" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Peltohyas_australis" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Phegornis_mitchellii" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Pluvialis_squatarola" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Thinornis_novaeseelandiae" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Thinornis_rubricollis" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Vanellus_chilensis" spec="beast.base.evolution.alignment.Taxon"/>
+                        <taxon id="Vanellus_vanellus" spec="beast.base.evolution.alignment.Taxon"/>
+                    </taxonset>
+                    <LogNormal id="LogNormalDistributionModel.2" meanInRealSpace="true" name="distr">
+                        <parameter id="RealParameter.8" spec="parameter.RealParameter" estimate="false" name="M">50.0</parameter>
+                        <parameter id="RealParameter.9" spec="parameter.RealParameter" estimate="false" lower="0.0" name="S" upper="5.0">0.01</parameter>
+                    </LogNormal>
+                </distribution>
+                <distribution id="charadriidae.prior" spec="beast.base.evolution.tree.MRCAPrior" monophyletic="true" tree="@Tree.t:co1">
+                    <taxonset id="charadriidae" spec="beast.base.evolution.alignment.TaxonSet">
+                        <taxon idref="Anarhynchus_frontalis"/>
+                        <taxon idref="Charadrius_alexandrinus"/>
+                        <taxon idref="Charadrius_bicinctus"/>
+                        <taxon idref="Charadrius_collaris"/>
+                        <taxon idref="Charadrius_falklandicus"/>
+                        <taxon idref="Charadrius_mongolus"/>
+                        <taxon idref="Charadrius_morinellus"/>
+                        <taxon idref="Charadrius_obscurus"/>
+                        <taxon idref="Charadrius_semipalmatus"/>
+                        <taxon idref="Charadrius_veredus"/>
+                        <taxon idref="Charadrius_vociferus"/>
+                        <taxon idref="Elseyornis_melanops"/>
+                        <taxon idref="Erythrogonys_cinctus"/>
+                        <taxon idref="Oreopholus_ruficollis"/>
+                        <taxon idref="Peltohyas_australis"/>
+                        <taxon idref="Phegornis_mitchellii"/>
+                        <taxon idref="Pluvialis_squatarola"/>
+                        <taxon idref="Thinornis_novaeseelandiae"/>
+                        <taxon idref="Thinornis_rubricollis"/>
+                        <taxon idref="Vanellus_chilensis"/>
+                        <taxon idref="Vanellus_vanellus"/>
+                    </taxonset>
+                </distribution>
+            </distribution>
+            <distribution id="likelihood" spec="CompoundDistribution" useThreads="true">
+                <distribution id="treeLikelihood.co1" spec="ThreadedTreeLikelihood" data="@co1" tree="@Tree.t:co1">
+                    <siteModel id="SiteModel.s:co1" spec="SiteModel">
+                        <parameter id="mutationRate.s:co1" spec="parameter.RealParameter" estimate="false" lower="0.0" name="mutationRate">1.0</parameter>
+                        <parameter id="gammaShape.s:co1" spec="parameter.RealParameter" estimate="false" lower="0.1" name="shape">1.0</parameter>
+                        <parameter id="proportionInvariant.s:co1" spec="parameter.RealParameter" estimate="false" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+                        <substModel id="JC69.s:co1" spec="JukesCantor"/>
+                    </siteModel>
+                    <branchRateModel id="OptimisedRelaxedClock.c:co1" spec="beast.base.evolution.branchratemodel.UCRelaxedClockModel" clock.rate="@ORCucldMean.c:co1" rates="@ORCRates.c:co1" tree="@Tree.t:co1">
+                        <LogNormal id="ORCLogNormalDistributionModel.c:co1" S="@ORCsigma.c:co1" meanInRealSpace="true" name="distr">
+                            <parameter id="RealParameter.23" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                        </LogNormal>
+                    </branchRateModel>
+                </distribution>
+            </distribution>
+        </distribution>
+        <operator id="BirthDeathBICEPSEpochTop.t:co1" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:co1" weight="2.0"/>
+        <operator id="BirthDeathBICEPSEpochAll.t:co1" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:co1" weight="2.0"/>
+        <operator id="BirthDeathBICEPSTreeFlex.t:co1" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:co1" weight="2.0"/>
+        <operator id="BirthDeathTreeRootScaler.t:co1" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.1" tree="@Tree.t:co1" upper="10.0" weight="3.0"/>
+        <operator id="BirthDeathUniformOperator.t:co1" spec="kernel.BactrianNodeOperator" tree="@Tree.t:co1" weight="30.0"/>
+        <operator id="BirthDeathSubtreeSlide.t:co1" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:co1" weight="15.0"/>
+        <operator id="BirthDeathNarrow.t:co1" spec="Exchange" tree="@Tree.t:co1" weight="0.0"/>
+        <operator id="BirthDeathWide.t:co1" spec="Exchange" isNarrow="false" tree="@Tree.t:co1" weight="3.0"/>
+        <operator id="BirthDeathWilsonBalding.t:co1" spec="WilsonBalding" tree="@Tree.t:co1" weight="3.0"/>
+        <operator id="BirthRateScaler.t:co1" spec="kernel.BactrianScaleOperator" parameter="@BDBirthRate.t:co1" upper="10.0" weight="3.0"/>
+        <operator id="DeathRateScaler.t:co1" spec="kernel.BactrianScaleOperator" parameter="@BDDeathRate.t:co1" upper="10.0" weight="3.0"/>
+        <operator id="ORCucldMeanScaler.c:co1" spec="ScaleOperator" parameter="@ORCucldMean.c:co1" scaleFactor="0.5" weight="3.0"/>
+        <operator id="ORC.UpDown.c:co1" spec="operator.kernel.BactrianUpDownOperator" scaleFactor="0.75" weight="3.0">
+            <up idref="ORCucldMean.c:co1"/>
+            <down idref="Tree.t:co1"/>
+        </operator>
+        <operator id="ORCAdaptableOperatorSampler_sigma.c:co1" spec="AdaptableOperatorSampler" weight="3.0">
+            <parameter idref="ORCsigma.c:co1"/>
+            <operator id="ORCucldStdevScaler.c:co1" spec="orc.consoperators.UcldScalerOperator" distr="@ORCLogNormalDistributionModel.c:co1" rates="@ORCRates.c:co1" scaleFactor="0.5" stdev="@ORCsigma.c:co1" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.32" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCUcldStdevRandomWalk.c:co1" spec="operator.kernel.BactrianRandomWalkOperator" parameter="@ORCsigma.c:co1" scaleFactor="0.1" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.33" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCUcldStdevScale.c:co1" spec="kernel.BactrianScaleOperator" parameter="@ORCsigma.c:co1" scaleFactor="0.5" upper="10.0" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.34" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCSampleFromPriorOperator_sigma.c:co1" spec="orc.operators.SampleFromPriorOperator" parameter="@ORCsigma.c:co1" prior2="@ORCsigmaPrior.c:co1" weight="1.0"/>
+        </operator>
+        <operator id="ORCAdaptableOperatorSampler_rates_root.c:co1" spec="AdaptableOperatorSampler" weight="1.0">
+            <parameter idref="ORCRates.c:co1"/>
+            <tree idref="Tree.t:co1"/>
+            <operator id="ORCRootOperator1.c:co1" spec="orc.consoperators.SimpleDistance" clockModel="@OptimisedRelaxedClock.c:co1" rates="@ORCRates.c:co1" tree="@Tree.t:co1" twindowSize="0.005" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.35" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCRootOperator2.c:co1" spec="orc.consoperators.SmallPulley" clockModel="@OptimisedRelaxedClock.c:co1" dwindowSize="0.005" rates="@ORCRates.c:co1" tree="@Tree.t:co1" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.36" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+        </operator>
+        <operator id="ORCAdaptableOperatorSampler_rates_internal.c:co1" spec="AdaptableOperatorSampler" weight="20.0">
+            <parameter idref="ORCRates.c:co1"/>
+            <tree idref="Tree.t:co1"/>
+            <operator id="ORCInternalnodesOperator.c:co1" spec="orc.consoperators.InConstantDistanceOperator" clockModel="@OptimisedRelaxedClock.c:co1" rates="@ORCRates.c:co1" tree="@Tree.t:co1" twindowSize="0.005" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.37" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCRatesRandomWalk.c:co1" spec="operator.kernel.BactrianRandomWalkOperator" parameter="@ORCRates.c:co1" scaleFactor="0.1" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.38" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCRatesScale.c:co1" spec="kernel.BactrianScaleOperator" parameter="@ORCRates.c:co1" scaleFactor="0.5" upper="10.0" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.39" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCSampleFromPriorOperator.rates.c:co1" spec="orc.operators.SampleFromPriorOperator" parameter="@ORCRates.c:co1" prior2="@ORCRatePriorDistribution.c:co1" weight="1.0"/>
+        </operator>
+        <operator id="ORCAdaptableOperatorSampler_NER.c:co1" spec="AdaptableOperatorSampler" weight="15.0">
+            <tree idref="Tree.t:co1"/>
+            <operator id="ORCNER_null.c:co1" spec="Exchange" tree="@Tree.t:co1" weight="0.0"/>
+            <operator id="ORCNER_dAE_dBE_dCE.c:co1" spec="orc.ner.NEROperator_dAE_dBE_dCE" rates="@ORCRates.c:co1" tree="@Tree.t:co1" weight="1.0"/>
+            <metric id="RNNIMetric.0" spec="beastlabs.evolution.tree.RNNIMetric" taxonset="@TaxonSet.co1"/>
+        </operator>
+        <logger id="tracelog" spec="Logger" fileName="co1_relaxed_clock.log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+            <log idref="treeLikelihood.co1"/>
+            <log id="TreeHeight.t:co1" spec="beast.base.evolution.tree.TreeStatLogger" tree="@Tree.t:co1"/>
+            <log idref="BirthDeath.t:co1"/>
+            <log idref="BDBirthRate.t:co1"/>
+            <log idref="BDDeathRate.t:co1"/>
+            <log idref="all.prior"/>
+            <log idref="charadriidae.prior"/>
+            <log idref="ORCucldMean.c:co1"/>
+            <log idref="ORCsigma.c:co1"/>
+            <log id="ORCRatesStat.c:co1" spec="beast.base.evolution.RateStatistic" branchratemodel="@OptimisedRelaxedClock.c:co1" tree="@Tree.t:co1"/>
+        </logger>
+        <logger id="screenlog" spec="Logger" logEvery="1000">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+        </logger>
+        <logger id="treelog.t:co1" spec="Logger" fileName="co1_relaxed_clock.trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:co1" spec="beast.base.evolution.TreeWithMetaDataLogger" branchratemodel="@OptimisedRelaxedClock.c:co1" tree="@Tree.t:co1"/>
+        </logger>
+        <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+    </run>
+
+</beast>
