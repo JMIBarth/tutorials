@@ -9,7 +9,7 @@ Practice Markov chain Monte Carlo (MCMC) sampling. MCMC simulation can be used t
 * [5.1 Flat parameter space](#flat)
 * [5.2 Simple parameter space](#simple)
 * [5.3 Complex parameter space](#complex)
-* [Optional: other parameter settings)(#mcmc_opt)
+* [Optional: other parameter settings)](#mcmc_opt)
 
 
 <a name="flat"></a>
@@ -37,7 +37,7 @@ Click on "**Clear**" to remove the MCMC chain. Then go back to **Settings** and 
 
 
 <a name="simple"></a>
-##5.2 Simple parameter space 
+## 5.2 Simple parameter space 
 
 Click on "**Clear**" to remove the MCMC chain. Then click somewhere in the black square and drag the mouse to define the size of a “hill” (a probability peak). By clicking inside the circle you can drag the hill to another place. The two circles of the hill represent the contours of the 95% and 50% probability mass.
 Leave the other settings unchanged and click the “**Run**” button repeatedly. 
@@ -81,11 +81,12 @@ You should see that the MCMC has difficulties reaching the center of the probabi
 
 
 <a name="complex"></a>
-##5.3 Complex parameter space 
+## 5.3 Complex parameter space 
 
 "**Clear**" the MCMC chain. Deactivate the “**Show fails**” option. Keep the large **"Step length mean"** (500) and the minimal standard deviation of the step size (0 or 1). Then, return to the black square and define a second hill that is in the opposite corner of the first hill and has a similar size to the first hill. Click the “**Run**” icon again a few times. You should see that almost all accepted steps are those that cross from one peak to the other. The areas of the individual peaks do not seem to be explored homogeneously by the MCMC chain. 
 
-<kbd>![](./img/mcmc_robot_005.png)</kbd> 
+<kbd>![](./img/mcmc_robot_005.png)</kbd>  
+
 Now, set the step length to more reasonable values. Use 50 for the **"Step length mean"** and 10 for the the standard deviation (**Step length sd/mean**). Then, run the MCMC chain again for a few thousand steps. You should see that even though the chain tends to remain within a peak most often, it occasionally crosses from peak to peak and is thus able to explore both evenly. If you click on the “**Stats**” button, you should see that about 50% and 95% of the accepted samples are within the 50% and 95% contours. 
 
 Now, clear the screen and change the starting position (just by clicking once somewhere in the black square). Click on “**Run**” again a couple of times. You will see that perhaps this time the other peak is explored more thoroughly.
@@ -94,7 +95,7 @@ Now, clear the screen and change the starting position (just by clicking once so
 
 
 <a name="mcmc_opt"></a>
-##Optional: other parameter settings)
+## Optional: other parameter settings
 
 Explore the MCMC robot a bit more. For example, add further hills, have a low (small) and high (large) hill, add an additional chain. There are also more options in the app.
 

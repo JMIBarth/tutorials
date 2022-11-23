@@ -40,7 +40,7 @@ The main text includes all information needed to follow the exercises. Some addi
 
 * [Maximum likelihood phylogenetic inference (Activity 4)](./maximum_likelihood_phylogenetic_inf/README.md)
 
-* [Markov chain Monte Carlo simulation usig the MCMC robot (Activity 5)](./mcmc_robot/README.md)
+* [Markov chain Monte Carlo simulation using the MCMC robot (Activity 5)](./mcmc_robot/README.md)
 
 * [Bayesian phylogenetic inference (Activity 6)](./bayesian_phylogenetic_inference/README.md)
 
