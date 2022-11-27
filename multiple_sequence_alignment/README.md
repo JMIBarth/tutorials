@@ -30,14 +30,14 @@ In case the web server is busy or you plan to use MAFFT for your future own work
 
 </details>
 
-Upload the file [`12s_ncbi_ed.fasta`](../dataset_compilation/res/12s_ncbi_ed.fasta) that we produced in [Activity 1](../dataset_compilation/README.md) to the “**Input**” field of the MAFFT website (using the "Browse" button to upload a plain text file). Leave all settings at their defaults to use the “Auto” strategy, and click “**Submit**” so send your sequences for alignment.
+Upload the file [`12s_ncbi_ed.fasta`](../dataset_compilation/res/12s_ncbi_ed.fasta) that we produced in [Activity 1](../dataset_compilation/README.md) to the “**Input**” field of the MAFFT website (using the "Browse" button to upload a plain text file). Leave all settings at their defaults to use the “Auto” strategy, and click “**Submit**” to send your sequences for alignment.
 
 <details>
   <summary>Optional: Command for locally installed MAFFT (click here)</summary>
 
 --------
 
-If use MAFFT on your computer, type the following (replace PATH/TO with the correct path and NUMBER with the number of threads/CPUs you want to use): 
+If you use MAFFT on your computer, type the following (replace PATH/TO with the correct path and NUMBER with the number of threads/CPUs you want to use): 
 `PATH/TO/mafft --auto --thread NUMBER --reorder /PATH/TO/12s_ncbi_ed.fasta > /PATH/TO/12s_ncbi_ed_aln.fasta`
 Here, the output will be a FASTA format that can be inspected using the Terminal, a text editor, or an alignment viewer.
 
@@ -68,7 +68,7 @@ Here, the output will be a FASTA format that can be inspected using the Terminal
 
 All the way at the bottom of the output the used method is indicated: "FFT-NS-2 (Fast but rough)". Below is a list of publications describing the algorithmns, but there is also a [MAFFT website explaining the algorithmns and parameters](https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html).
 
-In FFT-NS-2, the fast Fourier transform (FFT) algorithm (hence MAFFT for **M**ultiple **A**lignment using **F**ast **F**ourier **T**ransform!) is used to perform a 2-step progressive alignment where the sequences are re-aligned along the guide tree inferred from the alignment by FFT-NS-1. It is expected that the re-alignment produces a more reliable alignment compared to only one round of progressive alignment (FFT-NS-1), however, the algorithm is not as accurate as the full iterative method.
+In FFT-NS-2, the fast Fourier transform (FFT) algorithm (hence MAFFT for **M**ultiple **A**lignment using **F**ast **F**ourier **T**ransform!) is used to perform a 2-step progressive alignment where the sequences are re-aligned along the guide tree inferred from the alignment by FFT-NS-1. It is expected that the re-alignment produces a more reliable alignment compared to only one round of progressive alignment (FFT-NS-1); however, the algorithm is not as accurate as the full iterative refinement methods (FFT-NS-i).
 
 --------
 
@@ -84,9 +84,9 @@ Download the [AliView alignment viewer](http://ormbunkar.se/aliview) ([Larsson 2
 
 Open the file that we just produced with MAFFT ([`12s_ncbi_ed_aln.fasta`](res/12s_ncbi_ed_aln.fasta)) in AliView. Use the slider at the bottom to inspect the alignment from left to right. 
 
-Since whole-mitochondrial sequences are only available for a few species, these do not help us much and we can remove the exceeding sequence parts not corresponding to the 12s region (the tight alignment block from about position ~407-971).  
+Since whole-mitochondrial genome sequences are only available for a few species, these do not help us much and we can remove the exceeding sequence parts not corresponding to the 12s region (the compact alignment block from about position 407-971).  
 Use the mouse and key-combination function(fn)-shift (instead of scrolling!) to select the sequences of all species from position 1 to about position 406, just before the well-aligned block starts (the exact position may vary due to the progressive method not finding the absolute best alignment in some cases).  
-Press shift and hit the back-space (“delete”) key or go to the menu: Edit > “Delete selected”. In the pop-up window, allow for edits and click OK for clearing all selected positions. Repeat this procedure for the exceeding sequence part from about position 566 all the way to the end.  
+Press shift and hit the back-space (“delete”) key or go to the menu: Edit > “Delete selected”. In the pop-up window, allow for edits and click OK to clear all selected positions. Repeat this procedure for the exceeding sequence part from about position 566 all the way to the end.  
 Save the edited file: go to the menu > File > “Save as Fasta” and save the file using the name ([`12s_ncbi_ed_aln_cut.fasta`](res/12s_ncbi_ed_aln_cut.fasta)).
 
 <a name="realign"></a>
@@ -118,7 +118,7 @@ The procedure shoud have been much faster. The reduced alignment length also red
 
 </details>
 
-Download the alignment again in FASTA format by clicking the link “**Fasta format**” at the top of the page. Rename the file to ([`12s_ncbi_ed_cut_realn.fasta`](res/12s_ncbi_ed_cut_realn.fasta)). 
+Download the alignment again in FASTA format by clicking the link “**Fasta format**” at the top of the page. Rename the file to `12s_ncbi_ed_cut_realn.fasta`. 
 
 Without closing the previous AliView window, open the new re-aligned file ([`12s_ncbi_ed_cut_realn.fasta`](res/12s_ncbi_ed_cut_realn.fasta)) in a separate AliView window. 
 
@@ -129,7 +129,7 @@ Without closing the previous AliView window, open the new re-aligned file ([`12s
 
 --------
 
-The re-aligned version is longer by one position (566 positions). The reason is an additional gap at position 158 in the re-aligned alignment. This may or may not make sense. If your expectation is that your sequences are highly consereved, you may increase the penalty for opening gaps (see next paragraph).
+The re-aligned version is longer by one position (566 positions). The reason is an additional gap at position 158 in the re-aligned alignment. This may or may not make sense. If your expectation is that your sequences are highly conserved, you may increase the penalty for opening gaps (see next paragraph).
 
 --------
  </details>
@@ -147,7 +147,7 @@ Using MAFFT on your computer, add `--op 3.0` to your command line.
 
 </details>
 
-Submit the sequences and download the result in FASTA format. Rename the file to ([`12s_ncbi_ed_cut_realn_gap3.fasta`](res/12s_ncbi_ed_cut_realn_gap3.fasta)) and open it in AliView alongside the two other alignments. If your computer screen is too small to view all alignments at once, you can either decrease the font size by pressing the little “A” in the menu-bar and/or close the first ([`12s_ncbi_ed_cut.fasta`](res/12s_ncbi_ed_cut.fasta)) alignment.
+Submit the sequences and download the result in FASTA format. Rename the file to [`12s_ncbi_ed_cut_realn_gap3.fasta`](res/12s_ncbi_ed_cut_realn_gap3.fasta) and open it in AliView alongside the two other alignments. If your computer screen is too small to view all alignments at once, you can either decrease the font size by pressing the little “A” in the menu-bar and/or close the first ([`12s_ncbi_ed_cut.fasta`](res/12s_ncbi_ed_cut.fasta)) alignment.
 
 ![](../img/question_icon.png) How long is the new alignment? Has the additional gap disappeared? What else has changed?
 
@@ -167,7 +167,7 @@ The new alignment with the increased gap penalty is shorter than the other two w
 
 <a name="bmge"></a>
 ## 2.4 Exclude unreliably aligned regions  
-By comparing the alignments above, you may have realized that despite the different algorithms and parameters used, alignment differences were always located in the same regions, while other parts did not change. This is, because some parts of the sequence are more conserved among the species and can thus be aligned with greater confidence. For phylogenetic inference, we rely on aligning only homologous sites, so we may exclude variable non-conserved regions that can not be aligned with high confidence.
+By comparing the alignments above, you may have realized that despite the different algorithms and parameters used, alignment differences were always located in the same regions, while other parts did not change. This is, because some parts of the sequence are more conserved among the species and can thus be aligned with greater confidence. For phylogenetic inference, we rely on aligning only homologous sites, so we may exclude variable non-conserved regions that cannot be aligned with high confidence.
 
 We will use the software BMGE (Block Mapping and Gathering with Entropy by [Criscuolo & Gribaldo 2010 BMC Evol Biol](https://doi.org/10.1186/1471-2148-10-210)) for this purpose. Download BMGE using the command below in your Terminal: 
 
@@ -193,7 +193,7 @@ Open the output file ending with `.html` in your browser. Scroll through the ali
 The **gap proportion** is shown with **light gray equal signs** and ranges from 0 to 1. **Black colons** indicate what is called a “**smoothed entropy-like score**”. Basically, this is a measure of the nucleotide diversity at this site. 
 You’ll note that the black alignment blocks coincide with regions of low gap proportion and low entropy, which are the most suitable alignment positions for phylogenetic inference. Our selection of alignment blocks is based on default settings of BMGE for the entropy score cut-off (option `-h`), the gap-rate cut-off (`-g`), and the minimum block size (`-b`). By default, BMGE selects sites with an entropy score below 0.5 (`-h 0.5`) and a gap proportion below 0.2 (`-g 0.2`), and only if these form a block of at least 5 sites with these properties (`-b 5`). The standard output of BMGE to the terminal tells you how many sites (characters) remain selected. 
 
-Now, open the file ([`12s_ncbi_ed_cut_realn_filtered.fasta`](res/12s_ncbi_ed_cut_realn_filtered.fasta)) in AliView.  
+Now, open the file [`12s_ncbi_ed_cut_realn_filtered.fasta`](res/12s_ncbi_ed_cut_realn_filtered.fasta) in AliView.  
 
 ![](../img/question_icon.png) Does the BMGE filtered alignment look better? What has changed? 
 
@@ -249,7 +249,7 @@ L-INS-i was used again.
 </details>
 
 Download the alignment in FASTA format to your computer. Name the file`rag1_ncbi_ed_aln.fasta`. Keep the MAFFT website open, we will need it later again. 
-Open the file ([`rag1_ncbi_ed_aln.fasta`](res/rag1_ncbi_ed_aln.fasta)) in AliView. 
+Open the file [`rag1_ncbi_ed_aln.fasta`](res/rag1_ncbi_ed_aln.fasta) in AliView. 
 
 ![](../img/discussion_icon.png) What are the obvious differences to the previous 12s alignment? Discuss with your neighbours why the rag1 alignment looks “better” aligned compared to the 12s alignment.
 
@@ -271,7 +271,8 @@ In Aliview, click on the fourth icon from the left in the tool bar to translate 
 
 <kbd>![](./img/alignment_003.png)</kbd> 
 
-Next, click the "**sigma-sign icon**" (Σ) in the center of the tool bar to count stop codons. How many stop codons does AliView count? 
+Next, click the "**sigma-sign icon**" (Σ) in the center of the tool bar to count stop codons.  
+![](../img/question_icon.png) How many stop codons does AliView count? 
 
 <details>
   <summary>Answer (click here)</summary>
@@ -283,7 +284,9 @@ Next, click the "**sigma-sign icon**" (Σ) in the center of the tool bar to coun
 --------
 </details>
 
-Change the reading frame using the drop-down menu to the right of the sigma-sign icon and also count stop codons for the **second** and the **third reading frame**. Note how the overall color pattern of the alignment changes when you select different reading frames. Does one reading frame appear more conserved than the other two? Which reading frame has the lowest number of stop codons? Use the reading frame with the lowest stop codon number from now on.
+Change the reading frame using the drop-down menu to the right of the sigma-sign icon and also count stop codons for the **second** and the **third reading frame**. Note how the overall color pattern of the alignment changes when you select different reading frames. 
+
+![](../img/question_icon.png) Does one reading frame appear more conserved than the other two? Which reading frame has the lowest number of stop codons? Use the reading frame with the lowest stop codon number from now on.
 
 <details>
   <summary>Answer (click here)</summary>
@@ -306,7 +309,7 @@ Notice that from position 1247 to 1273, there is a large indel. Could this indic
 
 --------
 
-No, they occur in three different clades, indicating that the remaining rag1 sequence among those species is more diverged and that they are not more closely related compared to the other species.
+No, they occur in three different clades, indicating that the remaining rag1 sequence among those species is more diverged and implying that the indel must have evolved convergently.
 
 --------
 </details>
@@ -320,12 +323,14 @@ No, they occur in three different clades, indicating that the remaining rag1 seq
 --------
 
 * technical error
-* sequencing artifact,
+* sequencing artifact
 * false combination of the sequences from the forward and reverse primers
 
 --------
 </details>
 
-Whatever happened, we do not trust this region so we delete the whole region like we did before. In addition, shorten the alignment by removing the not very informative beginning of the alignment where we only have data for a few species (about position 0 to 130). Check again that our editing has not introduced an alignment error by counting the stop codons (you may have to adjust the reading frame again).
+The example above discloses the limits of automated sequence alignment and whatever sequences you have, whatever alignment method you choose – always manually inspect your alignments. Poor alignment can result in falsely inferred substitutions, eventually leading to a wrong phylogeny, following the maxim: "Rubbish in, rubbish out".
 
-Save the alignment in Fasta format using the name ([`rag1_ncbi_ed_aln_filtered.fasta`](res/rag1_ncbi_ed_aln_filtered.fasta)).
+So, whatever caused the indel, we do not trust this region so we delete the whole region like we did before. In addition, shorten the alignment by removing the not very informative beginning of the alignment where we only have data for a few species (about position 0 to 130). Check again that our editing has not introduced an alignment error by counting the stop codons (you may have to adjust the reading frame again).
+
+Save the alignment in Fasta format using the name [`rag1_ncbi_ed_aln_filtered.fasta`](res/rag1_ncbi_ed_aln_filtered.fasta).

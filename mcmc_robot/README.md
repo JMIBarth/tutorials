@@ -1,4 +1,4 @@
-# The MCMC Robot (Activity 5)
+# Markov chain Monte Carlo simulation using the MCMC robot (Activity 5)
 
 ## Objective
 
@@ -9,7 +9,7 @@ Practice Markov chain Monte Carlo (MCMC) sampling. MCMC simulation can be used t
 * [5.1 Flat parameter space](#flat)
 * [5.2 Simple parameter space](#simple)
 * [5.3 Complex parameter space](#complex)
-* [Optional: other parameter settings)](#mcmc_opt)
+* [Optional: other parameter settings](#mcmc_opt)
 
 
 <a name="flat"></a>

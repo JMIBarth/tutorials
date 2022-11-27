@@ -70,13 +70,45 @@ The table above is missing some accession numbers for the 12s sequences. That is
 
 Go to the NCBI (National Center for Biotechnology Information) [BLAST website](https://blast.ncbi.nlm.nih.gov/Blast.cgi) and select **“Nucleotide BLAST”** to use a nucleotide sequence to search for other nucleotide sequences.
 
-In the search field **“Enter Query Sequence”** enter the accession number (or the sequence) of any of the other 12s sequences of Charadriidae (don’t use the accession numbers stating with “NC” or “MW” as these correspond to whole mitochondrial sequences). In the "**Choose Search Set**” field, restrict the “Organism" to “Charadriidae”, then start the search by clicking on “**BLAST**”. Scroll through the results, there should be around 38 hits.  
+In the search field **“Enter Query Sequence”** enter the accession number (or the sequence) of one of the other 12s sequences of Charadriidae (don’t use the accession numbers stating with “NC” or “MW” as these correspond to whole mitochondrial sequences). In the "**Choose Search Set**” field, restrict the “Organism" to “**Charadriidae**” and keep the algorithm to search for "**Highly similar sequences (megablast)**". Have a look at the algorithm parameters by clicking on the blue "**+ Algorithm parameters**" option at the very bottom. 
+
+<kbd>![](./img/blast_003.png)</kbd>
+
+![](../img/question_icon.png) What is the default Word size in megablast?
+
+<details>
+  <summary>Answer (click here)</summary> 
+
+--------
+
+28 bp
+
+--------
+</details>
+
+
+![](../img/discussion_icon.png) If your search would be targeting very diverged species, would you shorten or increase the Word size? How could you adjust the Scoring Parameters to assure finding the diverged sequences? Discuss with your neighbors!
+
+<details>
+  <summary>Discussion points (click here)</summary> 
+
+--------
+
+* Sequence divergence
+* Number of expected mismatches
+* Number of expected gaps
+* Total length of sequence
+
+--------
+</details>
+
+For now, don't change the algorithm parameters, but just start the search by clicking on “**BLAST**”. Once the search is finished, scroll through the results, there should be around 38 hits.  
 
 Go to the “**Taxonomy**” tab.  
 
 <kbd>![](./img/blast_001.png)</kbd>
 
-![](../img/question_icon.png) Of the six species that had missing 12s sequences, is there one or more included in this list? If, how many hits were found?
+![](../img/question_icon.png) Of the six species that had missing 12s sequences, is there one or more included in this list? If so, how many hits were found?
 
 <details>
   <summary>Answer (click here)</summary> 
@@ -88,7 +120,7 @@ In November 2022, there was only one species with additional 12s sequence data: 
 --------
 </details>
 
-![](../img/discussion_icon.png)If there are multiple hits, which criteria do you use to select the one sequence to include in your dataset? Where do you find  information about these criteria? Click on the different links within the NCBI page to explore which information you can find and discuss possible criteria with your neighbors.
+![](../img/discussion_icon.png) If there are multiple hits, which criteria do you use to select the one sequence to include in your dataset? Where do you find  information about these criteria? Click on the different links within the NCBI page to explore which information you can find and discuss possible criteria with your neighbors.
 
 <details>
   <summary>Discussion points (click here)</summary> 
@@ -177,7 +209,7 @@ Do you know the commands used above? If not, you may consult the manual (e.g., `
 --------
 </details>
 
-**5\.**  If these are the correct header lines, lets rename them and check the result: 
+**5\.**  If these are the correct header lines, let's rename them and check the result: 
 `cat 12s_ncbi.fasta | cut -d ' ' -f 1-3 | tr ' ' '_' | sed 's/\.[0-9]//g' | grep ">" | head -n 5`
 
 <details>
@@ -203,7 +235,7 @@ There are more databases than NCBI or its European counterpart [ENA (European Nu
 
 --------
 
-Barcoding is a technique uses one or more standardized short genetic markers to identify a specimen as belonging to a particular species. It is also used to depict cryptic species, to survey environmental samples, and for forensic applications.
+Barcoding is a technique that uses one or more standardized short genetic markers to identify a specimen as belonging to a particular species. It is also used to depict cryptic species, to survey environmental samples, and for forensic applications.
 
 --------
 </details>
@@ -224,12 +256,12 @@ The site should now display 22 records. Click on the blue “Sequences: FASTA”
 
 --------
 
-Yes, because the sequences have leading and trailing “gap” characters (here dashes) that adjust them to the same length. Indeed, the closer related species are already well aligned, but Haematopus ater is not.
+Yes, because the sequences have leading and trailing “gap” characters (here dashes) that adjust them to the same length. Indeed, more closely related species are already well aligned, but *Haematopus ater* is not.
 
 --------
 </details>
 
-The names in the sequence headers are again not very machine-readable. Adjust the code from section [1.4 Rename sequences] (#rename) to rename the headers. Note, there is no “version” number in the BOLD UIDs, instead the number after the dash corresponds to the year the sequence was added to the database. The year is part of the UID, so we need to keep it, but we could replace the dash with an underscore. For example, we could change: `>BON196-07|Charadrius morinellus|COI-5P|GU571332` to `>BON196_07_Charadrius_morinellus`.
+The names in the sequence headers are again not very machine-readable. Adjust the code from section [1.4 Rename sequences](#rename) to rename the headers. Note, there is no “version” number in the BOLD UIDs, instead the number after the dash corresponds to the year the sequence was added to the database. The year is part of the UID, so we need to keep it, but we could replace the dash with an underscore. For example, we could change `>BON196-07|Charadrius morinellus|COI-5P|GU571332` to `>BON196_07_Charadrius_morinellus`.
 
 <details>
   <summary>Answer (click here)</summary> 
@@ -241,7 +273,7 @@ The names in the sequence headers are again not very machine-readable. Adjust th
 --------
 </details>
 
-NOTE: Because *Thinornis rubricollis* is also know by the synonym *Thinornis cucullatus*, the CO1 sequence is labeled with *T. cucullatus*. This will be problematic if we compare the phylogenetic trees or concatenate the data, so rename this sequence (manually or with `sed`) to *Thinornis rubricollis*.
+NOTE: Because *Thinornis rubricollis* is also known by the synonym *Thinornis cucullatus*, the CO1 sequence is labeled with *T. cucullatus*. This will be problematic if we compare the phylogenetic trees or concatenate the data, so rename this sequence (manually or with `sed`) to *Thinornis rubricollis*.
 
 
 <a name="rag1"></a>
