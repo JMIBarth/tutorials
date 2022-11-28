@@ -94,7 +94,13 @@ Proceed to the “**Clock Model**” tab. You’ll see that a “**Strict Clock*
 
 Click on the “**Priors**” tab. Here, prior probability distributions can be specified for all model parameters. Because we have so far selected the simple Jukes-Cantor model, not many parameters are listed. You’ll see two rows, one row for the type of the diversification model (**Tree.t**) where currently the “Yule Model” (the Yule process) is selected, and one row for the specified prior probability for the only parameter of this model, the “**birthRate**” parameter (*i.e.*, the speciation rate).
 
-Click on the drop-down menu that currently says “**Yule Model**”. Select the “**Birth Death Model**” instead to assume speciation as well as extinction. You’ll see that an additional row has been added. The second row now is for the “**BDBirthRate**” and the third is for the **“BDDeathRate**”, both rates are estimated during the analysis. Note that in BEAST 2, these parameters do not correspond to the speciation (```math λ```) and extinction (```math μ```) rates directly. Instead, the “BDBirthRate” is the so-called “net diversification rate” which is the difference between the speciation rate and the extinction rate (```math λ-μ```), and the “BDDeathRate” is the “relative extinction rate, the ratio between extinction and speciation (```math μ/λ```).
+Click on the drop-down menu that currently says “**Yule Model**”. Select the “**Birth Death Model**” instead to assume speciation as well as extinction. You’ll see that an additional row has been added. The second row now is for the “**BDBirthRate**” and the third is for the **“BDDeathRate**”, both rates are estimated during the analysis. Note that in BEAST 2, these parameters do not correspond to the speciation (
+```math 
+λ
+```
+) and extinction (```math 
+μ
+```) rates directly. Instead, the “BDBirthRate” is the so-called “net diversification rate” which is the difference between the speciation rate and the extinction rate (```math λ-μ```), and the “BDDeathRate” is the “relative extinction rate, the ratio between extinction and speciation (```math μ/λ```).
 
 <details>
  <summary>Current prior constraints for the BDDeathRate and BDBirthRate (click here)</summary>
