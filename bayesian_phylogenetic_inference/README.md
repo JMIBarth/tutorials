@@ -156,8 +156,9 @@ The rest of the XML file (after around line 147) includes the "**operators**", t
 <a name="beast"></a>
 #### 6.1.1.3 Run the MCMC analysis using BEAST 2
 
-Open the software BEAST 2 and click on “**Choose File...**” to select the XML input file [`co1_strict_clock.xml`](res/co1_strict_clock.xml). Leave everything else at their default values and click “**Run**” to start the analysis. This should take no more than 5 minutes.   
-Note on thread/CPU usage: You may choose one or two thread, depending on your computer. However, with a single partition, BEAST 2 can only use a single thread for the calculation of the Likelihood. You can calculate the time your run will take by checking the minutes/Msamples output in the log file.
+Open the software BEAST 2 and click on “**Choose File...**” to select the XML input file [`co1_strict_clock.xml`](res/co1_strict_clock.xml). Leave everything else at their default values and click “**Run**” to start the analysis. This should take no more than 5 minutes.  
+ 
+Note on thread/CPU usage: You may choose one or two thread, depending on your computer. However, with a single partition, BEAST 2 can only use a single thread for the calculation of the likelihood. You can calculate the time your run will take by checking the minutes/Msamples output in the log file.
 
 <details>
  <summary> Issue closing the BEAST 2 App on Mac OS X (click here)</summary>
@@ -219,7 +220,7 @@ Go directly to the “**Clock Model**” tab, and change the model from “Stric
 	<summary> Background: ORC (click here)</summary>
 
 --------
-The ORC ([Douglas et al. 2021](https://doi.org/10.1371/journal.pbio.0040088)) is a recent implementation of the relaxed clock model with optimized operators that improve the efficiency of the MCMC chain compared to the earlier uncorrelated log-normal clock of [Drummond et al. (2006)](https://doi.org/10.1371/journal.pbio.0040088). 
+The ORC ([Douglas et al., 2021](https://doi.org/10.1371/journal.pbio.0040088)) is a recent implementation of the relaxed clock model with optimized operators that improve the efficiency of the MCMC chain compared to the earlier uncorrelated log-normal clock of [Drummond et al. (2006)](https://doi.org/10.1371/journal.pbio.0040088). 
 
 --------
 </details>
