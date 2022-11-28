@@ -48,8 +48,8 @@ name="alignment">
 
     <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
 
-    <run id="mcmc" spec="MCMC" chainLength="5000000">
-        <state id="state" spec="State" storeEvery="5000">
+    <run id="mcmc" spec="MCMC" chainLength="2000000">
+        <state id="state" spec="State" storeEvery="2000">
             <tree id="Tree.t:co1" spec="beast.base.evolution.tree.Tree" name="stateNode">
                 <taxonset id="TaxonSet.co1" spec="beast.base.evolution.alignment.TaxonSet">
                     <alignment idref="co1"/>

@@ -1,8 +1,8 @@
-# Markov chain Monte Carlo simulation using the MCMC robot (Activity 5)
+# Testing Markov chain Monte Carlo with the MCMC robot (Activity 5)
 
 ## Objective
 
-Practice Markov chain Monte Carlo (MCMC) sampling. MCMC simulation can be used to sample from a probability distribution. Similar to hill-climbing, the algorithm can get stuck on local optima and its success to explore the parameter space sufficiently depends on – for example – the step operator or a scale operator. 
+Practice Markov chain Monte Carlo (MCMC) sampling. MCMC can be used to sample from a probability distribution. Similar to hill-climbing, the algorithm can get stuck on local optima and its success to explore the parameter space sufficiently depends on – for example – the step operator or a scale operator. 
 
 ## Table of contents
 
