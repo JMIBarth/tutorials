@@ -23,7 +23,7 @@ The main text includes all information needed to follow the exercises. Some addi
 
 ![](./img/discussion_icon.png) The discussion icon indicates questions/topics to be discussed with your neighbors
 
-
+<br/><br/>
 ## Tutorials on phylogenetic inference
 ### Evolutionary Genetics lecture at the University of Basel (2021, 2022 – LV25600-01)
 
