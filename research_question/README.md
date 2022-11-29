@@ -22,8 +22,8 @@ New Zealand, today consistent of two main islands, is part of the mostly submerg
 
 --------
 
-Also New Zealand wasn't spared by human exploitation. The first settlers intensively hunted the larger, slower-breeding animals like Moas, geese, penguins, sea lions, and seals, which became extinct within a few hundred years. Smaller animals, lizards, frogs, birds were prayed on by introduced Kiore, the Pacific rat. Forest was burned to make the land more habitable and so New Zealand lost half of its forested area within a few hundred years after settlement.  
-The most devastating environmental impact however had the Europeans after their arrival only some 200 years ago. Endemic flora and fauna is threatened by further deforestation and introduced plant and mammal species. Especially ground breeding and flightless birds have hardly any defense against introduced predators such as ferrets, stoats and weasels, hedgehogs, possums, dogs and cats.  
+Yet, also New Zealand wasn't spared by human exploitation. The first settlers intensively hunted the larger, slower-breeding animals like Moas, geese, penguins, sea lions, and seals, which became extinct within a few hundred years. Smaller animals, lizards, frogs, birds were prayed on by introduced Kiore, the Pacific rat. Forest was burned to make the land more habitable and so New Zealand lost half of its forested area within a few hundred years after settlement.  
+The most devastating environmental impact however had the Europeans after their arrival only some 200 years ago. Endemic flora and fauna is threatened by further deforestation and introduced plant and mammal species. Especially ground breeding and flightless birds have hardly any defense against introduced predators such as ferrets, stoats and weasels, hedgehogs, possums, dogs, and cats.  
 
 There is an excellent (while a little lengthy) four parts 45-minutes each documentary series and a four parts 25-minutes each podcast series produced for Radio New Zealand (RNZ) highlighting New Zealands unique biodiversity and the desperate battle to protect it: [www.rnz.co.nz/wild](https://www.rnz.co.nz/programmes/fight-for-the-wild)
 
@@ -40,7 +40,7 @@ The faunal biogeography of New Zealand is an actively researched topic that stil
 
 --------
 
-A recent review article focusing on new insights from ancient DNA research nicely summarizes previous and recent theories: [https://doi.org/10.1080/03036758.2022.2093227](https://doi.org/10.1080/03036758.2022.2093227)
+A recent review article focusing on new insights from ancient DNA research nicely summarizes previous and recent theories: [Verry et al., 2022](https://doi.org/10.1080/03036758.2022.2093227)
 
 --------
 </details>
@@ -91,7 +91,7 @@ Species | Common name | Breeding distribution
 *Vanellus Vanellus* | Northern lapwing | Eurasia
 *Haematopus ater* | Blackish oystercatcher | Outgroup (South Am.)
 
-For a recent phylogeny of Charadriiformes, refer to Černýa and Natale, 2022: [https://doi.org/10.1016/j.ympev.2022.107620](https://doi.org/10.1016/j.ympev.2022.107620)
+For a recent phylogeny of Charadriiformes, refer to [Černýa and Natale, 2022](https://doi.org/10.1016/j.ympev.2022.107620).
 
 --------
 </details>
