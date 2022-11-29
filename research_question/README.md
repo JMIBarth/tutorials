@@ -91,7 +91,7 @@ Species | Common name | Breeding distribution
 *Vanellus Vanellus* | Northern lapwing | Eurasia
 *Haematopus ater* | Blackish oystercatcher | Outgroup (South Am.)
 
-The idea for the tutorial stems from [Barth et al. (2012)](https://doi.org/10.1371/journal.pone.0078068) but for a recent phylogeny of Charadriiformes, refer to [Černýa and Natale, 2022](https://doi.org/10.1016/j.ympev.2022.107620).
+The idea for the tutorial stems from [Barth et al. (2013)](https://doi.org/10.1371/journal.pone.0078068) but for a recent phylogeny of Charadriiformes, refer to [Černýa and Natale, 2022](https://doi.org/10.1016/j.ympev.2022.107620).
 
 --------
 </details>
