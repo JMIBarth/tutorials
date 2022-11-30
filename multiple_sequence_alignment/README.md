@@ -87,7 +87,7 @@ Open the file that we just produced with MAFFT ([`12s_ncbi_ed_aln.fasta`](res/12
 Since whole-mitochondrial genome sequences are only available for a few species, these do not help us much and we can remove the exceeding sequence parts not corresponding to the 12s region (the compact alignment block from about position 407-971).  
 Use the mouse and key-combination function(fn)-shift (instead of scrolling!) to select the sequences of all species from position 1 to about position 406, just before the well-aligned block starts (the exact position may vary due to the progressive method not finding the absolute best alignment in some cases).  
 Press shift and hit the back-space (“delete”) key or go to the menu: Edit > “Delete selected”. In the pop-up window, allow for edits and click OK to clear all selected positions. Repeat this procedure for the exceeding sequence part from about position 566 all the way to the end.  
-Save the edited file: go to the menu > File > “Save as Fasta” and save the file using the name ([`12s_ncbi_ed_aln_cut.fasta`](res/12s_ncbi_ed_aln_cut.fasta)).
+Save the edited file: go to the menu > **File** > “**Save as Fasta**” and save the file using the name ([`12s_ncbi_ed_aln_cut.fasta`](res/12s_ncbi_ed_aln_cut.fasta)).
 
 <a name="realign"></a>
 ## 2.3 Re-align the alignment
@@ -188,7 +188,7 @@ If you see a line starting with `mandatory parameters: -i ‘infile’…` the s
 
 The `-t` flag indicates that we are using DNA sequences, `-of` tells the program to write a filtered alignment in FASTA format, and `-oh` to visualize the filtered alignment in HTML format.
 
-Open the output file ending with `.html` in your browser. Scroll through the alignment and note the black alignment blocks. At the very top of the alignment, you’ll see two measures plotted for each site in light grey and black.
+Open the output file [`12s_ncbi_ed_cut_realn_filtered.html`](./res/12s_ncbi_ed_cut_realn_filtered.html) in your browser. Scroll through the alignment and note the black alignment blocks. At the very top of the alignment, you’ll see two measures plotted for each site in light grey and black.
  
 The **gap proportion** is shown with **light gray equal signs** and ranges from 0 to 1. **Black colons** indicate what is called a “**smoothed entropy-like score**”. Basically, this is a measure of the nucleotide diversity at this site. 
 You’ll note that the black alignment blocks coincide with regions of low gap proportion and low entropy, which are the most suitable alignment positions for phylogenetic inference. Our selection of alignment blocks is based on default settings of BMGE for the entropy score cut-off (option `-h`), the gap-rate cut-off (`-g`), and the minimum block size (`-b`). By default, BMGE selects sites with an entropy score below 0.5 (`-h 0.5`) and a gap proportion below 0.2 (`-g 0.2`), and only if these form a block of at least 5 sites with these properties (`-b 5`). The standard output of BMGE to the terminal tells you how many sites (characters) remain selected. 
@@ -262,6 +262,7 @@ Open the file [`rag1_ncbi_ed_aln.fasta`](res/rag1_ncbi_ed_aln.fasta) in AliView.
 * conserved regions
 * essential genes
 * selection
+* mutation rate
 
 --------
 
@@ -331,6 +332,6 @@ No, they occur in three different clades, indicating that the remaining rag1 seq
 
 The example above discloses the limits of automated sequence alignment and whatever sequences you have, whatever alignment method you choose – always manually inspect your alignments. Poor alignment can result in falsely inferred substitutions, eventually leading to a wrong phylogeny, following the maxim: "Rubbish in, rubbish out".
 
-So, whatever caused the indel, we do not trust this region so we delete the whole region like we did before. In addition, shorten the alignment by removing the not very informative beginning of the alignment where we only have data for a few species (about position 0 to 130). Check again that our editing has not introduced an alignment error by counting the stop codons (you may have to adjust the reading frame again).
+So, whatever caused the indel, we do not trust this region and delete the whole region like we did before. In addition, shorten the alignment by removing the not very informative beginning of the alignment where only few species have data (about position 0 to 130). Check again that our editing has not introduced an alignment error by counting the stop codons (you may have to adjust the reading frame again).
 
 Save the alignment in Fasta format using the name [`rag1_ncbi_ed_aln_filtered.fasta`](res/rag1_ncbi_ed_aln_filtered.fasta).
