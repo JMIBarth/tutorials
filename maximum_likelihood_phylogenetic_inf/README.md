@@ -2,7 +2,7 @@
 
 ## Objective
 
-Find the phylogenetic hypothesis that best explains the data. So far, we have learned how to retrieve homologous sequences, how to align these sequences to match homologous sites, and how to find the best-fit substitution model for our data. In this tutorial, we will now perform maximum likelihood (ML) phylogenetic inference with the best-fit substitution model to find the best phylogenetic hypothesis for our data.
+Find the phylogenetic hypothesis that best explains the data. So far, we have learned how to retrieve homologous sequences ([Activity 1](../dataset_compilation/README.md)), how to align these sequences to match homologous sites ([Activity 2](../multiple_sequence_alignment/README.md)), and how to find the best-fit substitution model for our data [Activity 3](../substitution_model_selection/README.md). In this tutorial, we will now perform maximum likelihood (ML) phylogenetic inference with the best-fit substitution model to find the best phylogenetic hypothesis for our data.
 
 
 ## Table of contents
@@ -32,7 +32,7 @@ Maximum-likelihood phylogenetic inference aims to find the parameter values of a
 In [Activity 3](../substitution_model_selection/README.md), we used the “Model Selection” function in IQ-TREE to find the best fit substitution model according to AIC, which was “TIM2+F+I+G4” (the “transition model” with variable base frequencies, variable transition rates, but two transversion rates that are set to be identical: AC=AT and CG=GT). Now, apply this model with the 12s alignment to perform a maximum-likelihood search.  
 
 Go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), stay at the first tab “**Tree inference**”. In the “**Input Data**” section, upload again the 12s alignment file ([`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta)) in the “**Alignment file**” field.  
-Then go to the “**Substitution Model Options**” tab and change the “Substitution model” from “Auto” to “TIM2”. Also check the boxes for “**Gamma [+G]**” and “**Invar. Sites [+I]**” and keep "4" as the number of rate categories. Then proceed to the “**Branch Support Analysis**”. Tick the “None” box for “**Bootstrap analysis**” and the “No” box for “**Single branch tests**”. We will do bootstrapping in part 3 of this activity. Leave all other fields at their default, click “**submit job**”.
+Then go to the “**Substitution Model Options**” tab and change the “Substitution model” from “Auto” to “TIM2”. Also check the boxes for “**Gamma [+G]**” and “**Invar. Sites [+I]**” and keep "4" as the number of rate categories. Then proceed to the “**Branch Support Analysis**”. Tick the “None” box for “**Bootstrap analysis**” and the “No” box for “**Single branch tests**”. We will do bootstrapping in [section 4.3](#bs) of this activity. Leave all other fields at their default, click “**submit job**”.
 
 <details>
   <summary>Optional: Command for locally installed IQ-TREE (click here)</summary>
@@ -162,7 +162,7 @@ Go again to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), stay on 
 
 --------
 
-The ultrafast bootstrap approximation in IQ-TREE was optimized for larger datasets and – unlike the standard bootstrap method for which the IQ-TREE web server allows maximally 100 bootstrap replicates – it is recommended to run it with a minimum of 1,000 replicates. With these settings, IQ-TREE will produce 1,000 pseudo-replicate alignment and for each infer a maximum likelihood phylogeny. Yet, the algorithm may stops earlier if it detects that the resulting node-support values are stable.  
+The ultrafast bootstrap approximation in IQ-TREE was optimized for larger datasets and – unlike the standard bootstrap method for which the IQ-TREE web server allows maximally 100 bootstrap replicates – it is recommended to run it with a minimum of 1,000 replicates. With these settings, IQ-TREE will produce 1,000 pseudo-replicate alignment and for each infer a maximum likelihood phylogeny. Yet, the algorithm may stop earlier if it detects that the resulting node-support values are stable.  
 The SH-aLRT branch test is another method to obtain branch support. In IQ-TREE you can obtain both values in one run, but we do not elaborate on the SH-aLRT branch test here.
 
 --------
@@ -307,7 +307,7 @@ co1_bold_ed_aln_cut_partitions.txt -pre co1_bold_ed_aln_cut_partfinder —m MFP+
 
 The comparison of phylogenies based on the short 12s alignment and the longer CO1 alignment showed that the overall node support can substantially be improved with increased size of the dataset. It is thus usually beneficial to use the information from several alignments jointly in one and the same phylogenetic analysis. To this end, the individual alignments were concatenated (simply pasted together), using [catfasta2phyml](https://github.com/nylander/catfasta2phyml), and a [partition scheme](./data/12s_co1_rag1_partitions.txt) based on genes and codon positions was generated.
 
-For the last time today, go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), und upload the alignment [`12s_co1_rag1.fasta`](./data/12s_co1_rag1.fasta). Also upload the associated partition file [`12s_co1_rag1_partitions.txt`](./data/12s_co1_rag1_partitions.txt). Again, keep the “**Auto**” option for “**Substitution model**”, keep the “**Ultrafast**” bootstrap, but click “**No**” in the box next to SH-aLRT. Leave all other fields at their defaults, click “**submit job**”.  
+For the last time today, go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), und upload the alignment [`12s_co1_rag1.fasta`](./data/12s_co1_rag1.fasta). Also upload the associated partition file [`12s_co1_rag1_partitions.txt`](./data/12s_co1_rag1_partitions.txt) (you can download those files to your computer by clicking on the links above, then right click the "**Raw**" button at the top of the file, select "**Save Link As…**", choose the location on your computer where you want to save the file, and select "**Save**"). Again, keep the “**Auto**” option for “**Substitution model**”, keep the “**Ultrafast**” bootstrap, but click “**No**” in the box next to SH-aLRT. Leave all other fields at their defaults, click “**submit job**”.  
 Once the run is finished, download the results by clicking on the link “**Download selected jobs**”, rename the folder to [`12s_co1_rag1_codonpart_bs`](./res/12s_co1_rag1_codonpart_bs).
 
 <details>
@@ -320,7 +320,7 @@ Once the run is finished, download the results by clicking on the link “**Down
 --------
 </details>
 
-Note that for partitioned analysis, IQ-TREE will assume that all partitions, and thus the 12s, CO1, and RAG1 sequences share the same true evolutionary history. The concatenation of genes may bias the result if this assumption is violated (which is common, particularly if closely related species are investigated, due to incomplete lineage sorting and/or introgression – you will hear more about this in the “Single- vs. multilocus ('omics') phylogenetics” lecture. However, given our dataset, the assumption that the 12s, CO1, and RAG1 genes share the same evolutionary history – or at least the same true topology – may be justified.
+Note that for partitioned analysis, IQ-TREE will assume that all partitions, and thus the 12s, CO1, and RAG1 sequences share the same true evolutionary history. The concatenation of genes may bias the result if this assumption is violated (which is common, particularly if closely related species are investigated, due to incomplete lineage sorting and/or introgression – you will hear more about this in the “Phylogenomics” lecture. However, given our dataset, the assumption that the 12s, CO1, and RAG1 genes share the same evolutionary history – or at least the same true topology – may be justified.
 
 Open the [`12s_co1_rag1.fasta.treefile`](./res/12s_co1_rag1_codonpart_bs/12s_co1_rag1.fasta.treefile) file in FigTree, name the node labels again “bootstrap” or “bs”, and once again “**Reroot**” (*Haematopus ater*) and sort ("**Decreasing node order**") the phylogeny, set a tick in the checkbox for "**Node Labels**", open the options using the little arrow, and select "bootstrap" (or "bs") from the "**Display**" drop-down menu.
 
