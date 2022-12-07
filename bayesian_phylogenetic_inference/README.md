@@ -94,22 +94,25 @@ Proceed to the “**Clock Model**” tab. You’ll see that a “**Strict Clock*
 
 Click on the “**Priors**” tab. Here, prior probability distributions can be specified for all model parameters. Because we have so far selected the simple Jukes-Cantor model, not many parameters are listed. You’ll see two rows, one row for the type of the diversification model (**Tree.t**) where currently the “Yule Model” (the Yule process) is selected, and one row for the specified prior probability for the only parameter of this model, the “**birthRate**” parameter (*i.e.*, the speciation rate).
 
-Click on the drop-down menu that currently says “**Yule Model**”. Select the “**Birth Death Model**” instead to assume speciation as well as extinction. You’ll see that an additional row has been added. The second row now is for the “**BDBirthRate**” and the third is for the **“BDDeathRate**”, both rates are estimated during the analysis. Note that in BEAST 2, these parameters do not correspond to the speciation ( $λ$ ) and extinction ( $μ$ ) rates directly. Instead, the “BDBirthRate” is the so-called “net diversification rate” which is the difference between the speciation rate and the extinction rate ( $λ-μ$ ), and the “BDDeathRate” is the “relative extinction rate, the ratio between extinction and speciation ( $μ/λ$ ).
+Click on the drop-down menu that currently says “**Yule Model**”. Select the “**Birth Death Model**” instead to assume speciation as well as extinction. You’ll see that an additional row has been added. The second row now is for the “**BDBirthRate**” and the third is for the **“BDDeathRate**”, both rates are estimated during the analysis. 
 
 <details>
- <summary>Current prior constraints for the BDDeathRate and BDBirthRate (click here)</summary>
+ <summary>Background: BDDeathRate and BDBirthRate and their prior constraints (click here)</summary>
 
 --------
 
+In BEAST 2, the BDBirthRate and the BDDeathRate do not correspond to the speciation ( $λ$ ) and extinction ( $μ$ ) rates directly. Instead, the “BDBirthRate” is the so-called “net diversification rate” which is the difference between the speciation rate and the extinction rate ( $λ-μ$ ), and the “BDDeathRate” is the “relative extinction rate, the ratio between extinction and speciation ( $μ/λ$ ).
 Click on the **triangle** next to "**BDDeathRate**" to see the prior constrains. The relative extinction rate is typically constrained to lie between 0 and 1, because if it was greater than 1, this would mean that the extinction rate is greater than the speciation rate, and in such a case, clades would go extinct rather than diversify.
 Also click on the **triangle** next to **BDBirthRate**. This rate has an entirely uninformative uniform probability distribution with a lower limit of 0 and an unrealistically high upper limit of 10,000. The unit for this is “net diversification per branch per million years” meaning that the upper limit could only be reached if we had a phylogeny in which several ten thousands of species would have evolved each million years. Clearly this is not the case. Nevertheless, for now we leave the uninformative prior probability as it is. 
 
 --------
 </details> 
 
+Now, click on the “**+ Add Prior**” button below the two rows. This will allow the specification of clades (called “taxon sets” by BEAST 2) that can then be constrained to be monophyletic and/or to be of a certain age (MCRA prior, which stands for “most recent common ancestor”). Select the “**MCRA prior**”. 
+
 <kbd>![](./img/beauti_004.png)</kbd>
 
-Now, click on the “**+ Add Prior**” button below the two rows. This will allow the specification of clades (called “taxon sets” by BEAST 2) that can then be constrained to be monophyletic and/or to be of a certain age (MCRA prior, which stands for “most recent common ancestor”). Select the “**MCRA prior**”. A pop-up window will appear, in which you can select a name for a clade as well as species to be included in the clade. In the top field of the pop-up window, specify “**all**” as the “**Taxon Set label**”. Leave the “Filter” field empty. In the field at the bottom left of the pop-up window **select all the species** (command-A) and click the “**>>**” button to move them into the ingroup of the clade, the window to the right. Then, click “**OK**”. We have now defined a clade that contains all species. We did so because this now allows us to constrain the age of the root of the phylogeny. 
+A pop-up window will appear, in which you can select a name for a clade as well as species to be included in the clade. In the top field of the pop-up window, specify “**all**” as the “**Taxon Set label**”. Leave the “Filter” field empty. In the field at the bottom left of the pop-up window **select all the species** (command-A) and click the “**>>**” button to move them into the ingroup of the clade, the window to the right. Then, click “**OK**”. We have now defined a clade that contains all species. We did so because this now allows us to constrain the age of the root of the phylogeny. 
 
 <kbd>![](./img/beauti_005.png)</kbd>
 
@@ -143,7 +146,7 @@ Then, click on “**Save As**” in BEAUti’s “**File**” menu to save the f
 Open the generated XML file [`co1_strict_clock.xml`](res/co1_strict_clock.xml) in a text editor to see how BEAST 2 has translated your specifications into the XML input format for BEAST 2. 
 
 <details>
- <summary> Explanations on the XML content (click here)</summary>
+ <summary> Background: Explanations on the XML content (click here)</summary>
 
 --------
 You will see the sequence alignment with tag “**sequence**” near the top of the file, followed by some specifications for “**maps**”; these are short names used by BEAST 2 for distribution classes. Around line 51, you’ll see an element starting with “**run**”, where the length of the MCMC chain is specified.
@@ -240,7 +243,7 @@ If the standard deviation would be zero, there would be no variation in rates am
 
 Finally, go to the the “**MCMC**” tab, and change the name of the log file to `co1_relaxed_clock.log` and of the tree file to `co1_relaxed_clock.trees`. Save the XML file under the name `co1_relaxed_clock.xml` by clicking “**Save As**” from the “**File**” menu. 
 
-As before, use BEAST 2 to run an analysis, but now use the XML file [`co1_relaxed_clock.xml`](./res/co1_relaxed_clock.xml) as input. You may choose 1one or two thread depending on your computer, but just leave everything else at their default values and click “**Run**” to start the analysis. This should take no more than 10 minutes.
+As before, use BEAST 2 to run an analysis, but now use the XML file [`co1_relaxed_clock.xml`](./res/co1_relaxed_clock.xml) as input. You may choose one or two thread depending on your computer, but just leave everything else at their default values and click “**Run**” to start the analysis. This should take no more than 10 minutes.
 
 
 <a name="strict_vs_relaxed"></a>
@@ -295,9 +298,16 @@ The HPD of the relaxed clock is wider since the relaxed clock allows the substit
 <a name="compare_trees"></a>
 ### 6.1.3.2 Compare the tree files using TreeAnnotator and FigTree
 
+<details>
+	<summary> Optional: Inspect the entire posterior tree sample (click here)</summary>
+
+--------
 Open the file [`co1_strict_clock.trees`](./res/co1_strict_clock.trees) in [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4). The displayed phylogeny probably looks rather odd, with many extremely short branches. In the second tab of the menu on the left, you see a row titled “**Current Tree: 1 / 5001**” (or another number if you didn’t log 5,000 trees). This means that what’s displayed is the very first phylogeny sampled from the MCMC. This is the starting tree that was randomly generated by BEAST 2 to initiate the MCMC chain. At the right of the top menu, you’ll see two buttons for “**Prev/Next**”. If you click on the symbol for “**Next**” repeatedly, you can see how the sampled phylogenies have changed throughout the course of the MCMC search. Instead of clicking on this icon 5,000 times to see the last phylogeny, click on the **triangle** to the left of “Current Tree: X/5001” in the menu. This will open a field where you can directly enter the number of the tree that you’d like to see. Type “**5,001**” and hit enter. You should then see a phylogeny that looks much more realistic than the very first sampled phylogeny. But note that this is only the last sampled phylogeny, it may not be representative for the entire collection of phylogenies sampled during the MCMC. This collection is called the “posterior tree sample”.
 
-To generate a more representative phylogeny summarizing the information from the posterior tree sample, open the program **TreeAnnotator** that you downloaded as part of the BEAST 2 package. In "**Input Tree File**" load the tree file [`co1_strict_clock.trees`](./res/co1_strict_clock.trees). Also specify the same name, but with the ending `.tree` instead of `.trees` for the "**Output Tree File**". Define a burn-in percentage according to your interpretation of the log file in Tracer (usually 10 to 50%). Leave the default options for “Posterior probability limit” and “Target tree type” to generate a “Maximum clade credibility tree”, a summary tree for Bayesian analyses ([Heled & Bouckaert, 2013](https://doi.org/10.1186/1471-2148-13-221)). However, as “**Node heights**”, choose “Mean heights” rather than the default “Common Ancestor heights”. Mean heights are calculated for all trees in the set where the clade in monophyletic, whereas common ancestor heights are calculated based on the average over all trees in the set.  Then, click “**Run**”. This should only take seconds.
+--------
+</details>
+
+To generate a representative phylogeny summarizing the information from the posterior tree sample, open the program **TreeAnnotator** that you downloaded as part of the BEAST 2 package. In "**Input Tree File**" load the tree file [`co1_strict_clock.trees`](./res/co1_strict_clock.trees). Also specify the same name, but with the ending `.tree` instead of `.trees` for the "**Output Tree File**". Define a burn-in percentage according to your interpretation of the log file in Tracer (usually 10 to 50%). Leave the default options for “Posterior probability limit” and “Target tree type” to generate a “Maximum clade credibility tree”, a summary tree for Bayesian analyses ([Heled & Bouckaert, 2013](https://doi.org/10.1186/1471-2148-13-221)). However, as “**Node heights**”, choose “Mean heights” rather than the default “Common Ancestor heights”. Mean heights are calculated for all trees in the set where the clade in monophyletic, whereas common ancestor heights are calculated based on the average over all trees in the set.  Then, click “**Run**”. This should only take seconds.
 
 <kbd>![](./img/treeannotator_001.png)</kbd>
 
@@ -330,6 +340,7 @@ The tree topology appears very similar between the two phylogenies; however, the
 Most importantly, in the strict clock phylogeny, *Thinornis rubricollis*, and *T. novaeseelandiae* are sister, but in the relaxed clock phylogeny, *E. melanops* is sister to *T. novaeseelandiae*.
 If you recall the co1 maximum-likelihood phylogeny from [Activity 4.4](../maximum_likelihood_phylogenetic_inf/README.md), you may remember that *E. melanops* had a much longer branch that *T. novaeseelandiae*. In the strict clock analysis, this apparent discrepancy in branch rates may have led to the position of the *T. rubricollis* / *T. novaeseelandiae* clade as sister species to *E. melanops*. In contrast, these different rates could be accommodated in the analysis using the relaxed clock model, allowing shared substitutions between *E. melanops* and *T. novaseelandiae* to dominate over the differences in the mutation rate.
 
+Strict clock (left image), relaxed clock (right imgge).
 <kbd>![](./img/figtree_002.png)</kbd>
 
 --------
