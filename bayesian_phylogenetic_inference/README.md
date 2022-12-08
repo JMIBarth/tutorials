@@ -40,7 +40,7 @@ Become familiar with BEAST 2 and Bayesian inference. So far, we have learned how
 -------- 
 **Software**: Here we use the Bayesian software package BEAST2 ([Bouckaert et al. 2014](https://doi.org/10.1371/journal.pcbi.1003537)) to infer a time-calibrated phylogeny. The package contains several programs: The settings for the analysis will be specified with the program BEAUti, a program with a graphical user interface (GUI) generating XML configuration files. The Bayesian analysis itself is going to be conducted with BEAST 2, and a summary tree will be generated with the program TreeAnnotator. In addition, we will use of the program Tracer ([Rambaut et al. 2018](https://doi.org/10.1093/sysbio/syy032)) to assess stationarity of the Bayesian analysis.  
 
-**Data**: You will use the exact same genes, sequences, and species as in the previous analyses. However, BEAST 2 requires all alignments to contain the same species (and there were some sequences of species missing in the 12s alignment) as well as that the species have exactly the same names (so far, they differed by the accession numbers). Therefore, these adjustments were made to the three alignment files: [`12s.nexus`](data/12s.nexus), [`co1.nexus`](data/co1.nexus), [`rag1.nexus`](data/rag1.nexus). 
+**Data**: You will use the exact same genes, sequences, and species as in the previous analyses. However, BEAST 2 requires all alignments to contain the same species (and there were some sequences of species missing in the 12s alignment) as well as that the species have exactly the same names (so far, they differed by the accession numbers). Therefore, these adjustments were made to the three alignment files: [`12s.nex`](data/12s.nex), [`co1.nex`](data/co1.nex), [`rag1.nex`](data/rag1.nex). 
 
 --------
 </details>
@@ -69,7 +69,7 @@ A strict clock model assumes that every branch in a phylogenetic tree evolves ac
 <a name="beauti"></a>
 #### 6.1.1.1 Generate a XML configuration file in BEAUti
 
-Download the file [`co1.nexus`](data/co1.nexus). Open the program BEAUti (“Bayesian Evolutionary Analysis Utility”), and click “**Import Alignment**” in BEAUti’s “**File**” menu. Select the co1 alignment file that you just downloaded (if you get the error "unsupported sequence file", close BEAUti, re-open, and try again.
+Download the file [`co1.nex`](data/co1.nex). Open the program BEAUti (“Bayesian Evolutionary Analysis Utility”), and click “**Import Alignment**” in BEAUti’s “**File**” menu. Select the co1 alignment file that you just downloaded (if you get the error "unsupported sequence file", close BEAUti, re-open, and try again.
 
 <kbd>![](./img/beauti_001.png)</kbd>
 
