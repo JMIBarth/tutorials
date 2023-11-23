@@ -23,7 +23,8 @@ New Zealand, today consistent of two main islands, is part of the mostly submerg
 --------
 
 Yet, also New Zealand wasn't spared by human exploitation. The first settlers intensively hunted the larger, slower-breeding animals like Moas, geese, penguins, sea lions, and seals, which became extinct within a few hundred years. Smaller animals, lizards, frogs, birds were prayed on by introduced Kiore, the Pacific rat. Forest was burned to make the land more habitable and so New Zealand lost half of its forested area within a few hundred years after settlement.  
-The most devastating environmental impact however had the Europeans after their arrival only some 200 years ago. Endemic flora and fauna is threatened by further deforestation and introduced plant and mammal species. Especially ground breeding and flightless birds have hardly any defense against introduced predators such as ferrets, stoats and weasels, hedgehogs, possums, dogs, and cats.  
+The most devastating environmental impact however had the Europeans after their arrival only some 200 years ago. Endemic flora and fauna is threatened by further deforestation and introduced plant and mammal species. Especially ground breeding and flightless birds have hardly any defense against introduced predators such as ferrets, stoats and weasels, hedgehogs, possums, dogs, and cats.
+During the last 700 years, about 50 species of birds have gone extinct in New Zealand. This high number is only topped by the islands of Hawai'i, where close to 80 species were lost in this exceedingly small area, with many more classified as highly endangered and expected to go extinct within the next years.
 
 There is an excellent (while a little lengthy) four parts 45-minutes each documentary series and a four parts 25-minutes each podcast series produced for Radio New Zealand (RNZ) highlighting New Zealands unique biodiversity and the desperate battle to protect it: [www.rnz.co.nz/wild](https://www.rnz.co.nz/programmes/fight-for-the-wild)
 
@@ -33,7 +34,7 @@ There is an excellent (while a little lengthy) four parts 45-minutes each docume
 <a name="origin_fauna"></a>
 ## Origin of the New Zealand fauna
 
-The faunal biogeography of New Zealand is an actively researched topic that still leaves many open questions. Main theories including vicariance – the split of species with the separation of the land masses – as well as overwater dispersal have been put forward for many of the endemic species. 
+The faunal biogeography of New Zealand is an actively researched topic that still leaves many open questions. Main theories include **vicariance** – the split of species with the separation of the land masses – as well as **overwater dispersal** have been put forward for many of the endemic species. 
 
 <details>
   <summary>Further background: The faunal biogeography of New Zealand (click here)</summary>
@@ -48,21 +49,26 @@ A recent review article focusing on new insights from ancient DNA research nicel
 <a name="charadriidae"></a>
 ## New Zealand endemic species of dotterels and plovers
 
-Today, four endemic species of dotterels and plovers occur in New Zealand, all belonging to the family Charadriidae in the order Charadriiformes – the “shorebirds”.  
-From previous studies we know that the whole order Charadriiformes is younger than the split of New Zealand from Australia, meaning that vicariance – the speciation simply due to the split of continents – can be excluded as origin of the endemic species. Thus, we also know that at least one dispersal event must have happened.
+Today, **four endemic species** of dotterels and plovers occur in New Zealand, all belonging to the family Charadriidae in the order Charadriiformes – the “shorebirds”.  
+From earlier studies we know that the whole order Charadriiformes is younger than the split of New Zealand from Australia, meaning that vicariance – speciation simply due to the split of continents – can be excluded as origin of the endemic species. Thus, we also know that at least one dispersal event must have happened.
 
 <details>
   <summary>Further background: The order Charadriiformes (click here)</summary>  
 
 --------
 
-About 380 species belonging to several families can be found in the order Charadriiformes. To pick some examples:
+About 380 species belonging to several families can be found in the order Charadriiformes. Prominent examples are:
 
-* The black-headed gull (*Chroicocephalus ridibundus*) that can also be observed along the Rhine in Basel and is especially abundand in the winter months 
-* The charismatic Atlantic puffin (*Fratercula arctica*), also referred to as "parrots" or "clowns of the sea"
-* The bar-tailed godwit, a species holding the record for the longest non-stop migration flight (~12,000 km between Alaska and New Zealand in eight days)
-* The family Charadriidae, including the the northern lapwing with its long head crest and iridescent plumage, which you can observe in the [Tierpark Lange-Erlen](https://www.erlen-verein.ch/) in Basel or the [Petite Camargue](https://www.birdingplaces.eu/en/birdingplaces/france/petite-camargue-alsacienne) in Alsace, as well as the four New Zealand endemic species: the wrybill (*Anarhynchus frontalis*), the only species whose beak is always bent sideways to the right, the double-banded plover (*Charadrius bicinctus*), the New Zealand plover (*Charadrius obscurus*), and the shore plover (*Thinornis  novaeseelandiae*).  
-Note that the genus *Charadrius* is not monophyletic – but see the most recent phylogeny of [Charadriiformes](https://doi.org/10.1016/j.ympev.2022.107620)
+* The **black-headed gull** (German: Lachmöwe) (*Chroicocephalus ridibundus*) that can also be observed along the Rhine in Basel and is especially abundand in the winter months 
+* The charismatic **Atlantic puffin** (German: Papageitaucher) (*Fratercula arctica*), also referred to as "parrots" or "clowns of the sea"
+* The **bar-tailed godwit** (German: Pfuhlschnepfe) (*Limosa lapponica*), a species holding the record for the longest non-stop migration flight (~12,000 km between Alaska and New Zealand in eight days)
+* The family Charadriidae, including the the **northern lapwing** (German: Kiebitz) (*Vanellus vanellus*), with its long head crest and iridescent plumage, which you can observe in the [Tierpark Lange-Erlen](https://www.erlen-verein.ch/) in Basel or the [Petite Camargue](https://www.birdingplaces.eu/en/birdingplaces/france/petite-camargue-alsacienne) in Alsace, as well as the **four New Zealand endemic species**: 
+	* The **wrybill** (German: Schiefschnabel) (*Anarhynchus frontalis*), the only species whose beak is always bent sideways to the right
+	* The **double-banded plover** (German: Doppelband-Regenpfeifer) (*Charadrius bicinctus*)
+	* The **New Zealand plover** or New Zealand dotterel (German: Maoriregenpfeifer) (*Charadrius obscurus*), and 
+	* The **shore plover** or shore dotterel (German: Chathamregenpfeifer) (*Thinornis  novaeseelandiae*).  
+
+Note that the genus *Charadrius* is not monophyletic – but see the most recent phylogeny of Charadriiformes [here](https://doi.org/10.1016/j.ympev.2022.107620).
 
 A list of species that we will include in our phylogenetic analyses:
   
@@ -103,6 +109,8 @@ The idea for the tutorial stems from [Barth et al. (2013)](https://doi.org/10.13
 When did the endemic species of dotterels and plovers disperse to New Zealand? Did they disperse in one or several events?
 
 ![](../img/discussion_icon.png) Take a few minutes and discuss with you neighbours how we could investigate this question and what kind of data we would need to find an answer. 
+
+If you feel lost, you will find possible discussion points below.
 
 <details>
   <summary>Possible discussion points (click here)</summary> 
