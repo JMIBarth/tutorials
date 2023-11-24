@@ -70,7 +70,13 @@ The table above is missing some accession numbers for the 12s sequences. That is
 
 Go to the NCBI (National Center for Biotechnology Information) [BLAST website](https://blast.ncbi.nlm.nih.gov/Blast.cgi) and select **“Nucleotide BLAST”** to use a nucleotide sequence to search for other nucleotide sequences.
 
-In the search field **“Enter Query Sequence”** enter the accession number (or the sequence) of one of the other 12s sequences of Charadriidae (don’t use the accession numbers stating with “NC” or “MW” as these correspond to whole mitochondrial sequences). In the "**Choose Search Set**” field, restrict the “Organism" to “**Charadriidae**” and keep the algorithm to search for "**Highly similar sequences (megablast)**". Have a look at the algorithm parameters by clicking on the blue "**+ Algorithm parameters**" option at the very bottom. 
+Then, in the search field **“Enter Query Sequence”** enter the accession number (or the sequence) of one of the other 12s sequences of Charadriidae (e.g., EF380263, don’t use the accession numbers stating with “NC” or “MW” as these correspond to whole mitochondrial sequences!). 
+
+In the "**Choose Search Set**” field, restrict the “Organism" to “**Charadriidae (taxid:8907)**” and keep the algorithm to search for "**Highly similar sequences (megablast)**". 
+
+<kbd>![](./img/blast_004.png)</kbd>
+
+Also have a look at the algorithm parameters by clicking on the blue "**+ Algorithm parameters**" option at the very bottom. 
 
 <kbd>![](./img/blast_003.png)</kbd>
 
@@ -87,7 +93,7 @@ In the search field **“Enter Query Sequence”** enter the accession number (o
 </details>
 
 
-![](../img/discussion_icon.png) If your search would be targeting very diverged species, would you shorten or increase the Word size? How could you adjust the Scoring Parameters to assure finding the diverged sequences? Discuss with your neighbors!
+![](../img/discussion_icon.png) If your search would target very diverged species, would you shorten or increase the Word size? How could you adjust the Scoring Parameters to assure finding the diverged sequences? Discuss with your neighbors!
 
 <details>
   <summary>Discussion points (click here)</summary> 
@@ -102,20 +108,22 @@ In the search field **“Enter Query Sequence”** enter the accession number (o
 --------
 </details>
 
-For now, don't change the algorithm parameters, but just start the search by clicking on “**BLAST**”. Once the search is finished, scroll through the results, there should be around 38 hits.  
+After you are satisfied with your settings – and for now, don't change the algorithm parameters – **start the search** by clicking on “**BLAST**”. 
 
-Go to the “**Taxonomy**” tab.  
+Once the search is finished, you will see the results page with some information about your search. If you scroll down a bit, there is a table with your results. There should be around 40 hits.  
+
+Using the tabs just above the table, go to “**Taxonomy**”.  
 
 <kbd>![](./img/blast_001.png)</kbd>
 
-![](../img/question_icon.png) Of the six species that had missing 12s sequences, is there one or more included in this list? If so, how many hits were found?
+![](../img/question_icon.png) Of the six species that had missing 12s sequences, is there one or more included in the taxonomy list (you can use your browsers text search tool for the search)? If so, how many hits were found?
 
 <details>
   <summary>Answer (click here)</summary> 
 
 --------
 
-In November 2022, there was only one species with additional 12s sequence data: *Charadrius vociferus* (Killdeer), for which four hits were found.
+In November 2023, there was only one species with additional 12s sequence data: *Charadrius vociferus* (Killdeer), for which four hits were found.
 
 --------
 </details>
@@ -135,27 +143,31 @@ In November 2022, there was only one species with additional 12s sequence data: 
 --------
 </details>
 
-Download the selected 12s sequence(s) for the species you found: In the “**Descriptions**” tab, click on the accession number for the available sequence(s), click on “**Send to**” in the upper right corner, select “**File**”, for “Format" choose “**FASTA**”, click “**Create file**”. 
+Download the selected 12s sequence for the species you found. There are multiple ways how to do this, e.g., in the **"Alignments"** tab next to the "Taxonomy" tab, go to your selected sequence, click on the **"Download"** icon above the sequence, select **"FASTA (complete sequence)"** and click **"Download"**.
 
 <kbd>![](./img/blast_002.png)</kbd> 
 
-Rename the file with the species name, gene ID, and accession number (e.g., `c_vociferus_12s_DQ485792.fasta` and have a look at the content using a a text editor.  
+The downloaded file will have a non-descriptive name, therefore rename the file with the species name, gene ID, and accession number (e.g., `c_vociferus_12s_DQ485792.fasta` and have a look at the content by opening it in a text editor.  
 
-In FASTA format, the first line always starts with a `>` (greater-than) symbol proceeded by a unique description of the sequence (here the accession number and a non-standardized name of the sequence given by the person who uploaded the sequence). Following this initial line is the actual sequence itself in one line ("sequential") or on multiple lines ("interleaved").
+In FASTA format, the first line always starts with a `>` (greater-than) symbol, proceeded by a unique description of the sequence (here the accession number and a non-standardized name of the sequence given by the person who uploaded the sequence). Following this initial line is the actual sequence itself in one line ("sequential") or on multiple lines ("interleaved").
 
 
 <a name="batch"></a>
 ## 1.3 Batch-download remaining sequences
 
-We could individually download the remaining 12s sequences, but NCBI also has a website to download multiple information, e.g., the sequence information for many accession numbers, at once. 
+Now, we could individually download the 12s sequences for the other species in our list, but this would be very tedious. Instead, NCBI also has a website to **"batch"**-download multiple information, e.g., the sequence information for many accession numbers, at once. 
 
-Go to the [NCBI Batch Entrez website](https://www.ncbi.nlm.nih.gov/sites/batchentrez). Select the “**Nucleotide**” database and upload the file [`12s_ncbi_accn.txt`](data/12s_ncbi_accn.txt) (to download the file, click on the link, then right click the "**Raw**" button at the top of the file, select "**Save Link As…**", choose the location on your computer where you want to save the file, and select "**Save**"). Click “**Retrieve**” and “**Retrieve records for 17 UID(s)**”. UID is the abbreviation for “unique identifier”. On the displayed website, quickly check that these are the correct sequences. Then proceed as before to download them in FASTA file format, but also sorted by "**Organism name**" (Send to > Complete record > File > FASTA > Sort by > Organism name > Create file). Rename the file to `12s_ncbi.fasta` and move it to your working directory.
+To provide the accession numbers, first download the text file containing the accession numbers for all species listed in the table above. This table also already includes the additional 12s sequence: [`12s_ncbi_accn.txt`](data/12s_ncbi_accn.txt) (To download the file to your computer, click on the provided link (you may use  right- or control-click to open the link in a new tab), then click on **"Download raw file"** at the top of the file. If you do not see this option, right- or control-click the "**Raw**" button, select "**Save Link As…**", choose the location on your computer where you want to save the file, and select "**Save**".)
+
+Then, go to the [NCBI Batch Entrez website](https://www.ncbi.nlm.nih.gov/sites/batchentrez). Select the “**Nucleotide**” database and click **"Browse"** to upload the `12s_ncbi_accn.txt` file. Click “**Retrieve**” and “**Retrieve records for 17 UID(s)**”. UID is the abbreviation for “unique identifier”. On the displayed website, quickly check that these are the correct sequences. Then click on **"Send to"** in the upper right corner to download the sequences in FASTA file format (choose **"Complete record"** and **"File"**, select **"FASTA"** as format, sort by "**Organism name**". Rename the file to `12s_ncbi.fasta` and move it to your working directory.
+
+<kbd>![](./img/batch_001.png)</kbd> 
 
 
 <a name="rename"></a>
 ## 1.4 Rename sequences
 
-Open the file `12s_ncbi.fasta` in a text editor. The format is the same as for the single FASTA file you manually downladed before, just that it contains multiple FASTA formated sequences after each other. Many of the sequence descriptions have long names with special characters and white space that are usually not handled well by most analyses software. Therefore, we rename the sequences descriptions to a name using only the accession number without the version information (the part after the period) followed by the species name, separated by underscores instead of whitespace. For example: `>NC_003713.2 Haematopus ater mitochondrion, complete genome` will then be `>NC_003713_Haematopus_ater`.  
+Open the file `12s_ncbi.fasta` in a text editor. The format is the same as for the single FASTA file you manually downladed before, just that it contains multiple FASTA formated sequences. Many of the sequence descriptions have long names with special characters and white space that are usually not handled well by most analyses software. Therefore, we rename the sequences descriptions to a name using only the accession number without the version information (the part after the period) followed by the species name, separated by underscores instead of whitespace. For example: `>NC_003713.2 Haematopus ater mitochondrion, complete genome` will then be `>NC_003713_Haematopus_ater`.  
  
 We will refresh your bioinformatics knowledge and do this on the command line using Bash:  
 
@@ -166,7 +178,7 @@ We will refresh your bioinformatics knowledge and do this on the command line us
 
 --------
   
-`cd path/to/your/file` (change directory)
+`cd path/to/your/file` (cd = **c**hange **d**irectory)
 
 --------
 </details>
@@ -192,7 +204,7 @@ There are many options, e.g., `less`, `more`, `head`, `tail`, `nano`, `emacs`, e
 
 `cat 12s_ncbi.fasta | grep ">" | wc -l`
 
-Do you know the commands used above? If not, you may consult the manual (e.g., `man grep` (to exit the man pages, press `q`) or consult the help text (`grep -h`). Our file should have 17 header lines.
+Do you know the commands and programs used above? If not, you may consult the manual (e.g., the **man**ual for the program "grep" with: `man grep` (to exit the man pages, press `q`) or consult the help text of the program "grep" (`grep -h`). Our file should have 17 header lines.
 
 --------
 </details>
@@ -217,7 +229,7 @@ Do you know the commands used above? If not, you may consult the manual (e.g., `
 
 --------
 
-With `cat` the file is read to standard out, with the pipe character `|` its content is forwarded to the program `cut`, where the `-d` flag specifies the field delimiter as being a `space` and the `-f` flag specifies the fields to be cut as the columns 1 to 3. With `tr` spaces are transformed to underscores, and with `sed` the period and any number thereafter is replaced with nothing. Finally, `grep` searches for the greater-than symbol and `head` prints the first 5 lines `-n 5`  on the screen.
+With `cat` the file is read to standard out, with the pipe character `|` its content is forwarded to the program `cut`, where the `-d` flag specifies the field **d**elimiter as being a `space` and the `-f` flag specifies the **f**ields to be cut as the columns 1 to 3. With `tr` spaces are **tr**ansformed to underscores, and with `sed` the period and any number thereafter is replaced with nothing. Finally, `grep` searches for the greater-than symbol and `head` prints the first 5 lines `-n 5`  on the screen.
 
 --------
 </details>
@@ -228,7 +240,7 @@ Do the reformatted names look like we want them? If yes, replace the last two co
 <a name="rename_co1"></a>
 ## 1.5 Download and rename the CO1 sequences
 
-There are more databases than NCBI or its European counterpart [ENA (European Nucleotide Archive)](https://www.ebi.ac.uk/ena/browser/) that store molecular information. One example is the [BOLD (The Barcode of Life Data System) database](https://www.boldsystems.org/), which is the database for “DNA barcoding”. 
+There are more databases than NCBI or its European counterpart [ENA (European Nucleotide Archive)](https://www.ebi.ac.uk/ena/browser/home) that store molecular information. One example is the [BOLD (The Barcode of Life Data System) database](https://www.boldsystems.org/), which is the database for “DNA barcoding”. 
 
 <details>
   <summary>Background: What is barcoding? (click here)</summary> 
@@ -249,31 +261,33 @@ Copy and paste the following UID’s into the search field and click “**Search
 
 The site should now display 22 records. Click on the blue “Sequences: FASTA” icon on the right to download the sequences. Rename the file to `co1_bold.fasta` and move it to your working directory. 
 
-![](../img/question_icon.png)Go to the Terminal and inspect the content of the downloaded file. Does this file contain aligned FASTA sequences?
+![](../img/question_icon.png)Inspect the content of the downloaded file. Does this file contain aligned FASTA sequences?
 
 <details>
   <summary>Answer (click here)</summary> 
 
 --------
 
-Yes, because the sequences have leading and trailing “gap” characters (here dashes) that adjust them to the same length. Indeed, more closely related species are already well aligned, but *Haematopus ater* is not.
+Yes, because the sequences have leading and trailing “gap” characters (here dashes) that adjust them to the same length. Indeed, more closely related species are already well aligned, but for example our outgroup, *Haematopus ater*, is not well aligned.
 
 --------
 </details>
 
-The names in the sequence headers are again not very machine-readable. Adjust the code from section [1.4 Rename sequences](#rename) to rename the headers. Note, there is no “version” number in the BOLD UIDs, instead the number after the dash corresponds to the year the sequence was added to the database. The year is part of the UID, so we need to keep it, but we could replace the dash with an underscore. For example, we could change `>BON196-07|Charadrius morinellus|COI-5P|GU571332` to `>BON196_07_Charadrius_morinellus`.
+The names in the sequence headers are again not very machine-readable. Adjust the bash command from section [1.4 Rename sequences](#rename) to rename the headers. Note, there is no “version” number in the BOLD UIDs, instead the number after the dash corresponds to the year the sequence was added to the database. The year is part of the UID, so we need to keep it, but we could replace the dash with an underscore. For example, we could change `>BON196-07|Charadrius morinellus|COI-5P|GU571332` to `>BON196_07_Charadrius_morinellus`.
 
 <details>
-  <summary>Answer (click here)</summary> 
+  <summary>"I don't know the right bash command..." (click here)</summary> 
 
 --------
 
-`cat co1_bold.fasta | cut -d '|' -f 1-2 | tr ' ' '_' | tr '|' '_' | tr '-' '_' > co1_bold_ed.fasta`
+`cat co1_bold.fasta | cut -d '|' -f 1-2 | tr ' ' '_' | tr '|' '_' | sed '/^>/s/-/_/g' > co1_bold_ed.fasta`
+
+The first commands are similar to section 1.4 above, but we `cut` at the `|`, instead of the space and only keep the first two fields. Then, `tr` is used to transform "space" and the remaining `|` to `_`, finally we use `sed` and address only lines beginning with a greater-than sign `'/^>` to substitute `-` with `_`.
 
 --------
 </details>
 
-NOTE: Because *Thinornis rubricollis* is also known by the synonym *Thinornis cucullatus*, the CO1 sequence is labeled with *T. cucullatus*. This will be problematic if we compare the phylogenetic trees or concatenate the data, so rename this sequence (manually or with `sed`) to *Thinornis rubricollis*.
+NOTE: Because *Thinornis rubricollis* is also known by the synonym *Thinornis cucullatus*, the CO1 sequence of this individual is labeled with *T. cucullatus*. This will be problematic if we compare the phylogenetic trees or concatenate the data, so rename this sequence (manually or with `sed`) to *Thinornis rubricollis*.
 
 
 <a name="rag1"></a>
