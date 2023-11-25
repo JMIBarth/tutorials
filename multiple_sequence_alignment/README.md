@@ -45,6 +45,9 @@ Here, the output will be a FASTA format that can be inspected using the Terminal
 
 </details>
 
+<kbd>![](./img/mafft_001.png)</kbd>
+
+
 ![](../img/discussion_icon.png) After less than a minute, the alignment should be ready and a new page will open that shows the alignment in CLUSTAL format. Inspect the output. Are all sequences nicely aligned in one block? If not, what could be the reason? Discuss with your neighbors.
 
 <details>
@@ -66,9 +69,9 @@ Here, the output will be a FASTA format that can be inspected using the Terminal
 
 --------
 
-All the way at the bottom of the output the used method is indicated: "FFT-NS-2 (Fast but rough)". Below is a list of publications describing the algorithmns, but there is also a [MAFFT website explaining the algorithmns and parameters](https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html).
+Just above the alignment as well as below the alignment the method is indicated: "FFT-NS-2 (Fast but rough)". Below the alignment there is also a list of publications describing the algorithmns. Importantly, a [MAFFT website explaining the algorithmns and parameters and their abbreviations](https://mafft.cbrc.jp/alignment/software/algorithms/algorithms.html) also exists.
 
-In FFT-NS-2, the fast Fourier transform (FFT) algorithm (hence MAFFT for **M**ultiple **A**lignment using **F**ast **F**ourier **T**ransform!) is used to perform a 2-step progressive alignment where the sequences are re-aligned along the guide tree inferred from the alignment by FFT-NS-1. It is expected that the re-alignment produces a more reliable alignment compared to only one round of progressive alignment (FFT-NS-1); however, the algorithm is not as accurate as the full iterative refinement methods (FFT-NS-i).
+In FFT-NS-2, the fast Fourier transform (FFT) algorithm (hence MAFFT for **M**ultiple **A**lignment using **F**ast **F**ourier **T**ransform) is used to perform a 2-step progressive alignment where the sequences are re-aligned along the guide tree inferred from the alignment by FFT-NS-1. It is expected that the re-alignment produces a more reliable alignment compared to only one round of progressive alignment (FFT-NS-1); however, the algorithm is not as accurate as the full iterative refinement methods (FFT-NS-i).
 
 --------
 
@@ -76,17 +79,26 @@ In FFT-NS-2, the fast Fourier transform (FFT) algorithm (hence MAFFT for **M**ul
 
 Download the alignment in FASTA format to your computer. To do so, click the link “**Fasta format**” at the very top of the page. Rename the file `12s_ncbi_ed_aln.fasta` and save it in your working directory.
 
+<kbd>![](./img/mafft_002.png)</kbd>
+
 
 <a name="aliview"></a>
 ## 2.2 Edit the alignment in an alignment viewer
 
-Download the [AliView alignment viewer](http://ormbunkar.se/aliview) ([Larsson 2014 Bioinf](https://doi.org/10.1093/bioinformatics/btu531)) and install the program (v1.28 Mac, Linux, and Windows versions available).
+If not done already, download the [AliView alignment viewer](http://ormbunkar.se/aliview) ([Larsson 2014 Bioinf](https://doi.org/10.1093/bioinformatics/btu531)) and install the program (v1.28 Mac, Linux, and Windows versions available).
 
-Open the file that we just produced with MAFFT ([`12s_ncbi_ed_aln.fasta`](res/12s_ncbi_ed_aln.fasta)) in AliView. Use the slider at the bottom to inspect the alignment from left to right. 
+Open the file that we just produced with MAFFT ([`12s_ncbi_ed_aln.fasta`](res/12s_ncbi_ed_aln.fasta)) in AliView (if it doesn't open right away, use the Menu "File" and "Open file"). Use the slider at the bottom to inspect the alignment from left to right. 
 
-Since whole-mitochondrial genome sequences are only available for a few species, these do not help us much and we can remove the exceeding sequence parts not corresponding to the 12s region (the compact alignment block from about position 407-971).  
-Use the mouse and key-combination function(fn)-shift (instead of scrolling!) to select the sequences of all species from position 1 to about position 406, just before the well-aligned block starts (the exact position may vary due to the progressive method not finding the absolute best alignment in some cases).  
-Press shift and hit the back-space (“delete”) key or go to the menu: Edit > “Delete selected”. In the pop-up window, allow for edits and click OK to clear all selected positions. Repeat this procedure for the exceeding sequence part from about position 566 all the way to the end.  
+Since whole-mitochondrial genome sequences are only available for a few species, these do not help us much and we can remove the exceeding sequence parts not corresponding to the 12s region (the compact alignment block from about position 407-971). To select positions 1 to about 406 (the exact position may vary due to the progressive method not finding the absolute best alignment in some cases) for all sequences, **select position 1 by clicking with the mouse in the scale bar** above the alignment, then use the **slider** at the bottom to go to about position 406, press the key-combination function(fn)-shift and **click in the scale bar on about position 406**, just before the well-aligned block starts. All sequences from position 1 to about 406 should now be marked. The exact key combination may be different on your computer, just try the usual ones.
+
+<kbd>![](./img/aliview_003.png)</kbd>
+
+Press shift (or command) and hit the back-space (“delete”) key – or go to the menu: Edit > “**Delete selected**” – to delete the selected positions. In the pop-up window, allow for edits and click OK to clear all selected positions. 
+
+Repeat this procedure for the exceeding sequence part from about position 566 all the way to the end.  
+
+
+
 Save the edited file: go to the menu > **File** > “**Save as Fasta**” and save the file using the name ([`12s_ncbi_ed_aln_cut.fasta`](res/12s_ncbi_ed_aln_cut.fasta)).
 
 <a name="realign"></a>
@@ -99,7 +111,7 @@ Go again to the [MAFFT alignment server](https://mafft.cbrc.jp/alignment/server/
 
 --------
 
-Using MAFFT on your computer, replace `--reorder` with `—inputorder`.
+Using MAFFT on your computer, replace `--reorder` with `--inputorder`.
 
 --------
 
@@ -129,12 +141,12 @@ Without closing the previous AliView window, open the new re-aligned file ([`12s
 
 --------
 
-The re-aligned version is longer by one position (566 positions). The reason is an additional gap at position 158 in the re-aligned alignment. This may or may not make sense. If your expectation is that your sequences are highly conserved, you may increase the penalty for opening gaps (see next paragraph).
+The re-aligned version is longer by one position (566 positions). The reason is an additional gap at position 158 in the re-aligned alignment. This may or may not make sense. If your expectation is that your sequences are highly conserved, you may increase the penalty for opening gaps to prevent additional gaps to be introduced (see next paragraph).
 
 --------
  </details>
 
-Go back to the previous result in the MAFFT alignment server. You may press “go back one page” in your browser to return to the input page with your alignment file still loaded. Scroll down to see the search parameters and change the “**Gap opening penalty**” from the default value of 1.53 to 3.
+Go back to the previous result in the MAFFT alignment server. You may press “go back one page” in your browser to return to the input page with your alignment file still loaded. Scroll down to the "Advanced settings" to edit the search parameters and change the “**Gap opening penalty**” from the default value of 1.53 to 3.
 
 <details>
   <summary>Optional: Command for locally installed MAFFT (click here)</summary>
@@ -169,21 +181,17 @@ The new alignment with the increased gap penalty is shorter than the other two w
 ## 2.4 Exclude unreliably aligned regions  
 By comparing the alignments above, you may have realized that despite the different algorithms and parameters used, alignment differences were always located in the same regions, while other parts did not change. This is, because some parts of the sequence are more conserved among the species and can thus be aligned with greater confidence. For phylogenetic inference, we rely on aligning only homologous sites, so we may exclude variable non-conserved regions that cannot be aligned with high confidence.
 
-We will use the software BMGE (Block Mapping and Gathering with Entropy by [Criscuolo & Gribaldo 2010 BMC Evol Biol](https://doi.org/10.1186/1471-2148-10-210)) for this purpose. Download BMGE using the command below in your Terminal: 
-
+We will use the software BMGE (Block Mapping and Gathering with Entropy by [Criscuolo & Gribaldo 2010 BMC Evol Biol](https://doi.org/10.1186/1471-2148-10-210)) for this purpose. If you haven't downloaded BMGE, do so via the following command in your Terminal: 
 `curl ftp://ftp.pasteur.fr/pub/gensoft/projects/BMGE/BMGE-1.12.tar.gz -o BMGE-1.12.tar.gz`
 
 Extract the content of the compressed tar.gz file using:
-
 `tar xvzf BMGE-1.12.tar.gz `
 
 Change the directory to the BMGE folder and test the program:
-
 `cd BMGE-1.12`  
 `java -jar BMGE.jar `
 
-If you see a line starting with `mandatory parameters: -i ‘infile’…` the software works and you can type the following command to take the cut and re-aligned FASTA file as input.
-
+If you see a line starting with `mandatory parameters: -i ‘infile’…` the software works and you can type the following command to input the cut and re-aligned FASTA file:
 `java -jar BMGE.jar -i PATH/TO/12s_ncbi_ed_cut_realn.fasta -t DNA -of PATH/TO/12s_ncbi_ed_cut_realn_filtered.fasta -oh PATH/TO/12s_ncbi_ed_cut_realn_filtered.html`
 
 The `-t` flag indicates that we are using DNA sequences, `-of` tells the program to write a filtered alignment in FASTA format, and `-oh` to visualize the filtered alignment in HTML format.
@@ -191,7 +199,23 @@ The `-t` flag indicates that we are using DNA sequences, `-of` tells the program
 Open the output file [`12s_ncbi_ed_cut_realn_filtered.html`](https://htmlpreview.github.io/?https://github.com/JMIBarth/tutorials/blob/main/multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.html) in your browser. Scroll through the alignment and note the black alignment blocks. At the very top of the alignment, you’ll see two measures plotted for each site in light grey and black.
  
 The **gap proportion** is shown with **light gray equal signs** and ranges from 0 to 1. **Black colons** indicate what is called a “**smoothed entropy-like score**”. Basically, this is a measure of the nucleotide diversity at this site. 
-You’ll note that the black alignment blocks coincide with regions of low gap proportion and low entropy, which are the most suitable alignment positions for phylogenetic inference. Our selection of alignment blocks is based on default settings of BMGE for the entropy score cut-off (option `-h`), the gap-rate cut-off (`-g`), and the minimum block size (`-b`). By default, BMGE selects sites with an entropy score below 0.5 (`-h 0.5`) and a gap proportion below 0.2 (`-g 0.2`), and only if these form a block of at least 5 sites with these properties (`-b 5`). The standard output of BMGE to the terminal tells you how many sites (characters) remain selected. 
+You’ll note that the black alignment blocks coincide with regions of low gap proportion and low entropy, which are the most suitable alignment positions for phylogenetic inference. Our selection of alignment blocks is based on default settings of BMGE for the entropy score cut-off (option `-h`), the gap-rate cut-off (`-g`), and the minimum block size (`-b`). By default, BMGE selects sites with an entropy score below 0.5 (`-h 0.5`) and a gap proportion below 0.2 (`-g 0.2`), and only if these form a block of at least 5 sites with these properties (`-b 5`). The standard output of BMGE to the terminal tells you how many sites (characters) remain selected.
+
+<kbd>![](./img/bmge_001.png)</kbd>
+
+![](../img/question_icon.png) How many sites were selected as reliably aligned and how many excluded by BMGE? 
+
+<details>
+  <summary>Answer (click here)</summary>
+
+--------
+
+541 were selected as reliably aligned, only 25 were removed.
+
+--------
+
+</details>
+
 
 Now, open the file [`12s_ncbi_ed_cut_realn_filtered.fasta`](res/12s_ncbi_ed_cut_realn_filtered.fasta) in AliView.  
 
@@ -248,7 +272,7 @@ L-INS-i was used again.
 
 </details>
 
-Download the alignment in FASTA format to your computer. Name the file`rag1_ncbi_ed_aln.fasta`. Keep the MAFFT website open, we will need it later again. 
+Download the alignment in FASTA format to your computer. Name the file`rag1_ncbi_ed_aln.fasta`. Keep the MAFFT website with the rag1 results open, we will need it later again. 
 Open the file [`rag1_ncbi_ed_aln.fasta`](res/rag1_ncbi_ed_aln.fasta) in AliView. 
 
 ![](../img/discussion_icon.png) What are the obvious differences to the previous 12s alignment? Discuss with your neighbours why the rag1 alignment looks “better” aligned compared to the 12s alignment.
@@ -301,16 +325,18 @@ Change the reading frame using the drop-down menu to the right of the sigma-sign
 --------
 </details>
 
-Notice that from position 1247 to 1273, there is a large indel. Could this indicate that these species are more closely related compared to the other species? To test this assumption, go back to the MAFFT website with the rag1 alignment. Click on “**Phylogenetic tree**” in the options above the alignment. Keep the default options and click “**Go!**”. Then choose “**View tree on Phylo.io**” and re-root the tree by clicking on the branch of the outgroup species (*Haematopus ater*) and selecting “**reroot**”. 
+Notice that from position 1247 to 1273, there is a large indel (insertion/deletion). Could this indicate that some species are more closely related compared to the other species? To test this assumption, go back to the MAFFT website with the rag1 alignment. Click on “**Phylogenetic tree**” in the options above the alignment. Keep the default options and click “**Go!**”. Then choose “**View tree on Phylo.io**” and re-root the tree by clicking on the branch of the outgroup species (*Haematopus ater*) and selecting “**reroot**”. 
 
-![](../img/question_icon.png) Inspect the tree. Are the species with the indels forming a clade? 
+![](../img/question_icon.png) Inspect the tree. Are the species with the same indel forming a clade? 
 
 <details>
   <summary>Answer (click here)</summary>
 
 --------
 
-No, they occur in three different clades, indicating that the remaining rag1 sequence among those species is more diverged and implying that the indel must have evolved convergently.
+No, they occur in three different clades, indicating that the remaining rag1 sequence among those species is more diverged and implying that the indel has evolved convergently. This is not impossible, but rather unlikely.
+
+<kbd>![](./img/phylo_io_001.png)</kbd>
 
 --------
 </details>
@@ -330,7 +356,7 @@ No, they occur in three different clades, indicating that the remaining rag1 seq
 --------
 </details>
 
-The example above discloses the limits of automated sequence alignment and whatever sequences you have, whatever alignment method you choose – always manually inspect your alignments. Poor alignment can result in falsely inferred substitutions, eventually leading to a wrong phylogeny, following the maxim: "Rubbish in, rubbish out".
+The example above discloses the **limits** of automated sequence alignment and whatever sequences you have, whatever alignment method you choose – **ALWAYS** manually inspect your alignments. Poor alignment can result in falsely inferred substitutions, eventually leading to a wrong phylogeny, following the maxim: "Rubbish in, rubbish out".
 
 So, whatever caused the indel, we do not trust this region and delete the whole region like we did before. In addition, shorten the alignment by removing the not very informative beginning of the alignment where only few species have data (about position 0 to 130). Check again that our editing has not introduced an alignment error by counting the stop codons (you may have to adjust the reading frame again).
 
