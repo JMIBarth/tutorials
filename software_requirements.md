@@ -1,6 +1,6 @@
 # Software requirement
 
-We will use online tools for many of the Activities. However, some programs and softwares need to be downloaded and installed locally. Mac, Linux, and Windows versions are usually available. Please test if the program opens/runs immediately after the installation.
+We will use online tools for many of the Activities. However, some programs and softwares need to be downloaded and installed locally. Mac, Linux, and Windows versions are usually available. Please immediately test if the program opens/runs after the installation.
 
 ### Activity 1 and 2
 
