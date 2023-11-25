@@ -11,11 +11,12 @@ The main text includes all information needed to follow the exercises. Some addi
   
 --------
 
-... and the additional information is revealed.
+... and the hidden information is revealed.
 
 --------
 </details>
 
+<br/>
 
 What is the additional information?
 
@@ -24,12 +25,13 @@ What is the additional information?
 * "**Answer**" or "**Hint"/"Help**": include hints or answers to a question. Please <ins>ONLY</ins> read if you really don't know what to do, if you cannot find an answer, or after you have answered the question to check if you are correct.
 * "**Discussion points**" can help to start a discussion
 
-
+<br/>
 
 ![](./img/question_icon.png) The question icon indicates questions to be answered.
 
 ![](./img/discussion_icon.png) The discussion icon indicates questions/topics to be discussed with your neighbors.
 
+<br/>
 
 Although ideally the activities are followed by using the produced output files again as input files in the next step, all materials (input and output files) are also provided. If the time to finish the activity is too short or something is not working as it should, the next step can always be followed by using the provided materials.
 
