@@ -23,7 +23,7 @@ Perform selection of the best-fit substitution model for phylogenetic inference.
 
 One of the earliest programs for phylogenetic analysis is the software [PAUP*](http://phylosolutions.com/paup-test/) by Dave Swofford that you used on the first course day. It was developed in the late 80s and has traditionally been one of the most frequently used and cited phylogenetic programs. However, the continuous advancing of sequencing technologies has led to a massive growth of datasets, promoting the development of newer and faster tools for phylogenetic inference. These include for example: [PhyML](http://atgc.lirmm.fr/phyml) ([Guindon and Gascuel, 2003](https://doi.org/10.1080/10635150390235520)) and [RAxML](https://cme.h-its.org/exelixis/web/software/raxml/index.html) ([Stamatakis, 2006](https://doi.org/10.1093/bioinformatics/btl446)).  
 
-In this Activity, we will make use of one of the latest of these developments, the software [IQ-TREE](http://iqtree.cibiv.univie.ac.at) ([Nguyen et al., 2015](https://doi.org/10.1093/molbev/msu300)). IQ-TREE takes advantage of an optimized implementation of the likelihood functions for better computational efficiency while yielding comparable or even better phylogenetic estimations. All programs listed above are also available on web-servers, but only PhyML and IQ-TREE include an automated substitution-model selection step, using SMS ([Lefort et al., 2017](https://doi.org/10.1093/molbev/msx149)) and ModelFinder ([Kalyaanamoorthy et al., 2017](https://doi.org/10.1038/nmeth.4285)), respectively. Finally, for IQ-TREE a very detailed and user-friendly [manual](http://www.iqtree.org/doc/) is available. 
+In this Activity, we will make use of one of the latest of these developments, the software [IQ-TREE](http://iqtree.cibiv.univie.ac.at) ([Nguyen et al., 2015](https://doi.org/10.1093/molbev/msu300)). IQ-TREE takes advantage of an optimized implementation of the likelihood functions for better computational efficiency while yielding comparable or even better phylogenetic estimations. All programs listed above are also available on web-servers, but only PhyML and IQ-TREE include an automated substitution-model selection step, using "Smart Model Selection" ([Lefort et al., 2017](https://doi.org/10.1093/molbev/msx149)) and "ModelFinder" ([Kalyaanamoorthy et al., 2017](https://doi.org/10.1038/nmeth.4285)), respectively. Finally, for IQ-TREE a very detailed and user-friendly [manual](http://www.iqtree.org/doc/) is available. 
 
 --------
 </details>
@@ -42,7 +42,7 @@ In case the web server is busy or you plan to use IQ-TREE for your future own wo
 --------
 </details>
 
-After opening the website you should see the first tab “**Tree Inference**”. Click on the second tab next to it to go to the “**Model selection**” section. Upload the 12s alignment file ([`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta)), which we generated in the last exercise, in either [Fasta](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta), [Phylip](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.phy), or [Nexus](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.nex) format (if you didn't produce the file you can download it by clicking on the link above, then right click the "**Raw**" button at the top of the file, select "**Save Link As…**", choose the location on your computer where you want to save the file, and select "**Save**"). Under “**Options**” change the “**Selection criterion**” from BIC to AIC, leave all other fields at their default, then click “**submit job**” (no email required).
+After opening the website you should see the first tab “**Tree Inference**”. Click on the second tab next to it to go to the “**Model selection**” section. Upload the 12s alignment file, which we generated in the last exercise ([`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta)), in either [Fasta](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta), [Phylip](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.phy), or [Nexus](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.nex) format (if you didn't produce or save the file you can download it by clicking on the link above, then click on "**Download raw file**"). Under “**Options**” change the “**Selection criterion**” from BIC to AIC, leave all other fields at their default, then click “**submit job**” (no email required).
 
 <details>
   <summary>Optional: Command for locally installed IQ-TREE (click here)</summary>
@@ -72,7 +72,7 @@ This is equal to the `.log` file if you ran IQ-TREE on your computer.
 --------
 </details>
 
-The log contains some general information about the software, followed by a list of our sequence IDs and then the 88 tested models of sequence evolution. 
+The [log](./res/12s_ncbi_ed_cut_realn_filtered.fasta.log) contains some general information about the software, followed by a list of our sequence IDs and then the 88 tested models of sequence evolution. 
 
 <kbd>![](./img/iqtree_002.png)</kbd>
 
@@ -163,7 +163,7 @@ Switch to the “**Full Result**” tab. The list of models is now sorted accord
 
 <kbd>![](./img/iqtree_003.png)</kbd>
 
-After the list of model scorings, the substitution model for the best fit model is listed. The best fit model according to AIC is: “TIM2+F+I+G4”, this is the “transition model” with variable base frequencies, variable transition rates, but two pairs of transversion rates that are set to be identical. For TIM, there is one rate for A to C and G to T, and another for A to T and C to G, while for TIM2 the pairing is AC=AT and CG=GT. Now, have a look at the rate parameter R. “G-T” is set to 1.0 and the other parameters are calculated according to it. Because in the TIM2 model, GT equals CG, the rate C to G is also 1.0. Below that, the empirically calculated base frequencies are listed and further down the parsimony tree is shown.
+In the [full results](./res/12s_ncbi_ed_cut_realn_filtered.fasta.iqtree), after the list of model scorings, the substitution model for the best fit model is listed. The best fit model according to AIC is: “TIM2+F+I+G4”, this is the “transition model” with variable base frequencies, variable transition rates, but two pairs of transversion rates that are set to be identical. For TIM, there is one rate for A to C and G to T, and another for A to T and C to G, while for TIM2 the pairing is AC=AT and CG=GT. Now, have a look at the rate parameter R. “G-T” is set to 1.0 and the other parameters are calculated according to it. Because in the TIM2 model, GT equals CG, the rate C to G is also 1.0. Below that, the empirically calculated base frequencies are listed and further down the parsimony tree is shown.
 Download these results by clicking on the link “**Download selected jobs**”.
 
 
