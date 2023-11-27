@@ -1,6 +1,8 @@
-# Software requirement
+# Software requirements
 
-We will use online tools for many of the Activities. However, some programs and softwares need to be downloaded and installed locally. Mac, Linux, and Windows versions are usually available. Please immediately test if the program opens/runs after the installation.
+We will use online tools for many of the Activities. However, some programs and softwares need to be downloaded and installed locally. Mac, Linux, and Windows versions are available. 
+
+After downloading, test if the program is funktioning by opening it.
 
 ### Activity 1 and 2
 
@@ -23,13 +25,41 @@ We will use online tools for many of the Activities. However, some programs and 
 
 * **FigTree** by Andrew Rambaut. Download the [`.dmg`](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree.v1.4.4.dmg) for Mac users, [`.zip`](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree.v1.4.4.zip) for Windows, or [`.tgz`](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree_v1.4.4.tgz) for Linux.
 
+	<details>
+	  <summary>FigTree is not working... (click here)</summary>
+	
+	--------
+	
+	* For Windows/Linux users: try to fix by installing/updating to the newest java version.
+	
+	* For Mac users:
+		* Try to fix by installing/updating to the newest java version. To do so, go to the terminal:
+		`java -version` (Check the installed version)
+		`brew install openjdk` (If you don't have homebrew, follow instructions [here](https://brew.sh/).
+		To have openjdk in your PATH, run:
+		`echo 'export PATH="/usr/local/opt/openjdk/bin:$PATH"' >> ~/.zshrc`
+		`source ~/.zshrc`
+		`java -version` (Check the installed version)
+	
+		* The app is till not responding? Update the "universalJavaApplicationStub".
+		`cd /Applications/FigTree\ v1.4.4.app/Contents/MacOS`
+		`curl -O https://raw.githubusercontent.com/tofi86/universalJavaApplicationStub/master/src/universalJavaApplicationStub`
+		`chmod 755 universalJavaApplicationStub`
+	
+		* The app is till not responding? Try opening from the terminal:
+		`java -jar /Applications/FigTree\ v1.4.4.app/Contents/Resources/Java/figtree.jar`
+	
+	--------
+	</details>
+
 ### Activity 5 and 6
 
-* **BEAST 2** – Go to the [BEAST 2 website](http://www.beast2.org/) and **download** the current BEAST 2 package (v2.7.1) according to your platform. The BEAST 2 package includes BEAUti, BEAST 2 itself, TreeAnnotator, and other tools. As all these programs are written in Java, compilation is not required, and they should work on Mac OS X, Linux, and Windows.
+* **BEAST 2** ([Bouckaert et al. 2014](https://doi.org/10.1371/journal.pcbi.1003537)). **Download** the current BEAST 2 package (v2.7.6.) according to your platform from the [BEAST 2 website](http://www.beast2.org/). The BEAST 2 package includes BEAUti, BEAST 2 itself, TreeAnnotator, and other tools. As all these programs are written in Java, compilation is not required, and they should work on Mac OS X, Linux, and Windows. 
 
-* **Tracer** – Download [Tracer](https://github.com/beast-dev/tracer/releases) according to your platform ([Mac OS X](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.dmg), [Linux](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer_v1.7.2.tgz), or [Windows](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.zip)) Just like BEAST 2, Tracer is written in Java and should work on any system.
+	After downloading the package, test if **BEAUti** (if there is a dialog "New Packages are available to install". Click **Yes**), **BEAST**, and **TreeAnnotator** can be opened. If not, try to update java if you haven't done so already (see above). 
+	
 
-* **FigTree** To visualize and edit the tree, we will again use the program [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4). You should already have this software installed from the Maximum Likelihood tutorial. If not, download FigTree for [Mac OS X](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree.v1.4.4.dmg), [Linux](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree_v1.4.4.tgz), or [Windows](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree.v1.4.4.zip).
+* **Tracer** ([Rambaut et al. 2018](https://doi.org/10.1093/sysbio/syy032)). Download [Tracer](https://github.com/beast-dev/tracer/releases) according to your platform ([Mac OS X](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.dmg), [Linux](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer_v1.7.2.tgz), or [Windows](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.zip)) Just like BEAST 2, Tracer is written in Java and should work on any system.
 
 
 
