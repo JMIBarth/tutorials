@@ -48,9 +48,15 @@ Become familiar with BEAST 2 and Bayesian inference. So far, we have learned how
 <a name="software"></a>
 ## Requirements
 
-For the software packages used in this activity, no online tools exist and they therefore need to be installed locally. 
+For the software packages used in this activity, no online tools exist and they therefore need to be installed locally if you haven't done so before. 
 
-* **BEAST 2** – Go to the [BEAST 2 website](http://www.beast2.org/) and **download** the current BEAST 2 package (v2.7.1) according to your platform. The BEAST 2 package includes BEAUti, BEAST 2 itself, TreeAnnotator, and other tools. As all these programs are written in Java, compilation is not required, and they should work on Mac OS X, Linux, and Windows.
+* **BEAST 2** – Go to the [BEAST 2 website](http://www.beast2.org/) and **download** the current BEAST 2 package (v2.7.6. ) according to your platform. The BEAST 2 package includes BEAUti, BEAST 2 itself, TreeAnnotator, and other tools. As all these programs are written in Java, compilation is not required, and they should work on Mac OS X, Linux, and Windows.
+
+	After downloading the package, test if BEAUti, BEAST, and TreeAnnotator can be opened. If not, try to update java if you haven't done so for FigTree already (see above).
+	
+	After opening BEAUTi, you may see a dialog "New Packages are available to install". Click **Yes**. If this dialog doesn't show up, go to File > Manage Packages and check that the latest version of the packages listed below are installed.
+	
+	<kbd>![](./img/beauti_015.png)</kbd>
 
 * **Tracer** – Download [Tracer](https://github.com/beast-dev/tracer/releases) according to your platform ([Mac OS X](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.dmg), [Linux](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer_v1.7.2.tgz), or [Windows](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.zip)) Just like BEAST 2, Tracer is written in Java and should work on any system.
 
@@ -69,7 +75,7 @@ A strict clock model assumes that every branch in a phylogenetic tree evolves ac
 <a name="beauti"></a>
 #### 6.1.1.1 Generate a XML configuration file in BEAUti
 
-Download the file [`co1.nex`](data/co1.nex). Open the program BEAUti (“Bayesian Evolutionary Analysis Utility”), and click “**Import Alignment**” in BEAUti’s “**File**” menu. Select the co1 alignment file that you just downloaded (if you get the error "unsupported sequence file", close BEAUti, re-open, and try again.
+Download the file [`co1.nex`](data/co1.nex). Open the program BEAUti (“Bayesian Evolutionary Analysis Utility”), and click “**Import Alignment**” in BEAUti’s “**File**” menu. Select the co1 alignment file that you just downloaded (if you get the error "unsupported sequence file", close BEAUti, re-open, and try loading it again).
 
 <kbd>![](./img/beauti_001.png)</kbd>
 
@@ -102,27 +108,35 @@ Click on the drop-down menu that currently says “**Yule Model**”. Select the
 --------
 
 In BEAST 2, the BDBirthRate and the BDDeathRate do not correspond to the speciation ( $λ$ ) and extinction ( $μ$ ) rates directly. Instead, the “BDBirthRate” is the so-called “net diversification rate” which is the difference between the speciation rate and the extinction rate ( $λ-μ$ ), and the “BDDeathRate” is the “relative extinction rate, the ratio between extinction and speciation ( $μ/λ$ ).
+
 Click on the **triangle** next to "**BDDeathRate**" to see the prior constrains. The relative extinction rate is typically constrained to lie between 0 and 1, because if it was greater than 1, this would mean that the extinction rate is greater than the speciation rate, and in such a case, clades would go extinct rather than diversify.
+
 Also click on the **triangle** next to **BDBirthRate**. This rate has an entirely uninformative uniform probability distribution with a lower limit of 0 and an unrealistically high upper limit of 10,000. The unit for this is “net diversification per branch per million years” meaning that the upper limit could only be reached if we had a phylogeny in which several ten thousands of species would have evolved each million years. Clearly this is not the case. Nevertheless, for now we leave the uninformative prior probability as it is. 
 
 --------
 </details> 
 
-Now, click on the “**+ Add Prior**” button below the two rows. This will allow the specification of clades (called “taxon sets” by BEAST 2) that can then be constrained to be monophyletic and/or to be of a certain age (MCRA prior, which stands for “most recent common ancestor”). Select the “**MCRA prior**”. 
+Now, click on the “**+ Add Prior**” button below the two rows. This will allow the specification of clades (called “taxon sets” by BEAST 2) that can then be constrained to be monophyletic and/or to be of a certain age (MCRA prior, which stands for “most recent common ancestor”). If there is a dialog which prior to add, select the “**MCRA prior**”. 
 
 <kbd>![](./img/beauti_004.png)</kbd>
 
-A pop-up window will appear, in which you can select a name for a clade as well as species to be included in the clade. In the top field of the pop-up window, specify “**all**” as the “**Taxon Set label**”. Leave the “Filter” field empty. In the field at the bottom left of the pop-up window **select all the species** (command-A) and click the “**>>**” button to move them into the ingroup of the clade, the window to the right. Then, click “**OK**”. We have now defined a clade that contains all species. We did so because this now allows us to constrain the age of the root of the phylogeny. 
+A pop-up window will appear, in which you can select a label (name) for a clade as well as species to be included in the clade. In the top field of the pop-up window, specify “**all**” as the “**Taxon set label**”. Leave the “Filter” field empty. In the field at the bottom left of the pop-up window **select all the species** (command-A) and click the “**>>**” button to move them into the ingroup of the clade, the window to the right. Then, click “**OK**”. We have now defined a clade that contains all species. We did so because this now allows us to constrain the age of the root of the phylogeny. 
 
 <kbd>![](./img/beauti_005.png)</kbd>
 
 To constrain the phylogeny’s root age, click the **[none] drop-down menu** in the fourth row, to the right of the button that should now say “all.prior”. You will see a list of distribution types. Of these, click on “**Log Normal**” to select a log-normally-distributed prior probability distribution for the age of the root of the phylogeny.
 
-To specify the parameters of the log normal distribution for the prior probability, click the **black triangle** at the left of the fourth row, left of the button saying “all.prior”. A new part of the window should open with three parameter fields for “**M**” **(mean)**, “**S**” **(Sigma)**, and “**Offset**”. The sigma parameter is the standard deviation of the log-normal distribution, the offset defines the minimum of the distribution, which is usually 0. Choose 50.0 for the mean, 0.01 for the standard deviation, and leave the offset at 0. With this we placed a narrow constraint on the age of the root of the phylogeny, we pretend to know the species in our phylogeny began to diversify 50 +/- 1 million years ago. This is of course overly confident, and we will perform a more realistic and substantiated time calibration later. Tick the box for “**Mean in real space**”. In the window to the right, you should now see that the distribution is centered around 50, with a 2.5% quantile at 49 and a 97.5% quantile at 51 (if you do not see the distribution, re-enter the 0.01 for the standard deviation). Click on the black triangle again to close this part of the window. 
+<kbd>![](./img/beauti_006_2.png)</kbd>
+
+To specify the parameters of the log normal distribution for the prior probability, click the **black triangle** at the left of the fourth row, left of the button saying “all.prior”. A new part of the window should open with three parameter fields for “**M**” **(mean)**, “**S**” **(Sigma)**, and “**Offset**”. The sigma parameter is the standard deviation of the log-normal distribution, the offset defines the minimum of the distribution, which is usually 0. 
+
+Choose **50.0** for the mean, **0.01** for the standard deviation, and leave the offset at **0**. With this we placed a narrow constraint on the age of the root of the phylogeny, we pretend to know the species in our phylogeny began to diversify 50 +/- 1 million years ago. This is of course overly confident, and we will perform a more realistic and substantiated time calibration later. 
+
+Tick the box for “**Mean in real space**”. In the window to the right, you should now see that the distribution is centered around 50, with a 2.5% quantile at 49 and a 97.5% quantile at 51 (if you do not see the distribution, re-enter the 0.01 for the standard deviation). Click on the black triangle again to close this part of the window. 
 
 <kbd>![](./img/beauti_006.png)</kbd>
 
-Click on “**+ Add Prior**” again to add another “**MCRA prior**", and specify a clade named “**charadriidae**” that includes all species except for *Haematopus ater*. 
+Click on “**+ Add Prior**” again to add another “**MCRA prior**", and specify a clade with the Taxon set label; “**charadriidae**”. This clade should include all species except for *Haematopus ater*. Click "**OK**".
 
 <kbd>![](./img/beauti_007.png)</kbd>
 
@@ -132,26 +146,37 @@ This clade should not be constrained with an age but instead to be monophyletic,
 
 The reason why we do this is two-fold: First the addition of monophyly constraints facilitates the MCMC search since it reduces the “tree space” to be explored, meaning that some phylogenies (those in which the clades do not appear as monophyletic) do not need to be tested at all. Second, with this we constrain our in-group, so we define our outgroup species to actually be the outgroup.
 
-Finally, click on the last tab named “**MCMC**”. Here, set the “**Chain Length**” to 2,000,000 steps of the MCMC chain, and leave the other fields for “Store Every”, “Pre Burnin”, and “Num Initialization Attempts” as they are. 
+Finally, click on the last tab named “**MCMC**”. Here, set the “**Chain Length**” to two million (2,000,000) steps of the MCMC chain, and leave the other fields for “Store Every”, “Pre Burnin”, and “Num Initialization Attempts” as they are. 
 
 <kbd>![](./img/beauti_009.png)</kbd>
 
 Click on the triangle to the left of “**tracelog**”, where you can specify the name of the log file written by BEAST 2 and specify `co1_strict_clock.log` as the name.
 Also click on the triangle to the left of “**treelog**”, and specify the same file name, except that the ending should be `.trees` instead of `.log`. 
-Then, click on “**Save As**” in BEAUti’s “**File**” menu to save the file. Name it `co1_strict_clock.xml`.
+
+<kbd>![](./img/beauti_009_2.png)</kbd>
+
+Finally, click on “**Save As**” in BEAUti’s “**File**” menu to save the configuration file. Name it `co1_strict_clock.xml`.
 
 <a name="xml"></a>
 #### 6.1.1.2 Inspect the XML configuration file
 
-Open the generated XML file [`co1_strict_clock.xml`](res/co1_strict_clock.xml) in a text editor to see how BEAST 2 has translated your specifications into the XML input format for BEAST 2. 
+BEAUTi is not a black box. To see how BEAUTi has translated your specifications into the XML input format for BEAST 2, look at the generated XML file [`co1_strict_clock.xml`](res/co1_strict_clock.xml) in a text editor. 
 
 <details>
  <summary> Background: Explanations on the XML content (click here)</summary>
 
 --------
 You will see the sequence alignment with tag “**sequence**” near the top of the file, followed by some specifications for “**maps**”; these are short names used by BEAST 2 for distribution classes. Around line 51, you’ll see an element starting with “**run**”, where the length of the MCMC chain is specified.
-Parameters that are estimated during the analysis are initiated between the “**state**” elements on the next lines. This is followed by the phylogeny parameter, specified between the “**init**” tags. Just below that, the "**distribution**" tag begins, including the elements “**posterior**” and “**prior**”. Here you’ll find the clade definitions for the clades “all” and “charadriidae”. Below these, around line 135, you should see the “**likelihood**” element which includes the site model. You can see that the parameters for “**mutationRate**”, “**gammaShape**”, and “**proportionInvariant**” are all fixed (estimate=“false”). 
-The rest of the XML file (after around line 147) includes the "**operators**", these are the methods with which the model parameters are modified during the MCMC search to propose new states (the step or scale operators). Finally, the “**logger**” elements define which output should be written to the log files with endings “.log” and “.trees”, and to the screen. 
+
+Parameters that are estimated during the analysis are initiated between the “**state**” elements on the next lines. This is followed by the phylogeny parameter, specified between the “**init**” tags. 
+
+Just below that, the "**distribution**" tag begins, including the elements “**posterior**” and “**prior**”. Here you’ll find the clade definitions for the clades “all” and “charadriidae”. 
+
+Below these, around line 135, you should see the “**likelihood**” element which includes the site model. You can see that the parameters for “**mutationRate**”, “**gammaShape**”, and “**proportionInvariant**” are all fixed (estimate=“false”). 
+
+The rest of the XML file (after around line 147) includes the "**operators**", these are the methods with which the model parameters are modified during the MCMC search to propose new states (the step or scale operators). 
+
+Finally, the “**logger**” elements define which output should be written to the log files with endings “.log” and “.trees”, and to the screen. 
 
 --------
 </details>
@@ -159,15 +184,17 @@ The rest of the XML file (after around line 147) includes the "**operators**", t
 <a name="beast"></a>
 #### 6.1.1.3 Run the MCMC analysis using BEAST 2
 
-Open the software BEAST 2 and click on “**Choose File...**” to select the XML input file [`co1_strict_clock.xml`](res/co1_strict_clock.xml). Leave everything else at their default values and click “**Run**” to start the analysis. This should take no more than 5 minutes.  
+Open the software BEAST 2 and click on “**Choose File...**” to select the XML input file [`co1_strict_clock.xml`](res/co1_strict_clock.xml). Leave everything else at their default values and click “**Run**” to start the analysis. Don't go for coffee yet, this should finish very fast.
+
+You can calculate the time your run will take by checking the time/Msamples output in the screen log. E.g., 28s/Msamples means 28 seconds for 1 million samples. 
  
-Note on thread/CPU usage: You may choose one or two thread, depending on your computer. However, with a single partition, BEAST 2 can only use a single thread for the calculation of the likelihood. You can calculate the time your run will take by checking the minutes/Msamples output in the log file.
+Note on thread/CPU usage: You may choose more than one thread depending on your computer; however, with a single data partition, BEAST 2 will only use a single thread for the calculation of the likelihood and specifying more threads can rather slow it down. For long alignments of multi-gene datasets with several partitions that might run weeks, [optimization](https://beast.community/performance) in terms of threads, instances, CPU, and GPU can be useful. 
 
 <details>
- <summary> Issue closing the BEAST 2 App on Mac OS X (click here)</summary>
+ <summary> Issue with closing the BEAST 2 App on Mac OS X (click here)</summary>
 
 --------
-If you experience difficulties quitting the BEAST 2 App on Mac OS X, either "Force quit" BEAST 2 via the Activity Monitor or execute BEAST 2 via the Terminal using the command `/Applications/BEAST_2.7.1/bin/beast -threads 2 co1_strict_clock.xml`
+If you experience difficulties quitting the BEAST 2 App on Mac OS X, either "Force quit" BEAST 2 via the Activity Monitor or execute BEAST 2 via the Terminal using the command `/Applications/BEAST_2.7.1/bin/beast -threads 1 co1_strict_clock.xml`
 
 --------
 </details>
@@ -177,7 +204,11 @@ If you experience difficulties quitting the BEAST 2 App on Mac OS X, either "For
 <a name="tracer"></a>
 #### 6.1.1.4 Visually inspect the posterior estimates using Tracer
 
-If you don’t have the software Tracer yet, download and install [Tracer](https://github.com/beast-dev/tracer/releases) according to your platform ([Mac OS X](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.dmg), [Linux](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer_v1.7.2.tgz), or [Windows](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.zip)). Once the BEAST 2 analysis has finished, open the file with the ending [`.log`](res/co1_strict_clock.log) with Tracer by simply dragging the file to the “**Trace files**” panel, by using the “**+**” button in the same window, or choosing “**File**” > “**Import Trace file**” from the menu. You should now see a window with four parts: 
+If you don’t have the software Tracer yet, download and install [Tracer](https://github.com/beast-dev/tracer/releases) according to your platform ([Mac OS X](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.dmg), [Linux](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer_v1.7.2.tgz), or [Windows](https://github.com/beast-dev/tracer/releases/download/v1.7.2/Tracer.v1.7.2.zip)). 
+
+Once the BEAST 2 analysis has finished, open the file with the ending [`.log`](res/co1_strict_clock.log) with Tracer by simply dragging the file to the “**Trace files**” panel, or by using the “**+**” button in the same window, or by choosing “**File**” > “**Import Trace file**” from the menu. You should now see a window with four parts: 
+
+<kbd>![](./img/tracer_001_2.png)</kbd>
 
 **Trace files** in the top left corner, lists the loaded log files – currently this is just a single file. This part of the window also specifies the number of states found in this file and the burn-in. 
 
@@ -195,7 +226,8 @@ The second column in this part shows the mean estimates for each parameter and t
 
 **Summary statistics** in the top right part of the Tracer window presents more detailed statistics for the parameter currently selected in the bottom left part of the window.
 
-**A graph of MCMC samples** is shown in the bottom right. By default these are shown in the form of a histogram, but when you click on the tab for “**Trace**” (at the very top right), you will see how the states of these samples have changed over the course of the MCMC. If this plot has the form of a “hairy caterpillar” that lies horizontally, the parameter estimates can be considered stationary.
+**A graph of MCMC samples** is shown in the bottom right.
+By default these are shown in the form of a histogram, but when you click on the tab for “**Trace**” (at the very top right), you will see how the states of these samples have changed over the course of the MCMC. If this plot has the form of a “hairy caterpillar” that lies horizontally, the parameter estimates can be considered stationary.
 
 <kbd>![](./img/tracer_001.png)</kbd>
 
@@ -228,6 +260,18 @@ The ORC ([Douglas et al., 2021](https://doi.org/10.1371/journal.pbio.0040088)) i
 --------
 </details>
 
+Go to the “**Prior**” tab. 
+
+<details>
+	<summary> Error message "Could not add entry for M" (click here)</summary>
+
+--------
+
+If there is an error message "Could not add entry for M", close BEAUTi, re-open, and load the [`co1_strict_clock.xml`](res/co1_strict_clock.xml) XML by clicking on "**File**" and then "**Load**" in the menu bar. Go directly to the “**Clock Model**” tab, and change the model from “Strict Clock” to “**Optimised Relaxed Clock (ORC)**”. Continoue to the “**Prior**” tab, the error message should not re-appear.
+
+--------
+</details>
+
 In the “**Prior**” tab, you now have three new priors, "**ORCRates**", the log-normal prior distribution for the rates of the relaxed clock, “**ORCsigma**”, the standard deviation of this log-normal prior distribution, and “**ORCucldMean**”, a multiplication factor for all relaxed clock rates. Don't change anything here, but ...
 
 ![](../img/question_icon.png) ... what would happen, if we would set the standard deviation to zero?
@@ -243,7 +287,7 @@ If the standard deviation would be zero, there would be no variation in rates am
 
 Finally, go to the the “**MCMC**” tab, and change the name of the log file to `co1_relaxed_clock.log` and of the tree file to `co1_relaxed_clock.trees`. Save the XML file under the name `co1_relaxed_clock.xml` by clicking “**Save As**” from the “**File**” menu. 
 
-As before, use BEAST 2 to run an analysis, but now use the XML file [`co1_relaxed_clock.xml`](./res/co1_relaxed_clock.xml) as input. You may choose one or two thread depending on your computer, but just leave everything else at their default values and click “**Run**” to start the analysis. This should take no more than 10 minutes.
+As before, use **BEAST 2** to run an analysis, but now use the XML file [`co1_relaxed_clock.xml`](./res/co1_relaxed_clock.xml) as input. If BEAST 2 is still open from the previous analysis, close and re-open to load the new XML file. Leave everything at their default values and click “**Run**” to start the analysis. This should only take a few minutes. You can check how long with the time/Msamples given in the screen log.
 
 
 <a name="strict_vs_relaxed"></a>
@@ -252,7 +296,7 @@ As before, use BEAST 2 to run an analysis, but now use the XML file [`co1_relaxe
 <a name="compare_tracer"></a>
 ### 6.1.3.1 Compare the log files using Tracer
 
-Once the analysis has finished, open the log file [`co1_relaxed_clock.log`](./res/co1_relaxed_clock.log) in Tracer, with the log of the strict clock model still open. 
+Once the analysis has finished, add the log file [`co1_relaxed_clock.log`](./res/co1_relaxed_clock.log) to Tracer, with the log of the strict clock model still open. 
 
 ![](../img/question_icon.png) Look at the "Trace" tab and the ESS values, do you consider the analysis as converged?
 
@@ -282,7 +326,7 @@ The posterior and the likelihood for the relaxed-clock analyses are better (less
 --------
 </details>
 
-![](../img/question_icon.png) Now select ”**mrca.age(charadriidae)**” to see more detailed statistics about the age estimate of Charadriidae. Identify the lower and upper boundaries of the 95% HPD interval for this age. How does the width of the interval for the strict clock compare to that for the relaxed clock?
+![](../img/question_icon.png) Select ”**mrca.age(charadriidae)**” to see more detailed statistics about the age estimate of Charadriidae. Identify the lower and upper boundaries of the 95% HPD interval for this age. How does the width of the interval for the strict clock compare to that for the relaxed clock?
 
 <details>
 	<summary> Answer (click here)</summary>
@@ -307,13 +351,18 @@ Open the file [`co1_strict_clock.trees`](./res/co1_strict_clock.trees) in [FigTr
 --------
 </details>
 
-To generate a representative phylogeny summarizing the information from the posterior tree sample, open the program **TreeAnnotator** that you downloaded as part of the BEAST 2 package. In "**Input Tree File**" load the tree file [`co1_strict_clock.trees`](./res/co1_strict_clock.trees). Also specify the same name, but with the ending `.tree` instead of `.trees` for the "**Output Tree File**". Define a burn-in percentage according to your interpretation of the log file in Tracer (usually 10 to 50%). Leave the default options for “Posterior probability limit” and “Target tree type” to generate a “Maximum clade credibility tree”, a summary tree for Bayesian analyses ([Heled & Bouckaert, 2013](https://doi.org/10.1186/1471-2148-13-221)). However, as “**Node heights**”, choose “Mean heights” rather than the default “Common Ancestor heights”. Mean heights are calculated for all trees in the set where the clade in monophyletic, whereas common ancestor heights are calculated based on the average over all trees in the set.  Then, click “**Run**”. This should only take seconds.
+To generate a representative phylogeny summarizing the information from the posterior tree sample, open the program **TreeAnnotator** that you downloaded as part of the BEAST 2 package. In "**Input Tree File**" load the tree file [`co1_strict_clock.trees`](./res/co1_strict_clock.trees). Also specify the same name, but with the ending `.tree` instead of `.trees` for the "**Output Tree File**". Define a burn-in percentage according to your interpretation of the log file in Tracer (usually 10 to 50%). Leave the default options for “Posterior probability limit” and “Target tree type” to generate a “**Maximum clade credibility tree**”, a summary tree for Bayesian analyses ([Heled & Bouckaert, 2013](https://doi.org/10.1186/1471-2148-13-221)). However, as “**Node heights**”, choose “Mean heights” rather than the default “Common Ancestor heights”. Mean heights are calculated for all trees in the set where the clade in monophyletic, whereas common ancestor heights are calculated based on the average over all trees in the set.  Then, click “**Run**”. This should only take seconds.
 
 <kbd>![](./img/treeannotator_001.png)</kbd>
 
 Close the program and re-open it to repeat the summarizing of trees with the same settings for the [`co1_relaxed_clock.trees`](./res/co1_relaxed_clock.trees) file. Save it as `co1_relaxed_clock.tree`.
 
-Open both the [`co1_strict_clock.tree`](./res/co1_strict_clock.tree)  and [`co1_relaxed_clock.tree`](./res/co1_relaxed_clock.tree) files in [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4) in two separate windows. Apply the next steps to both tree files. Sort the taxa according to node order using **"Decreasing node order**" in FigTree's "**Tree**" menu (or command-d). This should move *Haematopus ater* to the top of the plot. To see the support values for each node, set a tick next to “**Node Labels**” in the menu on the left and click on the triangle to open the menu. Choose “**posterior**” from the drop-down menu next to “**Display**”. You’ll see that most clades are rather well-supported with a posterior probability close to 1. For Bayesian posterior probabilities, a value above 0.95 is considered reliable and means that the tree is correct with a probability of 95% (assuming that the model is correct).
+Open both the [`co1_strict_clock.tree`](./res/co1_strict_clock.tree)  and [`co1_relaxed_clock.tree`](./res/co1_relaxed_clock.tree) files in [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4) in two separate windows. Apply the next steps to both tree files. 
+
+Sort the taxa according to node order using **"Decreasing node order**" in FigTree's "**Tree**" menu (or command-d). This should move *Haematopus ater* to the top of the plot. 
+
+To see the support values for each node, set a tick next to “**Node Labels**” in the menu on the left and click on the triangle to open the menu. Choose “**posterior**” from the drop-down menu next to “**Display**”. You’ll see that most clades are rather well-supported with a posterior probability close to 1. For Bayesian posterior probabilities, a value above 0.95 is considered reliable and means that the tree is correct with a probability of 95% (assuming that the model is correct).
+
 To also see the age estimates, check the box next to “**Scale axis**”. This will show a grid for the time line; however, the ages on the scale at the bottom will appear wrong. Click the "**triangle**" to the left of “Scale Axis” to open the corresponding field and set a tick for “**Reverse axis**” in this field. 
 
 ![](../img/question_icon.png) Where did we place the age constraint? Does the age corresponds to the age we specified?
@@ -393,15 +442,15 @@ The difference means that our data is rather informative in assuming an extincti
 
 Finally, we will use all our data at hand to estimate the time of arrival of the endemic New Zealand shorebirds.
 
-Download the three alignment files for [12s](./data/12s.nex), [CO1](./data/co1.nex), and [RAG1](./data/rag1.nex) (all in Nexus format). These alignments are the ones you generated in [Activity 2](./multiple_sequence_alignment/README.md), but modified to contain the same species as well as identical species IDs.
+Download the three alignment files for [12s](./data/12s.nex), [CO1](./data/co1.nex), and [RAG1](./data/rag1.nex) (all in Nexus format). These alignments are the ones you generated in [Activity 2 (Multiple sequence alignment)](./multiple_sequence_alignment/README.md), but modified to contain identical species and species IDs.
 
 Close and re-open BEAUTi, go to “**File**” > “**Import Alignment**”, select all **three alignments** for [12s](./data/12s.nex), [CO1](./data/co1.nex), and [RAG1](./data/rag1.nex) and click “**open**”. We will again partition the CO1 and RAG1 sequences into codon positions to allow for independent model assumptions. To do so, click on the row for the **CO1 alignment** to select it. Then, click the “**Split**” button at the bottom of the BEAUti window. As suggested, split the alignment into partitions “**1 + 2 + 3**”, which will divide the alignment by codon position. Click “**OK**”. You should now see three rows for the CO1 alignment.
 
 <kbd>![](./img/beauti_010.png)</kbd>
 
-Now select the **RAG1** row. Similar to the final maximum likelihood analysis [Activity 4.5](../maximum_likelihood_phylogenetic_inf/README.md) we will partition the RAG1 gene only into two parts, combining codon positions 1 and 2, which fit a similar substitution model, but keeping codon position 3 separate. Therefore, click the “**Split**” button again, but now select to split into “**{1,2}+3**”. You should have six rows now, one for the 16s, three for CO1, and two for RAG1.
+Now select the **RAG1** row. Similar to the final maximum likelihood analysis ([Activity 4.5](../maximum_likelihood_phylogenetic_inf/README.md)) we will partition the RAG1 gene only into two parts, combining codon positions 1 and 2, which fit a similar substitution model, but keeping codon position 3 separate. Therefore, click the “**Split**” button again, but now select to split into “**{1,2}+3**”. You should have six rows now, one for the 16s, three for CO1, and two for RAG1.
 
-Select all six rows at the same time (holding the “shift” key and click), then click on “**Link Trees**” near the top of the BEAUti window to force BEAST 2 to use the same phylogeny for all partitions. For our data set, this is equivalent to the concatenation that we did with IQ-TREE. If we had sequences for many more genes (tens to thousands) it would be more appropriate to use an alternative model that allows the phylogenies of genes to differ from each other to account for “coalescent” processes such as “incomplete lineage sorting”. This topic will be covered in the next lecture.
+**Select all six rows** at the same time (ctrl+A or command+A or holding the “shift” key and click), then click on “**Link Trees**” near the top of the BEAUti window to force BEAST 2 to use the same phylogeny for all partitions. For our data set, this is equivalent to the concatenation that we did with IQ-TREE. If we had sequences for many more genes (tens to thousands) it would be more appropriate to use an alternative model that allows the phylogenies of genes to differ from each other to account for “coalescent” processes such as “incomplete lineage sorting”. This topic will be covered in the next lecture.
 
 With all six rows still selected, also click on “**Link Clock Models**”. This means that the clock model that we will select for 12s will also be applied to all partitions of the CO1 and RAG1 genes. 
 
@@ -445,17 +494,22 @@ Then, continue to the “**Clock Model**” tab. Choose again the “**Optimised
 
 Proceed to the “**Priors**” tab. In contrast to how this tab looked when we used BEAUti before, a very large number of parameters is now listed. Most of them are part of the HKY site model (base frequencies, gamma, and kappa; the latter is the transition/transversion rate ratio parameter). 
 From the drop-down menu at the very top of the window, select again the “**Birth Death Model**” instead of “Yule Model” as the diversification model ("**Tree.t**").
-Then scroll to the bottom of the window, where you should see the “**+ Add Prior**” button at the end of the list of parameters. Use this button to again define clades. When asked “**Which prior do you want to add**”, choose “**MRCA prior**”. Define the following two clades:  
+
+<kbd>![](./img/beauti_014_2.png)</kbd>
+
+Then scroll to the bottom of the window, where you should see the “**+ Add Prior**” button at the end of the list of parameters. Use this button to again define clades. When asked “**Which prior do you want to add**”, choose “**MRCA prior**”. Define the following two clades: 
+ 
 1) “**charadriidae**”, including all species except for *Haematopus ater* (just as before). Once specified, tick the box “**monophyletic**” next to it.  
 2) “**charadriidae\_except\_pluvialis**”, including all species except for *Haematopus ater* and *Pluvialis squatarola*.  
 This second clade is where we will place our age constrain, which is not on the root this time, but on the internal node splitting *Pluvialis* from all other Charadriidae. Since the basal topology of Charadriidae disagrees between previous molecular phylogenies, we will use an age constraint for the most ancient well-supported internal node rather than the root. Also, the fossil record of Charadriidae is limited to fragmented remains where the taxonomic assignment is difficult. Therefore, we use a constraint from a large-scale phylogeny of extant birds, which was dated on the basis of ten well-known fossils ([Jetz et al. 2012](https://doi.org/10.1038/nature11631)).  
-In order to constrain the age of “**charadriidae\_except\_pluvialis**”, click the drop-down menu in the third column and select the “**Log Normal**” distribution. To specify the parameters of the log normal distribution for the prior probability, click the **black triangle** at the very left. This time we will choose a more meaningful but still rather narrow age constrain according to the results by [Jetz et al. (2012)](https://doi.org/10.1038/nature11631). Set a tick in the box next to "**Mean In Real Space**" and enter **38.85** for the **mean (M)** and **0.1** for the **standard deviation (S)**, leave the offset at 0. This means that the clade Charadriidae, except Pluvialis, is around 38.85 million years old, with a soft minimum and maximum age of divergence between 45.6 and 82.8 Ma.
+
+In order to constrain the age of “**charadriidae\_except\_pluvialis**”, click the drop-down menu in the third column and select the “**Log Normal**” distribution. To specify the parameters of the log normal distribution for the prior probability, click the **black triangle** at the very left. This time we will choose a more meaningful but still rather narrow age constrain according to the results by [Jetz et al. (2012)](https://doi.org/10.1038/nature11631). Set a tick in the box next to "**Mean In Real Space**" and enter **38.85** for the **mean (M)** and **0.1** for the **standard deviation (S)**, leave the offset at 0. This means that the clade Charadriidae, except Pluvialis, is around 38.85 million years old, with a soft minimum and maximum age of divergence between 45.6 and 32.8 Ma.
 
 <kbd>![](./img/beauti_014.png)</kbd>
 
-Continue to the “**MCMC**” tab. Use 5,000,000 as the chain length, but change the names of the output files again: Click on the triangle to the left of “**tracelog**” and specify `div_date.log`. Then click on the black triangle to the left of “**treelog**”. Specify `div_date.trees` as the file name. Finally, save the XML file as `div_date.xml`, open it in BEAST 2 and run the MCMC search. Here you may adjust the thread/CPU usage because there are multiple partitions. You can check how many minutes/Msamples are needed and ajust the threds accordingly. The analysis will take between 15 to 30 minutes, so take a break!
+Continue to the “**MCMC**” tab. Use 5,000,000 as the chain length, but change the names of the output files again: Click on the triangle to the left of “**tracelog**” and specify `div_date.log`. Then click on the black triangle to the left of “**treelog**”. Specify `div_date.trees` as the file name. Finally, save the XML file as `div_date.xml` and open it in BEAST 2 to run the MCMC search. This time the thread/CPU usage should be adjusted because multiple partitions are included. For me the run-time was shortest using 3 threads (~3 min/Msample; 15 min total) and longer with more or fewer threads.
 
-Should your analysis indeed still run after more than 15 min, you may use the files provided in this repository for the following steps.
+This is a good moment to take a coffee break. However, if your analysis will need much more than 15 min, instead of waiting you may use the result files provided in this repository for the following steps.
 
 ![](../img/question_icon.png) Open the file [`div_date.log`](./res/div_date.log) in Tracer and find out if the MCMC search has reached stationarity (*i.e.*, do all parameters have ESS values above 200 in the bottom left part of the Tracer window?
 
@@ -514,7 +568,8 @@ Yes, but mostly for rather weakly supported clades.
 	<summary> Answer (click here)</summary>
 
 --------
-The clade combining the three plovers endemic to New Zealand (*A.frontalis*, *C. bicinctus* and *C. obscurus*) apparently originated about 18 Ma, with a 95% HPD of ca. 13 – 24 Ma. In contrast to the maximum likelihood tree, the three New Zealand species from a well-supported clade (PP 1.0) in the Bayesian tree, indicating that they originate from a single dispersal event.  
+The clade combining the three plovers endemic to New Zealand (*A.frontalis*, *C. bicinctus* and *C. obscurus*) apparently originated about 18 Ma, with a 95% HPD of ca. 13 – 24 Ma. In contrast to the maximum likelihood tree, the three New Zealand species from a well-supported clade (PP 1.0) in the Bayesian tree, indicating that they originate from a single dispersal event and have speciated on New Zealand.  
+
 However, *Thinornis novaeseelandiae*, the fourth New Zealand species, may have arrived a little later (about 11 Ma, 95% HPD ca. 5.5 – 17 Ma) in an independent dispersal event, since it was resolved within the paraphyletic Charadrius group.
 
 <kbd>![](./img/div_date_long.tree.png)</kbd>
