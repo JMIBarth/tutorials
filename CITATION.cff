@@ -1,11 +1,10 @@
 cff-version: 1.2.0
 title: Tutorials on population genomics and phylogenetics
 message: >-
-  If you use this dataset, please cite it using the metadata
-  from this file.
-type: dataset
+  If you use this tutorial, please cite it as below.
 authors:
-  - given-names: Julia
-    name-particle: M.I.
+  - given-names: Julia M.I.
+    name-particle:
     family-names: Barth
+version: 2023
 repository-code: 'https://github.com/JMIBarth/tutorials/'
