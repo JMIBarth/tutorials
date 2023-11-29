@@ -1,10 +1,8 @@
 cff-version: 1.2.0
-title: Tutorials on population genomics and phylogenetics
-message: >-
-  If you use this tutorial, please cite it as below.
+message: "If you found this tutorial helpful, please consider citing it as below."
 authors:
-  - given-names: Julia M.I.
-    name-particle:
-    family-names: Barth
+  - given-names: "Julia M.I."
+    family-names: "Barth"
+title: "Tutorials on population genomics and phylogenetics"
 version: 2023
 repository-code: 'https://github.com/JMIBarth/tutorials/'
