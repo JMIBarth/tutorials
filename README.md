@@ -1,10 +1,10 @@
 # Tutorials
 
-A collection of tutorials used for teaching at workshops and university courses
+A collection of tutorials used for teaching at workshops and university courses.
 
 ### How to follow the tutorials
 
-The main text includes all information needed to follow the exercises. Some additional information, discussion points or answers are hidden behind clickable sections (black triangles like the one below):
+The main text provides all necessary information for the exercises. Additional details, discussion points, or answers are hidden in expandable sections (marked by black triangles below).
 
  <details>
   <summary>Click here...</summary>  
@@ -20,28 +20,30 @@ The main text includes all information needed to follow the exercises. Some addi
 
 What is the additional information?
 
-* "**Further background**" contains additional information to deepen the understanding, including links to publications and videos
-* "**Optional**" are either further exercises that can be done for additional practice or alternative commands for locally installed software
-* "**Answer**" or "**Hint"/"Help**": include hints or answers to a question. Please <ins>ONLY</ins> read if you really don't know what to do, if you cannot find an answer, or after you have answered the question to check if you are correct.
-* "**Discussion points**" can help to start a discussion
+* "**Further background**" Offers additional information, including links to publications and videos.
+* "**Optional**" Provides extra exercises for practice or alternative commands for local software.
+* "**Answer**" or "**Hint"/"Help**" Use only if you're stuck, can't find an answer, or want to check your solution.
+* "**Discussion points**" Suggested topics to initiate a discussion.
 
 <br/>
 
-![](./img/question_icon.png) The question icon indicates questions to be answered.
+![](./img/question_icon.png) Question icon: Marks questions to be answered.
 
-![](./img/discussion_icon.png) The discussion icon indicates questions/topics to be discussed with your neighbors.
+![](./img/discussion_icon.png) Discussion icon: Marks topics/questions for discussion with peers.
 
 <br/>
 
-Although ideally the activities are followed by using the produced output files again as input files in the next step, all materials (input and output files) are also provided. If the time to finish the activity is too short or something is not working as it should, the next step can always be followed by using the provided materials.
+Ideally, activities use the generated output files as input for the next step. However, all input and output files are provided, so if time is limited or issues arise, the next step can still be completed using the provided materials.
 
 
 <br/><br/>
 ## Tutorials on phylogenetic inference
-### Evolutionary Genetics lecture at the University of Basel (2021, 2022 – LV25600-01)
+### Evolutionary Genetics lecture at the University of Basel (LV25600-01)
 
-We will use online tools for many of the Activities. However, some softwares need to be downloaded and installed locally. Please go to [Software requirements](./software_requirements.md) and install the listed programs.
+Since 2021, last update 2024.
 
+Many activities will use online tools, but some require locally installed software. Please visit [Software requirements](./software_requirements.md) to download and install the necessary programs.
+<br/><br/>
 
 * Phylogenetics – an introduction (not covered here)
 
@@ -65,7 +67,7 @@ We will use online tools for many of the Activities. However, some softwares nee
 ## Tutorials on population genomic analyses
 ### Workshop on Population and Speciation Genomics in Český Krumlov (2016, 2018, 2020)
 
-These tutorials follow a slightly different style but still have question and answer options.
+These tutorials use a slightly different format but still include question-and-answer options.
 
 * [Quality control, quality filtering, and preparation of a population genomic dataset for downstream analyses](http://evomics.org/learning/population-and-speciation-genomics/2020-population-and-speciation-genomics/first-steps-in-genomic-data-analysis/)
 
