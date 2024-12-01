@@ -2,7 +2,7 @@
 
 ## Objective
 
-Perform selection of the best-fit substitution model for phylogenetic inference.  In [Activity 1](../dataset_compilation/README.md), we learned how to retrieve homologous sequences, and in [Activity 2](../multiple_sequence_alignment/README.md) we aligned these sequences to match homologous sites. In this activity, we will select an appropriate substitution model using maximum likelihood (ML) inference.
+In this activity, we will select the best-fit substitution model for phylogenetic inference. After retrieving homologous sequences ([Activity 1](../dataset_compilation/README.md)) and aligning them to match homologous sites ([Activity 2](../multiple_sequence_alignment/README.md)), we will use maximum likelihood (ML) methods to evaluate and select the most suitable substitution model. This improves the accuracy of phylogenetic inferences by reflecting the evolutionary processes relevant to our dataset.
  
 
 ## Table of contents
@@ -21,14 +21,14 @@ Perform selection of the best-fit substitution model for phylogenetic inference.
   
 --------
 
-One of the earliest programs for phylogenetic analysis is the software [PAUP*](http://phylosolutions.com/paup-test/) by Dave Swofford that you used on the first course day. It was developed in the late 80s and has traditionally been one of the most frequently used and cited phylogenetic programs. However, the continuous advancing of sequencing technologies has led to a massive growth of datasets, promoting the development of newer and faster tools for phylogenetic inference. These include for example: [PhyML](http://atgc.lirmm.fr/phyml) ([Guindon and Gascuel, 2003](https://doi.org/10.1080/10635150390235520)) and [RAxML](https://cme.h-its.org/exelixis/web/software/raxml/index.html) ([Stamatakis, 2006](https://doi.org/10.1093/bioinformatics/btl446)).  
+On the first course day you used [PAUP*](http://phylosolutions.com/paup-test/), developed by Dave Swofford in the late 1980s, one of the earliest programs for phylogenetic analysis. It has been one of the most frequently used and cited phylogenetic programs. However, as sequencing technologies have advanced, leading to larger datasets, newer and faster tools for phylogenetic inference have emerged. Some examples include: [PhyML](http://atgc.lirmm.fr/phyml) ([Guindon and Gascuel, 2003](https://doi.org/10.1080/10635150390235520)) and [RAxML](https://cme.h-its.org/exelixis/web/software/raxml/index.html) ([Stamatakis, 2014]( https://doi.org/10.1093/bioinformatics/btu033)).  
 
-In this Activity, we will make use of one of the latest of these developments, the software [IQ-TREE](http://iqtree.cibiv.univie.ac.at) ([Nguyen et al., 2015](https://doi.org/10.1093/molbev/msu300)). IQ-TREE takes advantage of an optimized implementation of the likelihood functions for better computational efficiency while yielding comparable or even better phylogenetic estimations. All programs listed above are also available on web-servers, but only PhyML and IQ-TREE include an automated substitution-model selection step, using "Smart Model Selection" ([Lefort et al., 2017](https://doi.org/10.1093/molbev/msx149)) and "ModelFinder" ([Kalyaanamoorthy et al., 2017](https://doi.org/10.1038/nmeth.4285)), respectively. Finally, for IQ-TREE a very detailed and user-friendly [manual](http://www.iqtree.org/doc/) is available. 
+In this Activity, we will use [IQ-TREE](http://iqtree.cibiv.univie.ac.at) ([Minh et al., 2020](https://doi.org/10.1093/molbev/msaa015)), which offers optimized likelihood functions for efficient and accurate phylogenetic estimations. While all listed programs have web-server versions, only PhyML and IQ-TREE include automated substitution-model selection: "Smart Model Selection" ([Lefort et al., 2017](https://doi.org/10.1093/molbev/msx149)) and "ModelFinder" ([Kalyaanamoorthy et al., 2017](https://doi.org/10.1038/nmeth.4285)), respectively. IQ-TREE also provides a detailed and user-friendly [manual](http://www.iqtree.org/doc/). 
 
 --------
 </details>
 
-In the lecture, we discussed different evolutionary models that may be more or less suitable for our dataset at hand: different base frequencies, varying rates of substitution (for example between transitions and transversions), and rate variation among sites. Combining these parameters, a plethora of evolutionary models can be obtained (in IQ-TREE’s ModelFinder, 88 models of sequence evolution are tested against each other!).
+In the lecture, we explored evolutionary models with differing base frequencies, substitution rates (e.g., transitions vs. transversions), and site-specific rate variation. These parameters generate diverse models. For example, IQ-TREE’s ModelFinder evaluates 88 sequence evolution models to identify the best fit for the dataset.
 
 Go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at). This site provides a web interface for ML inference including the most frequently used features of IQ-TREE. 
 
@@ -37,12 +37,13 @@ Go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at). This site prov
   
 --------
 
-In case the web server is busy or you plan to use IQ-TREE for your future own work, you may also download and locally install [IQ-TREE (version 1.6.12)](http://www.iqtree.org/#download).
+In case the web server is busy or you plan to use IQ-TREE for your future own work, you may also download and locally install [IQ-TREE (2024: v2.3.6 )](http://www.iqtree.org/#download).
 
 --------
 </details>
 
-After opening the website you should see the first tab “**Tree Inference**”. Click on the second tab next to it to go to the “**Model selection**” section. Upload the 12s alignment file, which we generated in the last exercise ([`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta)), in either [Fasta](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta), [Phylip](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.phy), or [Nexus](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.nex) format (if you didn't produce or save the file you can download it by clicking on the link above, then click on "**Download raw file**"). Under “**Options**” change the “**Selection criterion**” from BIC to AIC, leave all other fields at their default, then click “**submit job**” (no email required).
+On the website, click the “**Model selection**” tab. Upload the 12s alignment, which we generated in the last activity ([`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta)), in [Fasta](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta), [Phylip](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.phy), or [Nexus](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.nex) format (if needed, download the file via the provided links).  
+Under “**Options**”, change “**Selection criterion**” to AIC, leave other settings as default, and click “**submit job**” (no email required).
 
 <details>
   <summary>Optional: Command for locally installed IQ-TREE (click here)</summary>
@@ -60,7 +61,7 @@ After opening the website you should see the first tab “**Tree Inference**”.
 <a name="log_12s"></a>
 ## 3.2 Inspect the model selection log file
 
-Go to the “**Analysis Results**” tab where your model selection analysis is listed. It should finish almost immediately, which you will see in the sub-tab “**Summary**”. Next to it, the “Run Log” and the “Full Result” can be viewed. Go to “**Run Log**” and inspect the file.
+Navigate to the “**Analysis Results**” tab to find your model selection analysis. The job should complete quickly, as indicated in the “**Summary**” sub-tab. Next to it are the “Run Log” and “Full Result” sub-tabs. Go to “**Run Log**” and inspect the content.
 
 <details>
   <summary>Optional: Log for locally installed IQ-TREE (click here)</summary>
@@ -76,20 +77,20 @@ The [log](./res/12s_ncbi_ed_cut_realn_filtered.fasta.log) contains some general 
 
 <kbd>![](./img/iqtree_002.png)</kbd>
 
-At the beginning of list of tested models, the log output states: “Create initial parsimony tree by phylogenetic likelihood library (PLL)... “, and at the end of this list, the best models according to three criteria are listed: 
+At the start of the model tests, the log output shows: “Create initial parsimony tree by phylogenetic likelihood library (PLL)... “. At the end, the best models are listed according to three criteria: 
 
 * the Akaike Information Criterion (AIC)
-* the Corrected Akaike Information Criterion (AICc – the correction is to prevent overfitting with short alignments)
+* the Corrected Akaike Information Criterion (AICc – adjusted for short alignments to prevent overfitting)
 * and the Bayesian Information Criterion (BIC)
 
-What ModelFinder does, is to compute the log-likelihoods for the 88 different models based on an initial parsimony tree and then apply each of these three criteria to obtain a score for each model. The AIC score of each model is calculated independently as:
+ModelFinder calculates log-likelihoods for 88 models using an initial parsimony tree and applies the above listed criteria to score each model. The AIC is calculated as:
 ```math
 AIC = 2 k -2 log(L)
 ```
-where $k$ is the number of free parameters in a model and $L$ is the likelihood after all free parameters have been optimized (*i.e.*, the maximum likelihood).
-These criteria are very similar to likelihood-ratio tests in that they assess the fit of each model, relative to the fit of the other models, but they have the advantage that they can also be used to compare models that are not “nested” (two models are nested if one of them has all the parameters of the other models plus additional parameters).
+where $k$ is the number of free parameters and $L$ is the likelihood after all free parameters have been optimized (*i.e.*, the maximum likelihood).
+These criteria are very similar to likelihood-ratio tests in that they assess model fit relative to the other models, but they have the advantage that they can also be used to compare models that are not “nested” (two models are nested if one of them has all the parameters of the other models plus additional parameters).
 
-![](../img/question_icon.png) Look at the first model in the table, the **Jukes-Cantor (JC)** model. It is the most simple substitution model as it assumes that all rates are equal, so we would expect df (the degrees of freedom) – or the number of free parameters (k) to be 0. Nevertheless, the df are 31. Do you know what these could be?
+![](../img/question_icon.png) The first model in the table, the **Jukes-Cantor (JC)** model, is the most simple substitution model as it assumes equal rates. Therefore, we would expect the degrees of freedom (df) – or the number of free parameters (k) – to be 0. However, the df are 31. What could these be?
 
 <details>
   <summary>Answer (click here)</summary>
@@ -138,10 +139,9 @@ Best-fit model: TIM2+F+I+G4 chosen according to AIC. If it is a model that you d
 --------
 </details>
 
-Usually, a model is considered preferable over another model if its AIC score is at least 4 points better (= smaller) than the AIC score of the other model. 
-The BIC is very similar to the AIC, but tends to penalize free parameters more strongly – that is, it shows less tolerance at higher dimensional models. However, most of the times the methods will agree on the preferred model(s) and it is always good to consider and report both, AIC and BIC.
+A model is preferred if its AIC score is at least 4 points lower (=better) than another's. The BIC is similar to the AIC, but penalizes free parameters more strongly – that is, it shows less tolerance at higher dimensional models. However, most of the times the methods will agree on the preferred model(s) and it is always good to consider and report both, AIC and BIC.
 
-![](../img/discussion_icon.png) Copy and paste the table containing the 88 models and their log-likelihoods (-lnL), degrees of freedom (df, the parameters (k) used), and the AIC and BIC scores to a spreadsheet. Sort the table according to the AIC scores and note the difference between the best three scores. Sort the table according to BIC scores. How is the difference here? Do AIC and BIC agree on the best models? Compare your results with your neighbours and discuss differences.
+![](../img/discussion_icon.png) Copy and paste the table of 88 models, their log-likelihoods (-lnL), degrees of freedom (df, the parameters (k) used), and the AIC and BIC scores into a spreadsheet. Sort the table by AIC and note the difference between the best three scores. Sort the table by BIC scores. How is the difference here? Do AIC and BIC agree on the best models? Compare your results with your neighbours and discuss differences.
 
 <details>
   <summary>Discussion points (click here)</summary>
@@ -159,11 +159,11 @@ The BIC is very similar to the AIC, but tends to penalize free parameters more s
 <a name="results_12s"></a>
 ## 3.3 Inspect the model selection results file
 
-Switch to the “**Full Result**” tab. The list of models is now sorted according to AIC scores and a column with “weights” is added. These weights add to 1 and indicate how much better the best model is compared to all other models. Do the weights fit your impression from the log file inspection?  
+Switch to the “**Full Result**” tab, where models are sorted by AIC and a “weights” column is added. These weights add to 1 and indicate how much better the best model is compared to all other models. Do the weights align with your log file inspection?  
 
 <kbd>![](./img/iqtree_003.png)</kbd>
 
-In the [full results](./res/12s_ncbi_ed_cut_realn_filtered.fasta.iqtree), after the list of model scorings, the substitution model for the best fit model is listed. The best fit model according to AIC is: “TIM2+F+I+G4”, this is the “transition model” with variable base frequencies, variable transition rates, but two pairs of transversion rates that are set to be identical. For TIM, there is one rate for A to C and G to T, and another for A to T and C to G, while for TIM2 the pairing is AC=AT and CG=GT. Now, have a look at the rate parameter R. “G-T” is set to 1.0 and the other parameters are calculated according to it. Because in the TIM2 model, GT equals CG, the rate C to G is also 1.0. Below that, the empirically calculated base frequencies are listed and further down the parsimony tree is shown.
+In the [full results](./res/12s_ncbi_ed_cut_realn_filtered.fasta.iqtree), after the model scorings, the best fit substitution model is shown. According to AIC, the best model is: “TIM2+F+I+G4”, the “transition model” with variable base frequencies and transition rates, but two pairs of transversion rates that are set to be equal. For TIM, there is one rate for A to C and G to T, and another for A to T and C to G, while for TIM2 the pairing is AC=AT and CG=GT. The rate parameter (R) is set to 1.0 for “G-T” and the other parameters are calculated according to it. Because in the TIM2 model, GT equals CG, the rate C to G is also 1.0. Then, the empirical base frequencies, the rate matrix (Q matrix) for modeling the transition rates, and the four categories of rate variation are shown, followed by the parsimony tree.  
 Download these results by clicking on the link “**Download selected jobs**”.
 
 

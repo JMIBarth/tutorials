@@ -2,7 +2,7 @@
 
 ## Objective
 
-Find the phylogenetic hypothesis that best explains the data. So far, we have learned how to retrieve homologous sequences ([Activity 1](../dataset_compilation/README.md)), how to align these sequences to match homologous sites ([Activity 2](../multiple_sequence_alignment/README.md)), and how to find the best-fit substitution model for our data [Activity 3](../substitution_model_selection/README.md). In this tutorial, we will now perform maximum likelihood (ML) phylogenetic inference with the best-fit substitution model to find the best phylogenetic hypothesis for our data.
+We first retrieved homologous sequences ([Activity 1](../dataset_compilation/README.md)), aligned them to match homologous sites ([Activity 2](../multiple_sequence_alignment/README.md)), and selected the best-fit substitution model [Activity 3](../substitution_model_selection/README.md). In this tutorial, we will use maximum likelihood (ML) phylogenetic inference with the best-fit substitution model to find the best phylogenetic hypothesis for our data.
 
 
 ## Table of contents
@@ -11,7 +11,7 @@ Find the phylogenetic hypothesis that best explains the data. So far, we have le
 * [4.2 Visualize the trees using a tree viewer](#tree_viewer)
 * [4.3 Assess node support with bootstrapping](#bs)
 * [4.4 Codon-position partitioned maximum-likelihood inference](#partitioned_ml)
-* [4.5 Phylogenetic inference with concatenated alignments](#concat_ml)
+* [(Optional) Phylogenetic inference with concatenated alignments](#concat_ml)
 
 
 <a name="ml_TIM2_12s"></a>
@@ -22,14 +22,14 @@ Find the phylogenetic hypothesis that best explains the data. So far, we have le
   
 --------
 
-Maximum-likelihood phylogenetic inference aims to find the parameter values of an evolutionary model that maximize the likelihood of observing the dataset at hand. The model parameters include the tree topology, its branch lengths, and all parameter of the substitution model. As the search space is enormous when the dataset contains more than just a few taxa, heuristic algorithms are usually used to reach the maximum-likelihood combination of parameter values. In this activity we will again use [IQ-TREE](http://iqtree.cibiv.univie.ac.at) ([Nguyen et al. 2015](https://doi.org/10.1093/molbev/msu300)), as we did already in [Activity 3](../substitution_model_selection/README.md).
+Maximum-likelihood phylogenetic inference seeks the parameter values of an evolutionary model that maximize the likelihood of the dataset. The model parameters include the tree topology, its branch lengths, and all parameter of the substitution model. Due to the large search space with many taxa, heuristic algorithms are used to find the optimal parameter combination. In this activity we will again use [IQ-TREE](http://iqtree.cibiv.univie.ac.at) ([Nguyen et al. 2015](https://doi.org/10.1093/molbev/msu300)), as in [Activity 3](../substitution_model_selection/README.md).
 
 --------
 </details>
 
 ### 4.1.1 Infer the ML tree using the TIM2+F+I+G4 substitution model
 
-In [Activity 3](../substitution_model_selection/README.md), we used the “Model Selection” function in IQ-TREE to find the best fit substitution model according to AIC, which was “TIM2+F+I+G4” (the “transition model” with variable base frequencies, variable transition rates, but two transversion rates that are set to be identical: AC=AT and CG=GT). Now, apply this model with the 12s alignment to perform a maximum-likelihood search.  
+In [Activity 3](../substitution_model_selection/README.md), we selected the best-fit model “TIM2+F+I+G4” using AIC. Now, apply this model to the 12s alignment for a maximum-likelihood search (reminder “TIM2+F+I+G4”: transition model” with variable base frequencies and transition rates, but two transversion rates that are set to be identical: AC=AT and CG=GT). 
 
 Go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), stay at the first tab “**Tree inference**”. In the “**Input Data**” section, upload again the 12s alignment file ([`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta)) in the “**Alignment file**” field.  
 Then go to the “**Substitution Model Options**” tab. Because we already know the best-fit substitution mode, change the “Substitution model” from “Auto” to “TIM2” ("Auto" would repeat the model selection). Also check the boxes for “**Gamma [+G]**” and “**Invar. Sites [+I]**” and keep "4" as the number of rate categories. Then proceed to the “**Branch Support Analysis**”. Tick the “None” box for “**Bootstrap analysis**” and the “No” box for “**Single branch tests**”. We will do bootstrapping in [section 4.3](#bs) of this activity. Leave all other fields at their default, click “**submit job**”.
@@ -46,7 +46,7 @@ Then go to the “**Substitution Model Options**” tab. Because we already know
 
 <kbd>![](./img/iqtree_ml_001.png)</kbd>
 
-![](../img/discussion_icon.png) Go to the “**Analysis Results**” tab where your ML analysis is listed. It should again have finished almost immediately, which you will see in the sub-tab “**Summary**”. Next to it, the “**Run Log**” and the “**Full Result**” can be viewed. Inspect both and compare and discuss the results with your neighbour.
+![](../img/discussion_icon.png) Go to the “**Analysis Results**” tab. It should again have finished almost immediately (sub-tab “**Summary**”). Next to it, the “**Run Log**” and the “**Full Result**” can be viewed. Inspect both and compare and discuss the results with your neighbour.
 
 <details>
   <summary>Features of the log and result files (click here)</summary>
@@ -66,7 +66,7 @@ Download these results by clicking on the link “**Download selected jobs**”,
 
 ### 4.1.2 Re-run the ML inference with the Jukes-Cantor (JC) substitution model
 
-On the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at) in the "**Tree Inference**" tab, upload again the 12s alignment file [`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta) in the “**Alignment file**” field. Then go to the “**Substitution Model Options**” tab and change the “Substitution model” from “Auto” to “JC”. Do <ins>not</ins> tick the boxes for “Gamma [+G]” and “Invar. Sites [+I]”. Tick the “None” box for “**Bootstrap analysis**” and the “No” box for “**Single branch tests**”. Leave all other fields at their default, then click “**submit job**”.
+On the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at) in the "**Tree Inference**" tab, upload again the 12s alignment file [`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta) in the “**Alignment file**” field. In the “**Substitution Model Options**” tab set the “Substitution model” to “JC”, <ins>without</ins> checking boxes for “Gamma [+G]” or “Invar. Sites [+I]”. Select “None” for “**Bootstrap analysis**” and “No” for “**Single branch tests**”. Leave other fields at their default, then click “**submit job**”.
 
 <details>
   <summary>Optional: Command for locally installed IQ-TREE (click here)</summary>
@@ -101,7 +101,7 @@ This treefile is written in the Newick format. Clades are grouped by parentheses
 --------
 </details>
 
-To better visualize and also edit the tree, we will use the program [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4). Download the [`.dmg`](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree.v1.4.4.dmg) for Mac users, [`.zip`](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree.v1.4.4.zip) for Windows, or [`.tgz`](https://github.com/rambaut/figtree/releases/download/v1.4.4/FigTree_v1.4.4.tgz) for Linux). If you have problems installing FigTree, an [online tree viewing and editing tool](https://itol.embl.de/upload.cgi) may be used instead.
+To better visualize and also edit the tree, we will use the program [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4). If you haven't installed FigTree, go to [Software requirements](../software_requirements.md). If you have problems installing FigTree, an [online tree viewing and editing tool](https://itol.embl.de/upload.cgi) may be used instead.
 
 <details>
   <summary>FigTree is not working... (click here)</summary>
@@ -130,10 +130,10 @@ To better visualize and also edit the tree, we will use the program [FigTree](ht
 --------
 </details>
 
-Open the [`.treefile`](./res/12s_TIM2_I_G4_F/12s_ncbi_ed_cut_realn_filtered.fasta.treefile) in [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4) and familiarize yourself with the "**Layout**" options in the left panel. You may "**Zoom**" in or "**Expand**" the tree to increase visibility of certain clades. You can also increase the "**Font Size**" of the "**Tip Labels**" (click on the triangle to the left of "Tip Labels" to open it).
+Open the [`.treefile`](./res/12s_TIM2_I_G4_F/12s_ncbi_ed_cut_realn_filtered.fasta.treefile) in [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4). Use the "**Layout**" options in the left panel to "**Zoom**" or "**Expand**" the tree to increase visibility. You can also increase the "**Font Size**" of the "**Tip Labels**" (click on the triangle to the left of "Tip Labels" to open it).
 
-Then, remember that IQ-TREE produced an unrooted tree, so the way the phylogeny is rooted is arbitrary. However, we included *Haematopus ater*, belonging to the family Haematopodidae, while all other species belong to the family Charadriidae. Thus, the correct root of the phylogeny must lie between *Haematopus ater* and the other taxa. Search for the branch leading to *Haematopus* (command-f on a Mac or go to Edit > Find and search for Haematopus, the tip will be highlighted). Click on the branch that leads to this species to select it. Then click on the “**Reroot**” icon with the yellow arrow in the upper panel to reroot the tree. 
-Then, sort the taxa according to node order. To do so, click "**Decreasing node order**" in FigTree's "**Tree**" menu (or hit command-d on a Mac). This should move *Haematopus ater* to the top of the tree.
+Remember that IQ-TREE produced an unrooted tree, so the phylogeny is rooted arbitrarily. However, we included *Haematopus ater*, belonging to the family Haematopodidae, while all other species belong to the family Charadriidae. Thus, the correct root of the phylogeny must lie between *Haematopus ater* and the other taxa. Search for the branch leading to *Haematopus* (command-f on a Mac or go to Edit > Find and search for Haematopus, the tip will be highlighted). Click on the branch that leads to this species to select it. Then click on the “**Reroot**” icon with the yellow arrow in the upper panel to reroot the tree. 
+Finally, sort the taxa according to node order: click "**Decreasing node order**" in FigTree's "**Tree**" menu (or hit command-d on a Mac). This should move *Haematopus ater* to the top of the tree.
 
 <kbd>![](./img/figtree_001.png)</kbd>
  
@@ -181,7 +181,7 @@ They are not concordant. In fact, the two phylogenies show major differences in 
 <a name="bs"></a>
 ## 4.3 Assess node support with bootstrapping
 
-The phylogenies of 12s sequences inferred with different models of substitutions do not agree with each other. However, so far, we have no indication of the reliability of the individual nodes in the phylogeny; therefore, we cannot assess how strong the evidence of one phylogeny weighs against other findings. To identify which nodes in the phylogeny are more or less trustworthy, we can perform a bootstrap analysis.
+The phylogenies of 12s sequences inferred with different substitution models do not agree. However, we lack reliability measures for the individual nodes, so we cannot assess the strength of the evidence. To identify which nodes in the phylogeny are more or less trustworthy, we can perform a bootstrap analysis.
 
 Go again to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), stay on the first tab “**Tree inference**”, upload again the 12s alignment file ([`12s_ncbi_ed_cut_realn_filtered.fasta`](../multiple_sequence_alignment/res/12s_ncbi_ed_cut_realn_filtered.fasta)), go to the “**Substitution Model Options**” tab and change the “**Substitution model**” from “Auto” to “**TIM2**”. Also check the boxes for inferring “**Gamma [+G]**” and “**Invar. Sites [+I]**”. Then proceed to the “**Branch Support Analysis**” tab. This time we keep the “**Ultrafast**” check box next to “**Bootstrap analysis**” checked, but tick the “**No**” box for the SH-aLRT branch test.
 
@@ -203,15 +203,14 @@ Download the results by clicking on the link “**Download selected jobs**”, r
 
 --------
 
-The ultrafast bootstrap approximation in IQ-TREE was optimized for larger datasets and – unlike the standard bootstrap method for which the IQ-TREE web server allows maximally 100 bootstrap replicates – it is recommended to run it with a minimum of 1,000 replicates. With these settings, IQ-TREE will produce 1,000 pseudo-replicate alignments and for each of the alignments infer a maximum likelihood phylogeny. Yet, the algorithm may stop earlier if it detects that the resulting node-support values are stable.  
-The SH-aLRT branch test is another method to obtain branch support. In IQ-TREE you can obtain both values in one run, but we do not elaborate on the SH-aLRT branch test here.
+The ultrafast bootstrap in IQ-TREE is optimized for large datasets and recommended with at least 1,000 replicates, compared to the standard bootstrap's 100 replicates. IQ-TREE will generate 1,000 pseudo-replicate alignments and infer a phylogeny for each, stopping early if node-support values stabilize. The SH-aLRT branch test is another method for branch support, but we won’t cover it here.
 
 --------
 </details>
 
-Open the tree file ending in [`12s_ncbi_ed_cut_realn_filtered.fasta.treefile`](./res/12s_TIM2_I_G4_F_bs/12s_ncbi_ed_cut_realn_filtered.fasta.treefile) in FigTree. FigTree recognizes that there are other labels in addition to species IDs and branch length and asks you to provide a name for these labels. As these are our bootstrap support values, you may simply name them “bootstrap” or “bs”.
+Open the tree file ending in [`12s_ncbi_ed_cut_realn_filtered.fasta.treefile`](./res/12s_TIM2_I_G4_F_bs/12s_ncbi_ed_cut_realn_filtered.fasta.treefile) in FigTree. FigTree recognizes that there are other labels in addition to species IDs and branch length and asks you to provide a name for these labels. As these are our bootstrap support values, you may simply name them “bootstrap”.
 
-Once again, "**Reroot**" the tree with *Haematopus ater* and sort all taxa according to "**Decreasing node order**". In principle, the phylogeny should now look exactly as the first one using the TIM2 substitution model without bootstraps, given that the maximum-likelihood inference should be independent of the additional bootstrap procedure. The bootstrap procedure is actually a convenient combination of analyses of bootstrapped alignments and the original alignment: The phylogeny is based on the original alignment and the support values are based on the bootstrapped alignments. However, due to stochastic variation in the inference, it is possible that IQ-TREE does not always find the actual maximum-likelihood phylogeny, but instead one with a slightly different likelihood. 
+"**Reroot**" the tree with *Haematopus ater* and sort taxa by "**Decreasing node order**". The phylogeny should match the first one using the TIM2 model without bootstraps, as the maximum-likelihood inference is independent of the bootstrap procedure. The bootstrap provides support values based on bootstrapped alignments, while the phylogeny is based on the original alignment. However, due to stochastic variation, IQ-TREE may not always find the exact maximum-likelihood phylogeny.
 
 ![](../img/question_icon.png) Compare the likelihoods of the two analyses with and without bootstrap (“**Best score found**” in the log file, or “**Log-likelihood of the tree**” in the results file). Are they identical? 
 
@@ -225,7 +224,7 @@ The likelihood may or may not be identical. If it is different from the previous
 --------
 </details>
 
-Now, return to FigTree. To see the node-support values based on bootstrapping, set a tick in the checkbox for "**Node Labels**", open the options using the little arrow, and select "bootstrap" (or whatever name you gave it) from the "**Display**" drop-down menu.  
+Return to FigTree. To see the node-support values based on bootstrapping, set a tick in the checkbox for "**Node Labels**", open the options using the little arrow, and select "bootstrap" from the "**Display**" drop-down menu.  
 
 ![](../img/question_icon.png) Look at the bootstrap values. Strong values are usually considered to be above 90, for ultrafast bootstrap even above 95, meaning that more than 95% of the bootstrap replicates include this node. Can this phylogeny be considered reliable?
 
@@ -234,7 +233,7 @@ Now, return to FigTree. To see the node-support values based on bootstrapping, s
 
 --------
 
-The bootstrap support values indicate that most nodes of the phylogeny are not particularly reliable. Only few nodes are supported with moderately strong values above 90, and some nodes are supported even with support values below 50. This overall low support for this phylogeny is not surprising given that it was built from a short alignment of a single marker. One of the most strongly supported nodes is the monophyly of the southern and northern Lapwing (*Vanellus chilensis* and *Vanellus vanellus*). Note, there is no bootstrap support value on the node (*i.e.*, the branch) leading from *Haematopus ater* to all other species because in the ML analyses the branch leading to the outgroup is essentially a terminal branch that is just for visualization drawn as the root.
+The bootstrap support values show most nodes are unreliable, with few nodes supported above 90 and some below 50. This low support is expected due to the short alignment of a single marker. One of the most strongly supported nodes is the monophyly of the southern and northern Lapwing (*Vanellus chilensis* and *Vanellus vanellus*). Note, there is no bootstrap support for the node (*i.e.*, the branch) leading from *Haematopus ater* to all other species because in the ML analyses the branch leading to the outgroup is essentially a terminal branch that is just for visualization drawn as the root.
 
 <kbd>![](./img/figtree_bs_003.png)</kbd>
 
@@ -245,9 +244,9 @@ The bootstrap support values indicate that most nodes of the phylogeny are not p
 <a name="partitioned_ml"></a>
 ## 4.4 Codon-position partitioned maximum-likelihood inference
 
-Given that node support in the phylogeny for 12s sequences turned out to be poor, we'll try now if the CO1 alignment leads to a better-supported phylogeny. Because the CO1 sequence is protein-coding, it may be reasonable to use separate substitution models for each codon position, so we will partition the alignment accordingly. Recall that in the Nexus file the codon positions were specified in a block near the end of the file. Here we will use a similar format for partitioning the data. Have a look at the [partition file](./data/co1_bold_ed_aln_cut_partitions.txt): ”codon1", "codon2", and "codon3" are names for the individual partitions and "1-850\3" specifies that each third site, counting from position 1 (thus sites 1, 4, 7,...) should be considered part of this partition.
+Since node support for the 12s phylogeny was poor, we will try the CO1 alignment for better-support. As CO1 is protein-coding, we’ll use separate substitution models for each codon position by partitioning the alignment. In the Nexus file, the codon positions are specified in a block near the end of the file. Here we will use a similar format for partitioning the data. Have a look at the [partition file](./data/co1_bold_ed_aln_cut_partitions.txt): ”codon1", "codon2", and "codon3" are names for the individual partitions and "1-850\3" specifies that each third site, counting from position 1 (thus sites 1, 4, 7,...) should be considered part of this partition.
 
-Go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), upload the alignment [`co1_bold_ed_aln_cut.fasta`](../multiple_sequence_alignment/res/co1_bold_ed_aln_cut.fasta). Below, in the field “**Partition file**”, upload the partition file: [partition file](./data/co1_bold_ed_aln_cut_partitions.txt). This time, keep the “**Auto**” option for “**Substitution model**”. Since we did not perform model selection for the CO1 alignment before, we will now do it jointly with the phylogenetic inference. Also keep the “**Ultrafast**” bootstrap, but again click “**No**” in the box next to SH-aLRT. Leave all other fields at their defaults, click “**submit job**”.
+Go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), upload the alignment [`co1_bold_ed_aln_cut.fasta`](../multiple_sequence_alignment/res/co1_bold_ed_aln_cut.fasta). Below, in the field “**Partition file**”, upload the partition file: [partition file](./data/co1_bold_ed_aln_cut_partitions.txt). This time, keep the “**Auto**” option for “**Substitution model**” to perform model selection jointly with the phylogenetic inference. Also keep the “**Ultrafast**” bootstrap, but again click “**No**” in the box next to SH-aLRT. Leave all other fields at their defaults, click “**submit job**”.
 
 <details>
   <summary>Optional: Command for locally installed IQ-TREE (click here)</summary>
@@ -304,7 +303,7 @@ The 3rd position is the most variable, so here TIM3+F+G4 was inferred in my anal
 --------
 </details>
 
-Now open the file [`co1_bold_ed_aln_cut.fasta.treefile`](./res/co1_codonpart_bs/co1_bold_ed_aln_cut.fasta.treefile) in [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4), name the node labels “bootstrap” or “bs”, and once again “**Reroot**” (*Haematopus ater*) and sort ("**Decreasing node order**") the phylogeny. To display the node-support values based on bootstrapping, set a tick in the checkbox for "**Node Labels**", open the options using the little arrow, and select "bootstrap" (or "bs") from the "**Display**" drop-down menu.  
+Now open the file [`co1_bold_ed_aln_cut.fasta.treefile`](./res/co1_codonpart_bs/co1_bold_ed_aln_cut.fasta.treefile) in [FigTree](https://github.com/rambaut/figtree/releases/tag/v1.4.4), name the node labels “bootstrap”, and once again “**Reroot**” (*Haematopus ater*) and sort ("**Decreasing node order**") the phylogeny. To display the node-support values based on bootstrapping, set a tick in the checkbox for "**Node Labels**", open the options using the little arrow, and select "bootstrap" from the "**Display**" drop-down menu.  
 
 ![](../img/question_icon.png) Does the CO1 phylogeny look more reliable compared to the 12s phylogeny?
 
@@ -335,11 +334,11 @@ co1_bold_ed_aln_cut_partitions.txt -pre co1_bold_ed_aln_cut_partfinder —m MFP+
 
 
 <a name="concat_ml"></a>
-## 4.5 Phylogenetic inference with concatenated alignments
+## (Optional) Phylogenetic inference with concatenated alignments
 
-The comparison of phylogenies based on the short 12s alignment and the longer CO1 alignment showed that the overall node support can substantially be improved with increased size of the dataset. It is thus usually beneficial to use the information from several alignments jointly in one and the same phylogenetic analysis. To this end, the individual alignments were concatenated (simply pasted together), using [catfasta2phyml](https://github.com/nylander/catfasta2phyml), and a [partition scheme](./data/12s_co1_rag1_partitions.txt) based on genes and codon positions was generated.
+The comparison of phylogenies from the short 12s alignment and the longer CO1 alignment showed that node support can substantially improve with more data. Therefore, combining multiple alignments in one analysis is usually beneficial. Here, the individual alignments were concatenated (simply pasted together), using [catfasta2phyml](https://github.com/nylander/catfasta2phyml), and a [partition scheme](./data/12s_co1_rag1_partitions.txt) based on genes and codon positions was generated.
 
-For the last time today, go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), und upload the alignment [`12s_co1_rag1.fasta`](./data/12s_co1_rag1.fasta). Also upload the associated partition file [`12s_co1_rag1_partitions.txt`](./data/12s_co1_rag1_partitions.txt) (you can download those files to your computer by clicking on the links above, then click the "**Download raw file**" button at the top of the file). Again, keep the “**Auto**” option for “**Substitution model**”, keep the “**Ultrafast**” bootstrap, but click “**No**” in the box next to SH-aLRT. Leave all other fields at their defaults, click “**submit job**”.  
+Go to the [IQ-TREE web server](http://iqtree.cibiv.univie.ac.at), und upload the combined alignment [`12s_co1_rag1.fasta`](./data/12s_co1_rag1.fasta). Also upload the associated partition file [`12s_co1_rag1_partitions.txt`](./data/12s_co1_rag1_partitions.txt). Keep the “**Auto**” option for “**Substitution model**”, keep the “**Ultrafast**” bootstrap, but click “**No**” in the box next to SH-aLRT. Leave all other fields at their defaults, click “**submit job**”.  
 Once the run is finished, download the results by clicking on the link “**Download selected jobs**”, rename the folder to [`12s_co1_rag1_codonpart_bs`](./res/12s_co1_rag1_codonpart_bs).
 
 <details>
@@ -352,9 +351,9 @@ Once the run is finished, download the results by clicking on the link “**Down
 --------
 </details>
 
-Note that for partitioned analysis, IQ-TREE will assume that all partitions, and thus the 12s, CO1, and RAG1 sequences share the same true evolutionary history. The concatenation of genes may bias the result if this assumption is violated (which is common, particularly if closely related species are investigated, due to incomplete lineage sorting and/or introgression – you will hear more about this in the “Phylogenomics” lecture. However, given our dataset, the assumption that the 12s, CO1, and RAG1 genes share the same evolutionary history – or at least the same true topology – may be justified.
+Note that for partitioned analysis, IQ-TREE will assume that all partitions, and thus the 12s, CO1, and RAG1 sequences share the same true evolutionary history. The concatenation of genes may bias the result if this assumption is violated (which is common, particularly if closely related species are investigated, due to incomplete lineage sorting and/or introgression – you will hear more about this in the “Phylogenomics” lecture. However, for our species, the assumption that the 12s, CO1, and RAG1 genes share the same evolutionary history – or at least the same true topology – may be justified.
 
-Open the [`12s_co1_rag1.fasta.treefile`](./res/12s_co1_rag1_codonpart_bs/12s_co1_rag1.fasta.treefile) file in FigTree, name the node labels again “bootstrap” or “bs”, and once again “**Reroot**” (*Haematopus ater*) and sort ("**Decreasing node order**") the phylogeny, set a tick in the checkbox for "**Node Labels**", open the options using the little arrow, and select "bootstrap" (or "bs") from the "**Display**" drop-down menu.
+Open the [`12s_co1_rag1.fasta.treefile`](./res/12s_co1_rag1_codonpart_bs/12s_co1_rag1.fasta.treefile) file in FigTree, name the node labels “bootstrap”, “**Reroot**” (*Haematopus ater*), sort ("**Decreasing node order**") the phylogeny, and check the box for "**Node Labels**", open the options using the little arrow, and select "bootstrap" from the "**Display**" drop-down menu.
 
 ![](../img/question_icon.png) How does node support of this phylogeny compare to the previous CO1 phylogeny?
 
@@ -389,9 +388,9 @@ No, still not. Even if some nodes are not very well supported, the clade includi
 
 --------
 
-Since *T. novaeseelandiae* is included in a clade widely separated from the other three endemic species (*C. bicinctus*,  *A. frontalis*, and *C. obscurus*, highlighted in yellow), it seems reasonable to assume that these originate from separate dispersal events. 
+Since *T. novaeseelandiae* is included in a clade distinct from the other endemic species (*C. bicinctus*,  *A. frontalis*, and *C. obscurus*, highlighted in yellow), they likely originate from separate dispersal events. 
 
-However, among *A. frontalis*, *C. obscurus*, and *C. bicinctus* there may be two possible scenarios: Either, the ancestor of this clade dispersed to New Zealand giving rise to all three species, followed by a second dispersal event back to Australia/Asia, giving rise to *C. alexandrinus* and the other four Charadrius species in this clade (highlighted in orange). Or, the two sister species *A. frontalis* and *C. obscurus* may have originated from one dispersal event, while *C. bicinctus* stems from yet another one.
+However, among *A. frontalis*, *C. obscurus*, and *C. bicinctus* two scenarios are possible: either, the ancestor of this clade dispersed to New Zealand giving rise to all three species, followed by a second dispersal event to Australia/Asia, giving rise to *C. alexandrinus* and the other four Charadrius species in this clade (highlighted in orange). Or, the two sister species *A. frontalis* and *C. obscurus* may have originated from one dispersal event, while *C. bicinctus* stems from yet another one.
 
 <kbd>![](./img/figtree_002.png)</kbd>
 
