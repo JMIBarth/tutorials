@@ -10,8 +10,8 @@ We first retrieved homologous sequences ([Activity 1](../dataset_compilation/REA
 * [4.1 Run ML inference for the 12s alignment using a predefined substitution model](#ml_TIM2_12s)
 * [4.2 Visualize the trees using a tree viewer](#tree_viewer)
 * [4.3 Assess node support with bootstrapping](#bs)
-* [4.4 Codon-position partitioned maximum-likelihood inference](#partitioned_ml)
-* [(Optional) Phylogenetic inference with concatenated alignments](#concat_ml)
+* [(Optional) Codon-position partitioned maximum-likelihood inference](#partitioned_ml)
+* [4.4 Phylogenetic inference with concatenated alignments](#concat_ml)
 
 
 <a name="ml_TIM2_12s"></a>
@@ -242,7 +242,7 @@ The bootstrap support values show most nodes are unreliable, with few nodes supp
 
 
 <a name="partitioned_ml"></a>
-## 4.4 Codon-position partitioned maximum-likelihood inference
+## (Optional) Codon-position partitioned maximum-likelihood inference
 
 Since node support for the 12s phylogeny was poor, we will try the CO1 alignment for better-support. As CO1 is protein-coding, we’ll use separate substitution models for each codon position by partitioning the alignment. In the Nexus file, the codon positions are specified in a block near the end of the file. Here we will use a similar format for partitioning the data. Have a look at the [partition file](./data/co1_bold_ed_aln_cut_partitions.txt): ”codon1", "codon2", and "codon3" are names for the individual partitions and "1-850\3" specifies that each third site, counting from position 1 (thus sites 1, 4, 7,...) should be considered part of this partition.
 
@@ -334,7 +334,7 @@ co1_bold_ed_aln_cut_partitions.txt -pre co1_bold_ed_aln_cut_partfinder —m MFP+
 
 
 <a name="concat_ml"></a>
-## (Optional) Phylogenetic inference with concatenated alignments
+## 4.4 Phylogenetic inference with concatenated alignments
 
 The comparison of phylogenies from the short 12s alignment and the longer CO1 alignment showed that node support can substantially improve with more data. Therefore, combining multiple alignments in one analysis is usually beneficial. Here, the individual alignments were concatenated (simply pasted together), using [catfasta2phyml](https://github.com/nylander/catfasta2phyml), and a [partition scheme](./data/12s_co1_rag1_partitions.txt) based on genes and codon positions was generated.
 
