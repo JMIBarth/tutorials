@@ -15,9 +15,9 @@ Practice Markov chain Monte Carlo (MCMC) sampling. MCMC can be used to sample fr
 <a name="flat"></a>
 ## 5.1 Flat parameter space
 
-Go to Paul Lewis' [MCMC Robot webpage](https://plewis.github.io/applets/mcmc-robot/). If you have an iPhone or iPad, you can also download and install the free app “MCMC Robot” from the App Store (the description given below may not exactly fit the appearance in the app).
+Go to Paul Lewis' [MCMC Robot webpage](https://plewis.github.io/applets/mcmc-robot/). With an iPhone or iPad, you can also download the app “MCMC Robot” from the App Store (the description given below may not exactly fit the appearance in the app).
 
-Click on the **outer white ring** in the black square and delete the “peak” (the two white rings should disappear). Then click on **Settings** in the blue menu below the black square and change "**Step length sd/mean**" from 1 to 0 and click on “**Hide fails**” to deactivate it (the button changes to "show fails"). Then click on the blue “**Run**” button to perform 100 steps of the MCMC. Continue to click the button repeatedly (10-30 times) to continue the chain.
+Click on the **outer white ring** in the black square and press delete to remove the “peak” (the two white rings should disappear). Under **Settings** in the blue menu below the black square set "**Step length sd/mean**" from 1 to 0 and click on “**Hide fails**” to deactivate it (the button changes to "show fails"). Then click on the blue “**Run**” button to perform 100 steps of the MCMC. Repeat clicking the button (10-30 times) to continue the chain.
 
 <kbd>![](./img/mcmc_robot_001.png)</kbd>
 
@@ -28,7 +28,7 @@ Click on the **outer white ring** in the black square and delete the “peak” 
 
 --------
 
-You should see that the MCMC explores the two-dimensional parameter landscape more or less evenly, because no probability peaks have yet been defined. You should also see that all steps are equally large.
+The MCMC should explore the two-dimensional parameter landscape evenly since no probability peaks are defined. All steps will appear uniformly large.
 
 --------
 </details>
@@ -53,17 +53,19 @@ Leave the other settings unchanged and click the “**Run**” button repeatedly
   
 You should see that the MCMC chain quickly finds the probability peak, and that it rarely leaves it afterwards.
 
-Click on “**Stats**”. Here you should see that the number of MCMC samples inside the 50% contour is close to 50% of the total number, and that the number of samples inside the 95% contour is also close to 95%, in line with the expectation for MCMC sampling. The more steps you perform, the closer you will get to 50% and 95%, respectively. 
+Click on “**Stats**” to check that about 50% of MCMC samples fall within the 50% contour and 95% within the 95% contour, as expected. Performing more steps will bring these percentages closer to 50% and 95%. 
 
 --------
 </details>
 
 
-So far, we’ve only seen lines and dots representing states that have been accepted by the MCMC algorithm (colored in blue) and that have therefore become part of the MCMC chain. Activate “**Show fails**” in the Settings menu (you may have to re-run the chain). You should now also see purple lines representing the proposed states with lower probability that have been proposed but not accepted by the MCMC algorithm. You’ll see that these purple lines seem to surround the blue ones and the probability peak. That is, because the further away these dots are from the peak, the lower is their probability, and therefore they are also less often accepted. You may see the pattern more clearly if you re-run the chain with the “Show fails” option on.
+So far, we’ve only seen blue lines and dots representing states accepted by the MCMC algorithm, which are part of the MCMC chain.  
+
+Activate “**Show fails**”  in the Settings menu (you may need to re-run the chain). You should now see purple lines representing proposed states with lower probabilities that were not accepted. These purple lines tend to surround the blue ones and the probability peak because lower-probability states, further from the peak, are less often accepted. Re-running the chain with “Show fails” on may make this pattern clearer.
 
 <kbd>![](./img/mcmc_robot_003.png)</kbd>
 
-Click on "**Clear**" again to remove the MCMC chain. Change the **"Step length mean"** to 500 and set a standard deviation of the step size (**Step length sd/mean**) of 0.
+Click on "**Clear**" to remove the MCMC chain. Change the **"Step length mean"** to 500 and set a standard deviation of the step size (**Step length sd/mean**) of 0.
 
 ![](../img/question_icon.png) How do these settings affect the discovery of the probability peak by the MCMC? Why do you see this pattern?
 
@@ -72,7 +74,7 @@ Click on "**Clear**" again to remove the MCMC chain. Change the **"Step length m
 
 --------
   
-You should see that the MCMC has difficulties reaching the center of the probability peak, because in order to get to the peak, it would first have to be in an accepted position 150 units away from it. As a result, the MCMC chain appears to from a ring from which states further outside are proposed but almost always rejected. After clicking the “**Run**” button several times, check the “**Stats**” for this MCMC chain. You might see that much less than 50% and 95% of the samples are now found within the 50% and 95% contours, respectively. Which would demonstrate that a flexible step size is crucial for proper MCMC behaviour.
+You should notice that the MCMC has difficulties reaching the center of the probability peak because it must first land in an accepted position 150 units away from it. Consequently, the chain appears to from a ring from which states further outside are proposed but almost always rejected. After clicking “**Run**” several times, check the “**Stats**” for this chain. You may find that much fewer than 50% and 95% of the samples fall within the 50% and 95% contours, highlighting the importance of flexible step sizes for proper MCMC behavior.
 
 <kbd>![](./img/mcmc_robot_004.png)</kbd>
 
@@ -83,15 +85,15 @@ You should see that the MCMC has difficulties reaching the center of the probabi
 <a name="complex"></a>
 ## 5.3 Complex parameter space 
 
-"**Clear**" the MCMC chain. Deactivate the “**Show fails**” option. Keep the large **"Step length mean"** (500) and the minimal standard deviation of the step size (0 or 1). Then, return to the black square and define a second hill that is in the opposite corner of the first hill and has a similar size to the first hill. Click the “**Run**” icon again a few times. You should see that almost all accepted steps are those that cross from one peak to the other. The areas of the individual peaks do not seem to be explored homogeneously by the MCMC chain. 
+"**Clear**" the MCMC chain and deactivate “**Show fails**”. Keep the large **"Step length mean"** (500) and the minimal standard deviation of the step size (0). In the black square, add a second hill in the opposite corner of the first with a similar size to the first hill. Click “**Run**” a few times. You'll notice that almost all accepted steps cross from one peak to the other, while the areas of the individual peaks are not explored homogeneously by the MCMC chain. 
 
 <kbd>![](./img/mcmc_robot_005.png)</kbd>  
 
-Now, set the step length to more reasonable values. Use 50 for the **"Step length mean"** and 10 for the the standard deviation (**Step length sd/mean**). Then, run the MCMC chain again for a few thousand steps. You should see that even though the chain tends to remain within a peak most often, it occasionally crosses from peak to peak and is thus able to explore both evenly. If you click on the “**Stats**” button, you should see that about 50% and 95% of the accepted samples are within the 50% and 95% contours. 
+Change the **"Step length mean"** to 50 and the standard deviation (**Step length sd/mean**) to 10 and Run the MCMC chain again for a few thousand steps. You should observe that while the chain mostly stays within one peak, it occasionally moves between peaks, eventually exploring both evenly. Check the "Stats" to confirm that approximately 50% and 95% of the samples are within the 50% and 95% contours.
 
-Now, clear the screen and change the starting position (just by clicking once somewhere in the black square). Click on “**Run**” again a couple of times. You will see that perhaps this time the other peak is explored more thoroughly.
+Clear the screen again and change the starting position by clicking once somewhere in the black square. Click on “**Run**” again a couple of times. Does it change which peak is explored more thoroughly?
 
-![](../img/discussion_icon.png) Discuss with your neighbours which settings of the MCMC chain seem to be important, how the parameter landscape can influence the exploration of the MCMC chain and why different starting positions are important.
+![](../img/discussion_icon.png) Discuss with your neighbours which settings of the MCMC chain seem to be important, how the parameter landscape can influence the exploration of the MCMC chain and why different starting positions and step lengths are important.
 
 
 <a name="mcmc_opt"></a>
