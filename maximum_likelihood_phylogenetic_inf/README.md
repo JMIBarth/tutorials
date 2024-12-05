@@ -356,7 +356,7 @@ Note that for partitioned analysis, IQ-TREE will assume that all partitions, and
 
 Open the [`12s_co1_rag1.fasta.treefile`](./res/12s_co1_rag1_codonpart_bs/12s_co1_rag1.fasta.treefile) file in FigTree, name the node labels “bootstrap”, “**Reroot**” (*Haematopus ater*), sort ("**Decreasing node order**") the phylogeny, and check the box for "**Node Labels**", open the options using the little arrow, and select "bootstrap" from the "**Display**" drop-down menu.
 
-![](../img/question_icon.png) How does node support of this phylogeny compare to the previous CO1 phylogeny?
+![](../img/question_icon.png) How does node support of this phylogeny compare to the previous 12s or CO1 phylogenies?
 
 <details>
   <summary>Answer (click here)</summary>
