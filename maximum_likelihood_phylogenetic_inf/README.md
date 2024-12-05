@@ -170,7 +170,8 @@ Keep the window with the current tree open and in addition open the [`.treefile`
 
 --------
 
-They are not concordant. In fact, the two phylogenies show major differences in topology, demonstrating that model selection is highly relevant. The use of one or another model may affect many stages of phylogenetic inference and the inferred phylogenetic hypothesis may be incorrect when the assumed model of evolution is poorly fitting.
+They are not concordant. In fact, the two phylogenies show major differences in topology, demonstrating that model selection is highly relevant. The use of one or another model may affect many stages of phylogenetic inference and the inferred phylogenetic hypothesis may be incorrect when the assumed model of evolution is poorly fitting.  
+In addition, this is a good example for a phylogenetic artifact called "long branch attraction", where distantly related lineages with high rates of evolution are incorrectly inferred to be closely related due to the accumulation of similar but independently evolved traits (homoplasies). Can you spot the potentially problematic lineages?
 
 <kbd>![](./img/iqtree_ml_002.png)</kbd>
 
