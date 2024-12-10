@@ -467,7 +467,7 @@ We will partition the CO1 and RAG1 sequences into codon positions to allow for i
 
 <kbd>![](./img/beauti_010.png)</kbd>
 
-Now select the **RAG1** row. Similar to the final maximum likelihood analysis ([Activity 4.5](../maximum_likelihood_phylogenetic_inf/README.md)) we will partition the RAG1 gene only into two parts, combining codon positions 1 and 2, which fit a similar substitution model, but keeping codon position 3 separate. Therefore, click the “**Split**” button again, but now select to split into “**{1,2}+3**”. You should have six rows now, one for the 16s, three for CO1, and two for RAG1.
+Now select the **RAG1** row. Similar to the final maximum likelihood analysis ([Activity 4.5](../maximum_likelihood_phylogenetic_inf/README.md)) we will partition the RAG1 gene only into two parts, combining codon positions 1 and 2, which fit a similar substitution model, but keeping codon position 3 separate. Therefore, click the “**Split**” button again, but now select to split into “**{1,2}+3**”. You should have six rows now, one for the 12s, three for CO1, and two for RAG1.
 
 **Select all six rows** at the same time (ctrl+A or command+A or holding the “shift” key and click), then click on “**Link Trees**” near the top of the BEAUti window to force BEAST 2 to use the same phylogeny for all partitions. For our data set, this is equivalent to the concatenation that we did with IQ-TREE. If we had sequences for many more genes (tens to thousands) it would be more appropriate to use an alternative model that allows the phylogenies of genes to differ from each other to account for “coalescent” processes such as “incomplete lineage sorting”. This topic will be covered in the next lecture.
 
