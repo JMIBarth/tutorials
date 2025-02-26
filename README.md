@@ -65,9 +65,11 @@ Many activities will use online tools, but some require locally installed softwa
 
 <br/><br/>
 ## Tutorials on population genomic analyses
-### Workshop on Population and Speciation Genomics in Český Krumlov (2016, 2018, 2020)
+### Workshop on Population and Speciation Genomics in Český Krumlov (2016-2025)
 
-These tutorials use a slightly different format but still include question-and-answer options.
+These tutorials use a slightly different format but most still include question-and-answer options.
+
+* [Genomics primer and calculating genome-wide population statistics (2025)](https://evomics.org/learning/population-and-speciation-genomics/2025-population-and-speciation-genomics/population-genomics-primer-i/)
 
 * [Quality control, quality filtering, and preparation of a population genomic dataset for downstream analyses](http://evomics.org/learning/population-and-speciation-genomics/2020-population-and-speciation-genomics/first-steps-in-genomic-data-analysis/)
 
@@ -76,7 +78,7 @@ These tutorials use a slightly different format but still include question-and-a
 	* [2016](http://evomics.org/learning/population-and-speciation-genomics/2016-population-and-speciation-genomics/fileformats-vcftools-plink/)
 
 
-* [Basic UNIX, some tips, tricks, and more](http://evomics.org/learning/population-and-speciation-genomics/2018-population-and-speciation-genomics/unix-activity/)
+* [Basic UNIX, some tips, tricks, and more (2018)](http://evomics.org/learning/population-and-speciation-genomics/2018-population-and-speciation-genomics/unix-activity/)
 
 
 <br/><br/><br/><br/>
